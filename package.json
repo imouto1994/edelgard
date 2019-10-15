@@ -1,0 +1,17 @@
+{
+  "name": "edelgard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:imouto1994/Edelgard.git",
+  "author": "Nhan Bui <imouto1994@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "generate-endings-json": "node scripts/generate-endings-json.js"
+  },
+  "dependencies": {
+    "react": "16.10.2"
+  },
+  "devDependencies": {
+    "prettier": "1.18.2"
+  }
+}
