@@ -1,0 +1,35 @@
+.endingsCard {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: flex-start;
+  padding: 16px 24px;
+  overflow: auto;
+  background: #e6e3d8;
+  border-radius: 1px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.75);
+}
+
+.header {
+  position: relative;
+  flex: 0 0 60%;
+  width: 60%;
+}
+
+.portraitA {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+}
+
+.portraitB {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+.content {
+  flex: 0 0 40%;
+  width: 40%;
+}

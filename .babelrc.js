@@ -17,6 +17,7 @@ module.exports = {
     ],
   ],
   plugins: [
+    ["@babel/plugin-proposal-class-properties", { loose: false }],
     [
       "@babel/plugin-transform-runtime",
       {

@@ -39,8 +39,11 @@ module.exports = {
             loader: "css-loader",
             options: {
               importLoaders: 1,
-              localIdentName: "[name]__[local]___[hash:base64:5]",
-              modules: true,
+              modules: {
+                mode: "local",
+                localIdentName: "[name]__[local]___[hash:base64:5]",
+                context: path.resolve(__dirname, "../src"),
+              },
             },
           },
           {
@@ -54,12 +57,18 @@ module.exports = {
         use: [
           {
             loader: "file-loader",
-            options: {
-              name: "[name]-[contenthash].[ext]",
-            },
           },
         ],
       },
+      // {
+      //   include: [path.resolve(__dirname, "../json/")],
+      //   test: /\.json$/,
+      //   use: [
+      //     {
+      //       loader: "file-loader",
+      //     },
+      //   ],
+      // },
     ],
   },
   output: {
