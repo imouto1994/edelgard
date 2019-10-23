@@ -34,6 +34,7 @@
   left: 12px;
   height: 24px;
   margin: auto 0;
+  cursor: pointer;
 }
 
 .content {

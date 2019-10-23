@@ -9,7 +9,7 @@
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.75);
 }
 
-.header {
+.left {
   position: relative;
   flex: 0 0 60%;
   width: 60%;
@@ -29,7 +29,7 @@
   width: 50%;
 }
 
-.content {
+.right {
   flex: 0 0 40%;
   width: 40%;
 }

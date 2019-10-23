@@ -19,11 +19,11 @@ class PairEndings extends PureComponent {
 
     return (
       <div className={classnames(styles.endingsCard, className)}>
-        <div className={styles.header}>
+        <div className={styles.left}>
           <img src={portraitAImageURL} className={styles.portraitA} />
           <img src={portraitBImageURL} className={styles.portraitB} />
         </div>
-        <div className={styles.content}></div>
+        <div className={styles.right}></div>
       </div>
     );
   }
