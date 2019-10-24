@@ -42,17 +42,16 @@ function PagePartnersWithCharacter(
   props: PagePartnersWithCharacterProps,
 ): ReactElement | null {
   const { character, characterSlug } = props;
-
   const dispatch = useDispatch();
   const history = useHistory();
-
-  const partners = useSelector((state: State) =>
-    selectPartners(state, { character }),
-  );
 
   useEffect(() => {
     dispatch(endingsPartnerGetRequest(character));
   }, [character, dispatch]);
+
+  const partners = useSelector((state: State) =>
+    selectPartners(state, { character }),
+  );
 
   function handlePartnerSelect(partner: Character): void {
     history.push(`/${characterSlug}/${slugify(partner)}`);

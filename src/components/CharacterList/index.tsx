@@ -1,4 +1,5 @@
-import React, { PureComponent, ReactElement } from "react";
+import React, { ReactElement } from "react";
+import { motion } from "framer-motion";
 
 import { characterFactions, Character } from "../../data/character/type";
 import { slugify } from "../../utils/string";
@@ -15,74 +16,106 @@ type Props = {
   onCharacterSelect: (character: Character) => void;
 };
 
-class CharacterList extends PureComponent<Props> {
-  onCharacterSelect = (character: Character): void => {
-    this.props.onCharacterSelect(character);
-  };
+export default function CharacterList(props: Props): ReactElement {
+  const { characters } = props;
 
-  render(): ReactElement {
-    const { characters } = this.props;
-
-    return (
-      <div className={styles.characterList}>
-        {characters.map(this.renderCharacter)}
-      </div>
-    );
+  function onCharacterSelect(character: Character): void {
+    props.onCharacterSelect(character);
   }
 
-  renderCharacter = (character: Character): ReactElement => {
-    return (
-      <CharacterItem
-        key={character}
-        character={character}
-        onCharacterSelect={this.onCharacterSelect}
-      />
-    );
-  };
+  return (
+    <div className={styles.characterList}>
+      {characters.map((character: Character) => (
+        <CharacterItem
+          key={character}
+          character={character}
+          onCharacterSelect={onCharacterSelect}
+        />
+      ))}
+    </div>
+  );
 }
-
-export default CharacterList;
 
 type CharacterItemProps = {
   character: Character;
   onCharacterSelect: (c: Character) => void;
 };
 
-class CharacterItem extends PureComponent<CharacterItemProps> {
-  onClick = (): void => {
-    const { character, onCharacterSelect } = this.props;
+function CharacterItem(props: CharacterItemProps): ReactElement {
+  function onClick(): void {
+    const { character, onCharacterSelect } = props;
     onCharacterSelect(character);
-  };
-
-  render(): ReactElement {
-    const { character } = this.props;
-    const characterSlug = slugify(character);
-    let factionImageURL;
-    if (characterFactions[character] === 0) {
-      factionImageURL = empireEmblemImageURL;
-    } else if (characterFactions[character] === 1) {
-      factionImageURL = holyEmblemImageURL;
-    } else if (characterFactions[character] === 2) {
-      factionImageURL = allianceEmblemImageURL;
-    } else if (characterFactions[character] === 3) {
-      factionImageURL = churchEmblemImageURL;
-    }
-
-    return (
-      <div className={styles.characterEntry} onClick={this.onClick}>
-        <div className={styles.portraitContainer}>
-          <div className={styles.portraitWrapper}>
-            <img
-              src={require(`../../images/${characterSlug}_y_s.png`)}
-              className={styles.portrait}
-            />
-            {factionImageURL != null ? (
-              <img src={factionImageURL} className={styles.faction} />
-            ) : null}
-          </div>
-        </div>
-        <div className={styles.contentContainer}>{character}</div>
-      </div>
-    );
   }
+
+  const { character } = props;
+  const characterSlug = slugify(character);
+  let factionImageURL;
+  if (characterFactions[character] === 0) {
+    factionImageURL = empireEmblemImageURL;
+  } else if (characterFactions[character] === 1) {
+    factionImageURL = holyEmblemImageURL;
+  } else if (characterFactions[character] === 2) {
+    factionImageURL = allianceEmblemImageURL;
+  } else if (characterFactions[character] === 3) {
+    factionImageURL = churchEmblemImageURL;
+  }
+
+  return (
+    <motion.div
+      animate="enter"
+      initial="initial"
+      whileHover="hover"
+      className={styles.characterEntry}
+      onClick={onClick}
+    >
+      <div className={styles.portraitContainer}>
+        <div className={styles.portraitWrapper}>
+          <motion.img
+            variants={{
+              initial: { x: -50, y: -10, opacity: 0 },
+              enter: {
+                x: 0,
+                y: -10,
+                opacity: 1,
+                transition: { duration: 0.5 },
+              },
+              hover: {
+                scale: 0.8,
+              },
+            }}
+            src={require(`../../images/${characterSlug}_y_s.png`)}
+            className={styles.portrait}
+          />
+          {factionImageURL != null ? (
+            <motion.img
+              variants={{
+                initial: { y: 50, opacity: 0 },
+                enter: {
+                  y: 0,
+                  opacity: 1,
+                  transition: { duration: 0.5 },
+                },
+              }}
+              src={factionImageURL}
+              className={styles.faction}
+            />
+          ) : null}
+        </div>
+      </div>
+      <div className={styles.contentContainer}>
+        <motion.span
+          variants={{
+            initial: { y: "50%", opacity: 0 },
+            enter: {
+              y: "0%",
+              opacity: 1,
+              transition: { delay: 0.5, duration: 0.5 },
+            },
+          }}
+        >
+          {character}
+        </motion.span>
+      </div>
+    </motion.div>
+  );
 }

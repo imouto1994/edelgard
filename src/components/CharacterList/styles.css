@@ -49,7 +49,6 @@
 .portrait {
   width: auto;
   height: 275%;
-  transform: translateY(-10%);
 }
 
 .faction {

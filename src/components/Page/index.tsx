@@ -1,4 +1,5 @@
 import React, { ReactElement, ReactNode } from "react";
+import { motion } from "framer-motion";
 import classnames from "classnames";
 
 import styles from "./styles.css";
@@ -16,7 +17,11 @@ export default function Page(props: Props): ReactElement {
   const { title, onBack, className, children } = props;
 
   return (
-    <div className={classnames(styles.page, className)}>
+    <motion.div
+      animate="enter"
+      initial="initial"
+      className={classnames(styles.page, className)}
+    >
       <div className={styles.header}>
         {onBack != null ? (
           <img
@@ -25,9 +30,16 @@ export default function Page(props: Props): ReactElement {
             onClick={onBack}
           />
         ) : null}
-        {title}
+        <motion.span
+          variants={{
+            initial: { opacity: 0, y: 15 },
+            enter: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+          }}
+        >
+          {title}
+        </motion.span>
       </div>
       <div className={styles.content}>{children}</div>
-    </div>
+    </motion.div>
   );
 }

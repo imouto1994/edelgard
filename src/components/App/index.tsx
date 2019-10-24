@@ -11,13 +11,13 @@ export default function App(): ReactElement {
   return (
     <div className={styles.app}>
       <Switch>
-        <Route path="/:characterASlug/:characterBSlug">
+        <Route exact path="/:characterASlug/:characterBSlug">
           <PageEndings />
         </Route>
-        <Route path="/:characterSlug">
+        <Route exact path="/:characterSlug">
           <PagePartners />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <PageHome />
         </Route>
       </Switch>
