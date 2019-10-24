@@ -15,6 +15,7 @@ module.exports = {
       "@babel/preset-react",
       { development: process.env.NODE_ENV === "development" },
     ],
+    "@babel/preset-typescript",
   ],
   plugins: [
     ["@babel/plugin-proposal-class-properties", { loose: false }],
@@ -22,7 +23,6 @@ module.exports = {
       "@babel/plugin-transform-runtime",
       {
         helpers: true,
-        regenerator: false,
         useESModules: true,
       },
     ],

@@ -4,12 +4,16 @@
     "google",
     "plugin:react/recommended",
     "plugin:css-modules/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier",
-    "prettier/react"
+    "prettier/react",
+    "prettier/@typescript-eslint"
   ],
-  "plugins": ["css-modules", "react", "react-hooks"],
-  "parser": "babel-eslint",
+  "plugins": ["react", "react-hooks", "css-modules", "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
   "rules": {
+    "@typescript-eslint/no-use-before-define": 0,
     "no-invalid-this": 0,
     "require-jsdoc": 0,
     "react/prop-types": 0,

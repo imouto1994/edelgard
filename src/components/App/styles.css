@@ -1,44 +1,8 @@
 .app {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
   height: 100%;
-  padding: 24px;
   background-color: #000;
   background-image: url("../../images/sothis_bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto 100%;
-}
-
-.header {
-  position: relative;
-  display: flex;
-  flex: 0 0 36px;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  height: 36px;
-  font-size: 18px;
-  color: #ede3e1;
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
-  letter-spacing: 1px;
-  background: #5f5273;
-  border-radius: 1px;
-}
-
-.headerBackButton {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 12px;
-  height: 24px;
-  margin: auto 0;
-  cursor: pointer;
-}
-
-.content {
-  flex: 1;
-  width: 90%;
-  margin-top: 12px;
 }

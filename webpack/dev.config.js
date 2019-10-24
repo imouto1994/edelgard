@@ -7,18 +7,19 @@ module.exports = {
   devServer: {
     compress: true,
     contentBase: path.join(__dirname, "../build/"),
+    historyApiFallback: true,
     hot: true,
     port: 9000,
   },
   entry: {
-    main: path.resolve(__dirname, "../src/index.js"),
+    main: path.resolve(__dirname, "../src/index.tsx"),
   },
   mode: "development",
   module: {
     rules: [
       {
         exclude: [path.resolve(__dirname, "../node_modules/")],
-        test: /\.js$/,
+        test: /\.(ts|js)x?$/,
         use: [
           {
             loader: "babel-loader",
@@ -57,24 +58,20 @@ module.exports = {
         use: [
           {
             loader: "file-loader",
+            options: {
+              outputPath: "",
+              publicPath: "/",
+            },
           },
         ],
       },
-      // {
-      //   include: [path.resolve(__dirname, "../json/")],
-      //   test: /\.json$/,
-      //   use: [
-      //     {
-      //       loader: "file-loader",
-      //     },
-      //   ],
-      // },
     ],
   },
   output: {
     chunkFilename: "[name].js",
     filename: "[name].js",
     path: path.resolve(__dirname, "../build/"),
+    publicPath: "/",
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -86,5 +83,8 @@ module.exports = {
       "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
     }),
   ],
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".json"],
+  },
   target: "web",
 };
