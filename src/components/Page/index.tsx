@@ -1,10 +1,7 @@
 import React, { ReactElement, ReactNode } from "react";
-import { motion } from "framer-motion";
 import classnames from "classnames";
 
 import styles from "./styles.css";
-
-import backArrowImageURL from "../../images/back_arrow.png";
 
 type Props = {
   children: ReactNode;
@@ -17,29 +14,21 @@ export default function Page(props: Props): ReactElement {
   const { title, onBack, className, children } = props;
 
   return (
-    <motion.div
-      animate="enter"
-      initial="initial"
-      className={classnames(styles.page, className)}
-    >
+    <div className={classnames(styles.page, className)}>
       <div className={styles.header}>
         {onBack != null ? (
-          <img
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 199.4 199.4"
             className={styles.headerBackButton}
-            src={backArrowImageURL}
             onClick={onBack}
-          />
+          >
+            <path d="M135 0L36 100l99 99 29-28-72-71 72-72z" />
+          </svg>
         ) : null}
-        <motion.span
-          variants={{
-            initial: { opacity: 0, y: 15 },
-            enter: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-          }}
-        >
-          {title}
-        </motion.span>
+        <span>{title}</span>
       </div>
       <div className={styles.content}>{children}</div>
-    </motion.div>
+    </div>
   );
 }

@@ -1,5 +1,4 @@
 import React, { ReactElement } from "react";
-import { motion } from "framer-motion";
 
 import { characterFactions, Character } from "../../data/character/type";
 import { slugify } from "../../utils/string";
@@ -61,61 +60,21 @@ function CharacterItem(props: CharacterItemProps): ReactElement {
   }
 
   return (
-    <motion.div
-      animate="enter"
-      initial="initial"
-      whileHover="hover"
-      className={styles.characterEntry}
-      onClick={onClick}
-    >
+    <div className={styles.characterEntry} onClick={onClick}>
       <div className={styles.portraitContainer}>
         <div className={styles.portraitWrapper}>
-          <motion.img
-            variants={{
-              initial: { x: -50, y: -10, opacity: 0 },
-              enter: {
-                x: 0,
-                y: -10,
-                opacity: 1,
-                transition: { duration: 0.5 },
-              },
-              hover: {
-                scale: 0.8,
-              },
-            }}
+          <img
             src={require(`../../images/${characterSlug}_y_s.png`)}
             className={styles.portrait}
           />
           {factionImageURL != null ? (
-            <motion.img
-              variants={{
-                initial: { y: 50, opacity: 0 },
-                enter: {
-                  y: 0,
-                  opacity: 1,
-                  transition: { duration: 0.5 },
-                },
-              }}
-              src={factionImageURL}
-              className={styles.faction}
-            />
+            <img src={factionImageURL} className={styles.faction} />
           ) : null}
         </div>
       </div>
       <div className={styles.contentContainer}>
-        <motion.span
-          variants={{
-            initial: { y: "50%", opacity: 0 },
-            enter: {
-              y: "0%",
-              opacity: 1,
-              transition: { delay: 0.5, duration: 0.5 },
-            },
-          }}
-        >
-          {character}
-        </motion.span>
+        <span>{character}</span>
       </div>
-    </motion.div>
+    </div>
   );
 }

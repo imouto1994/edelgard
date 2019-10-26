@@ -11,13 +11,15 @@ export type Route =
   | "Verdant Wind"
   | "Silver Snow";
 
-export type Endings = Array<{
-  ending: string;
+export type Ending = {
+  content: string;
   routes: Route[];
-}>;
+};
 
-export type PartnerEndings = {
-  [partner in Character]?: Endings;
+export type PartnerEndings = Ending[];
+
+export type PartnerEndingsMap = {
+  [partner in Character]?: PartnerEndings;
 };
 
 /* Actions */
@@ -38,7 +40,7 @@ export type EndingsPartnerGetSuccessAction = {
   type: "ENDINGS_PARTNER_GET_SUCCESS";
   payload: {
     character: Character;
-    partnerEndings: PartnerEndings;
+    partnerEndingsMap: PartnerEndingsMap;
   };
 };
 
@@ -55,5 +57,5 @@ export type EndingAction =
 /* State */
 
 export type EndingState = {
-  endingsMap: { [char in Character]?: PartnerEndings };
+  endingsMap: { [char in Character]?: PartnerEndingsMap };
 };

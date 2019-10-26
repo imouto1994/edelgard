@@ -23,8 +23,10 @@ const path = require("path");
       const endings = completeRouteEndingsMap[characterA][characterB];
       const endingRoutesMap = endings.reduce((map, ending, index) => {
         if (ending != null) {
-          if (map[ending] == null) {
-            map[ending] = [];
+          const endingStr =
+            ending instanceof Array ? ending.join("\n") : ending;
+          if (map[endingStr] == null) {
+            map[endingStr] = [];
           }
           let route;
           if (index === 0) {
@@ -37,7 +39,7 @@ const path = require("path");
             route = "Silver Snow";
           }
 
-          map[ending].push(route);
+          map[endingStr].push(route);
         }
 
         return map;
@@ -45,7 +47,7 @@ const path = require("path");
       charEndingsMap[characterA][characterB] = Object.keys(endingRoutesMap).map(
         ending => {
           return {
-            ending,
+            content: ending,
             routes: endingRoutesMap[ending],
           };
         },

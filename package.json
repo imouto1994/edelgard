@@ -15,7 +15,6 @@
   "dependencies": {
     "@babel/runtime": "7.6.3",
     "classnames": "2.2.6",
-    "framer-motion": "1.6.15",
     "react": "16.10.2",
     "react-dom": "16.10.2",
     "react-redux": "7.1.1",

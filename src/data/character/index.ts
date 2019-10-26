@@ -1,5 +1,7 @@
 import { Character } from "./type";
 
+/* Constants */
+
 export const orderedCharacters: Character[] = [
   "Byleth M",
   "Byleth F",

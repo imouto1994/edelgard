@@ -6,7 +6,7 @@
 
 .characterEntry {
   display: flex;
-  flex: 0 0 100%;
+  flex: none;
   flex-flow: row nowrap;
   width: 100%;
   height: 48px;
@@ -14,14 +14,13 @@
   cursor: pointer;
 
   @media all and (min-width: $tabletLandscape) {
-    flex: 0 0 50%;
     width: 50%;
     padding: 0 24px;
   }
 }
 
 .portraitContainer {
-  flex: 0 0 144px;
+  flex: none;
   width: 144px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -33,6 +32,7 @@
 }
 
 .portraitWrapper {
+  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
@@ -49,6 +49,7 @@
 .portrait {
   width: auto;
   height: 275%;
+  transform: translateY(-10%);
 }
 
 .faction {

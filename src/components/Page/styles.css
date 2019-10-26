@@ -14,10 +14,12 @@
 .header {
   position: relative;
   display: flex;
-  flex: 0 0 36px;
+  flex: none;
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-width: 428px;
+  max-width: 1440px;
   height: 36px;
   font-size: 18px;
   color: #ede3e1;
@@ -25,6 +27,7 @@
   letter-spacing: 1px;
   background: #5f5273;
   border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .headerBackButton {
@@ -35,17 +38,24 @@
   height: 24px;
   margin: auto 0;
   cursor: pointer;
+  fill: rgba(237, 227, 225, 0.9);
+
+  @media all and (min-width: $tabletLandscape) {
+    left: 16px;
+  }
 }
 
 .content {
   flex: 1;
   width: 100%;
+  min-width: 428px;
+  max-width: 1440px;
   padding: 16px 12px;
   margin-top: 12px;
   overflow: auto;
   background: #e6e3d8;
   border-radius: 1px;
-  /* box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.75); */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
   @media all and (min-width: $tabletLandscape) {
     padding: 16px 24px;
