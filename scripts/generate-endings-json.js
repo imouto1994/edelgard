@@ -217,6 +217,10 @@ function cleanUpMainCharEnding(ending, isMale) {
       if (!endingsMap[characterA][characterB].length) {
         delete endingsMap[characterA][characterB];
       }
+      // Print out the pairs that got different endings
+      if ((endingsMap[characterA][characterB] || []).length >= 2) {
+        console.log(characterA, characterB);
+      }
     }
   }
 

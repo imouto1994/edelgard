@@ -2556,33 +2556,33 @@
   "Mercedes": {
     "Mercedes": [
       {
-        "content": "Mercedes left home and went to Garreg Mach, where she became a model cleric. She devoted the whole of her life to the service of the goddess and became well-loved by the people, who revered her for her piety and her boundless generosity toward those in need.",
+        "content": "Mercedes left home and opened a small orphanage in the Faerghus region with her mother. There, she took in and raised children who had lost their families in the war, regardless of their blood or circumstances of birth. It is said that, in the town which grew around this orphanage, the children never failed to smile.",
         "routes": [
-          "Crimson Flower",
-          "Verdant Wind",
-          "Silver Snow"
+          "Crimson Flower"
         ]
       },
       {
-        "content": "Mercedes left home and opened a small orphanage in the Faerghus region with her mother. There, she took in and raised children who had lost their families in the war, regardless of their blood or circumstances of birth. It is said that, in the town which grew around this orphanage, the children never failed to smile.",
+        "content": "Mercedes left home and went to Garreg Mach, where she became a model cleric. She devoted the whole of her life to the service of the goddess and became well-loved by the people, who revered her for her piety and her boundless generosity toward those in need.",
         "routes": [
-          "Azure Moon"
+          "Azure Moon",
+          "Verdant Wind",
+          "Silver Snow"
         ]
       }
     ],
     "Annette": [
       {
-        "content": "After the war, Annette and Mercedes lived separate lives: the former as a teacher at the school of sorcery in Fhirdiad, the latter as a cleric at Garreg Mach. Though they lived apart, they exchanged letters so frequently and shared their lives with one another in such detail that it was as though they were side by side. After many decades, they resigned their respective positions and reunited at Garreg Mach. In their final years, they relocated to a modest house in the Fortress City. It is said that they were happy together to the very end.",
+        "content": "After the war, Annette and Mercedes lived separate lives: the former as a teacher at the school of sorcery in Fhirdiad, the latter as the proprietor of an orphanage in a village in the Faerghus region. Though they lived apart, they exchanged letters so frequently and shared their lives with one another in such detail that it was as though they were side by side. After many decades, Annette decided to resign from her post and move to the village where Mercedes lived to help run the orphanage. The life they lived there was modest, but it is said that they were happy to the very end.",
         "routes": [
-          "Crimson Flower",
-          "Verdant Wind",
-          "Silver Snow"
+          "Crimson Flower"
         ]
       },
       {
-        "content": "After the war, Annette and Mercedes lived separate lives: the former as a teacher at the school of sorcery in Fhirdiad, the latter as the proprietor of an orphanage in a village in the Faerghus region. Though they lived apart, they exchanged letters so frequently and shared their lives with one another in such detail that it was as though they were side by side. After many decades, Annette decided to resign from her post and move to the village where Mercedes lived to help run the orphanage. The life they lived there was modest, but it is said that they were happy to the very end.",
+        "content": "After the war, Annette and Mercedes lived separate lives: the former as a teacher at the school of sorcery in Fhirdiad, the latter as a cleric at Garreg Mach. Though they lived apart, they exchanged letters so frequently and shared their lives with one another in such detail that it was as though they were side by side. After many decades, they resigned their respective positions and reunited at Garreg Mach. In their final years, they relocated to a modest house in the Fortress City. It is said that they were happy together to the very end.",
         "routes": [
-          "Azure Moon"
+          "Azure Moon",
+          "Verdant Wind",
+          "Silver Snow"
         ]
       }
     ],
@@ -2599,17 +2599,17 @@
     ],
     "Ignatz": [
       {
-        "content": "Mercedes left home for a life as a cleric at Garreg Mach. There, she took in and raised children who had lost their families in the war, regardless of the circumstances of their birth or bloodline. Some years later, she was reunited with Ignatz, who had persuaded his family that he should become a painter and traveled all through Fódlan painting beautiful landscapes. His greatest masterpiece, however, was a portrait that was entitled The Smiling Saint. It is said that the woman whose face inspired it became the love of his life, and that she spent all of her remaining days close by his side.",
+        "content": "Mercedes left home and opened a small orphanage in the Faerghus region with her mother. There, she took in and raised children who had lost their families in the war, regardless of their blood or circumstances of birth. Some years later, she was reunited with Ignatz, who had persuaded his family that he should become a painter and traveled all through Fódlan painting beautiful landscapes. His greatest masterpiece, however, was a portrait that was entitled The Smiling Saint. It is said that the woman whose face inspired it became the love of his life, and that she spent all of her remaining days close by his side.",
         "routes": [
-          "Crimson Flower",
-          "Verdant Wind",
-          "Silver Snow"
+          "Crimson Flower"
         ]
       },
       {
-        "content": "Mercedes left home and opened a small orphanage in the Faerghus region with her mother. There, she took in and raised children who had lost their families in the war, regardless of their blood or circumstances of birth. Some years later, she was reunited with Ignatz, who had persuaded his family that he should become a painter and traveled all through Fódlan painting beautiful landscapes. His greatest masterpiece, however, was a portrait that was entitled The Smiling Saint. It is said that the woman whose face inspired it became the love of his life, and that she spent all of her remaining days close by his side.",
+        "content": "Mercedes left home for a life as a cleric at Garreg Mach. There, she took in and raised children who had lost their families in the war, regardless of the circumstances of their birth or bloodline. Some years later, she was reunited with Ignatz, who had persuaded his family that he should become a painter and traveled all through Fódlan painting beautiful landscapes. His greatest masterpiece, however, was a portrait that was entitled The Smiling Saint. It is said that the woman whose face inspired it became the love of his life, and that she spent all of her remaining days close by his side.",
         "routes": [
-          "Azure Moon"
+          "Azure Moon",
+          "Verdant Wind",
+          "Silver Snow"
         ]
       }
     ],
@@ -2869,17 +2869,17 @@
     ],
     "Mercedes": [
       {
-        "content": "After the war, Annette and Mercedes lived separate lives: the former as a teacher at the school of sorcery in Fhirdiad, the latter as a cleric at Garreg Mach. Though they lived apart, they exchanged letters so frequently and shared their lives with one another in such detail that it was as though they were side by side. After many decades, they resigned their respective positions and reunited at Garreg Mach. In their final years, they relocated to a modest house in the Fortress City. It is said that they were happy together to the very end.",
+        "content": "After the war, Annette and Mercedes lived separate lives: the former as a teacher at the school of sorcery in Fhirdiad, the latter as the proprietor of an orphanage in a village in the Faerghus region. Though they lived apart, they exchanged letters so frequently and shared their lives with one another in such detail that it was as though they were side by side. After many decades, Annette decided to resign from her post and move to the village where Mercedes lived to help run the orphanage. The life they lived there was modest, but it is said that they were happy to the very end.",
         "routes": [
-          "Crimson Flower",
-          "Verdant Wind",
-          "Silver Snow"
+          "Crimson Flower"
         ]
       },
       {
-        "content": "After the war, Annette and Mercedes lived separate lives: the former as a teacher at the school of sorcery in Fhirdiad, the latter as the proprietor of an orphanage in a village in the Faerghus region. Though they lived apart, they exchanged letters so frequently and shared their lives with one another in such detail that it was as though they were side by side. After many decades, Annette decided to resign from her post and move to the village where Mercedes lived to help run the orphanage. The life they lived there was modest, but it is said that they were happy to the very end.",
+        "content": "After the war, Annette and Mercedes lived separate lives: the former as a teacher at the school of sorcery in Fhirdiad, the latter as a cleric at Garreg Mach. Though they lived apart, they exchanged letters so frequently and shared their lives with one another in such detail that it was as though they were side by side. After many decades, they resigned their respective positions and reunited at Garreg Mach. In their final years, they relocated to a modest house in the Fortress City. It is said that they were happy together to the very end.",
         "routes": [
-          "Azure Moon"
+          "Azure Moon",
+          "Verdant Wind",
+          "Silver Snow"
         ]
       }
     ]
@@ -3416,17 +3416,17 @@
     ],
     "Mercedes": [
       {
-        "content": "Mercedes left home for a life as a cleric at Garreg Mach. There, she took in and raised children who had lost their families in the war, regardless of the circumstances of their birth or bloodline. Some years later, she was reunited with Ignatz, who had persuaded his family that he should become a painter and traveled all through Fódlan painting beautiful landscapes. His greatest masterpiece, however, was a portrait that was entitled The Smiling Saint. It is said that the woman whose face inspired it became the love of his life, and that she spent all of her remaining days close by his side.",
+        "content": "Mercedes left home and opened a small orphanage in the Faerghus region with her mother. There, she took in and raised children who had lost their families in the war, regardless of their blood or circumstances of birth. Some years later, she was reunited with Ignatz, who had persuaded his family that he should become a painter and traveled all through Fódlan painting beautiful landscapes. His greatest masterpiece, however, was a portrait that was entitled The Smiling Saint. It is said that the woman whose face inspired it became the love of his life, and that she spent all of her remaining days close by his side.",
         "routes": [
-          "Crimson Flower",
-          "Verdant Wind",
-          "Silver Snow"
+          "Crimson Flower"
         ]
       },
       {
-        "content": "Mercedes left home and opened a small orphanage in the Faerghus region with her mother. There, she took in and raised children who had lost their families in the war, regardless of their blood or circumstances of birth. Some years later, she was reunited with Ignatz, who had persuaded his family that he should become a painter and traveled all through Fódlan painting beautiful landscapes. His greatest masterpiece, however, was a portrait that was entitled The Smiling Saint. It is said that the woman whose face inspired it became the love of his life, and that she spent all of her remaining days close by his side.",
+        "content": "Mercedes left home for a life as a cleric at Garreg Mach. There, she took in and raised children who had lost their families in the war, regardless of the circumstances of their birth or bloodline. Some years later, she was reunited with Ignatz, who had persuaded his family that he should become a painter and traveled all through Fódlan painting beautiful landscapes. His greatest masterpiece, however, was a portrait that was entitled The Smiling Saint. It is said that the woman whose face inspired it became the love of his life, and that she spent all of her remaining days close by his side.",
         "routes": [
-          "Azure Moon"
+          "Azure Moon",
+          "Verdant Wind",
+          "Silver Snow"
         ]
       }
     ],
@@ -3878,15 +3878,15 @@
       {
         "content": "Leonie joined up with the mercenaries formerly led by Jeralt. As his greatest apprentice, she quickly took on a leadership role, and eventually even inherited the title of Blade Breaker. No matter where she went, however, she was burdened with Jeralt's unpaid tavern tabs. Angry with Alois for pushing these debts upon her, she went to see him with the intention of forcing him to pay half the debt. But when she arrived, she found a suntanned Alois happily lounging after a hard day's work on his family farm. Leonie found herself unable to go through with it. She did become a world-renowned mercenary, but she spent the whole of her career paying off debt.",
         "routes": [
-          "Crimson Flower",
-          "Verdant Wind",
-          "Silver Snow"
+          "Crimson Flower"
         ]
       },
       {
         "content": "Leonie joined up with the mercenaries formerly led by Jeralt. As his greatest apprentice, she quickly took on a leadership role, and eventually even inherited the title of Blade Breaker. No matter where she went, however, she was burdened with Jeralt's unpaid tavern tabs. Angry with Alois for pushing these debts upon her, she went to Garreg Mach to force him to pay half the debt. She encountered a smiling Alois, who had become captain of the Knights of Seiros, and who was all too happy in his new prosperity to take the debts back on. It is said that Leonie developed quite the drinking habit once she was free to visit taverns whenever she liked.",
         "routes": [
-          "Azure Moon"
+          "Azure Moon",
+          "Verdant Wind",
+          "Silver Snow"
         ]
       }
     ],
@@ -4537,15 +4537,15 @@
       {
         "content": "Leonie joined up with the mercenaries formerly led by Jeralt. As his greatest apprentice, she quickly took on a leadership role, and eventually even inherited the title of Blade Breaker. No matter where she went, however, she was burdened with Jeralt's unpaid tavern tabs. Angry with Alois for pushing these debts upon her, she went to see him with the intention of forcing him to pay half the debt. But when she arrived, she found a suntanned Alois happily lounging after a hard day's work on his family farm. Leonie found herself unable to go through with it. She did become a world-renowned mercenary, but she spent the whole of her career paying off debt.",
         "routes": [
-          "Crimson Flower",
-          "Verdant Wind",
-          "Silver Snow"
+          "Crimson Flower"
         ]
       },
       {
         "content": "Leonie joined up with the mercenaries formerly led by Jeralt. As his greatest apprentice, she quickly took on a leadership role, and eventually even inherited the title of Blade Breaker. No matter where she went, however, she was burdened with Jeralt's unpaid tavern tabs. Angry with Alois for pushing these debts upon her, she went to Garreg Mach to force him to pay half the debt. She encountered a smiling Alois, who had become captain of the Knights of Seiros, and who was all too happy in his new prosperity to take the debts back on. It is said that Leonie developed quite the drinking habit once she was free to visit taverns whenever she liked.",
         "routes": [
-          "Azure Moon"
+          "Azure Moon",
+          "Verdant Wind",
+          "Silver Snow"
         ]
       }
     ]
