@@ -47,13 +47,14 @@
 }
 
 .portrait {
-  width: auto;
-  height: 275%;
+  width: 100px;
+  height: 100px;
   transform: translateY(-10%);
 }
 
 .faction {
-  height: 85%;
+  width: auto;
+  height: 32px;
   margin-left: 4px;
 }
 
