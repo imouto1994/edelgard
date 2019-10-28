@@ -6,6 +6,8 @@
   "author": "Nhan Bui <imouto1994@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "NODE_ENV=production webpack --config ./webpack/prod.config.js",
+    "deploy": "yarn build && gh-pages -d build",
     "dev": "NODE_ENV=development webpack-dev-server --config ./webpack/dev.config.js --progress --color --open",
     "eslint": "eslint ./src --max-warnings 0 --cache --ext .js,.tsx,.ts",
     "lint": "yarn eslint && yarn stylelint",
@@ -51,6 +53,7 @@
     "eslint-plugin-react": "7.16.0",
     "eslint-plugin-react-hooks": "2.1.2",
     "file-loader": "4.2.0",
+    "gh-pages": "2.1.1",
     "html-webpack-plugin": "3.2.0",
     "mini-css-extract-plugin": "0.8.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
