@@ -66,7 +66,7 @@ function CharacterItem(props: CharacterItemProps): ReactElement {
         <div className={styles.portraitWrapper}>
           <Image
             src={require(`../../images/${characterSlug}_y_s@1x.png`)}
-            srcSet={`${require(`../../images/${characterSlug}_y_s@2x.png`)} 1x, ${require(`../../images/${characterSlug}_y_s@2x.png`)} 2x, ${require(`../../images/${characterSlug}_y_s@3x.png`)} 3x`}
+            srcSet={`${require(`../../images/${characterSlug}_y_s@1x.png`)} 1x, ${require(`../../images/${characterSlug}_y_s@2x.png`)} 2x, ${require(`../../images/${characterSlug}_y_s@3x.png`)} 3x`}
             placeholderSrc={require(`../../images/${characterSlug}_y_s.svg`)}
             className={styles.portrait}
           />
