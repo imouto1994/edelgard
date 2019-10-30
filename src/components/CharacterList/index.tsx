@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 
+import Image from "../Image";
 import { characterFactions, Character } from "../../data/character/type";
 import { slugify } from "../../utils/string";
 
@@ -63,8 +64,9 @@ function CharacterItem(props: CharacterItemProps): ReactElement {
     <div className={styles.characterEntry} onClick={onClick}>
       <div className={styles.portraitContainer}>
         <div className={styles.portraitWrapper}>
-          <img
+          <Image
             src={require(`../../images/${characterSlug}_y_s.png`)}
+            placeholderSrc={require(`../../images/${characterSlug}_y_s.svg`)}
             className={styles.portrait}
           />
           {factionImageURL != null ? (

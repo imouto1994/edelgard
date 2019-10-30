@@ -71,7 +71,7 @@
   letter-spacing: 1px;
   background-image: linear-gradient(
     to right,
-    #333 30%,
+    #4e4936 30%,
     rgba(255, 255, 255, 0) 0%
   );
   background-repeat: repeat-x;
@@ -93,6 +93,6 @@
   height: 6px;
   margin: auto 0;
   content: "";
-  background: #bdb5a0;
+  background: #a99e8a;
   transform: rotateZ(45deg);
 }
