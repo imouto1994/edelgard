@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useEffect } from "react";
+import React, { ReactElement, useState, useCallback } from "react";
 import classnames from "classnames";
 
 import styles from "./styles.css";
@@ -14,13 +14,16 @@ export default function Image(props: Props): ReactElement {
   const { className, placeholderSrc, src, srcSet } = props;
   const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    setIsLoaded(false);
-  }, [src]);
+  const imageRef = useCallback((imageElement: HTMLImageElement): void => {
+    if (imageElement !== null && imageElement.complete) {
+      setIsLoaded(imageElement.complete);
+    }
+  }, []);
 
   return (
     <div className={classnames(className, styles.container)}>
       <img
+        ref={imageRef}
         className={classnames(styles.image, { [styles.imageShow]: isLoaded })}
         onLoad={(): void => setIsLoaded(true)}
         src={src}
