@@ -7,10 +7,11 @@ type Props = {
   className?: string;
   placeholderSrc: string;
   src: string;
+  srcSet?: string;
 };
 
 export default function Image(props: Props): ReactElement {
-  const { className, placeholderSrc, src } = props;
+  const { className, placeholderSrc, src, srcSet } = props;
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function Image(props: Props): ReactElement {
         className={classnames(styles.image, { [styles.imageShow]: isLoaded })}
         onLoad={(): void => setIsLoaded(true)}
         src={src}
+        srcSet={srcSet}
       />
       <img
         className={classnames(styles.placeholder, {

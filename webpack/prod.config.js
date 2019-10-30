@@ -49,13 +49,25 @@ module.exports = {
       },
       {
         include: [path.resolve(__dirname, "../src/")],
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
             loader: "file-loader",
             options: {
               outputPath: "",
               publicPath: "/Edelgard/",
+            },
+          },
+        ],
+      },
+      {
+        include: [path.resolve(__dirname, "../src/")],
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 25000,
             },
           },
         ],

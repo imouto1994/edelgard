@@ -1,8 +1,4 @@
 .app {
   height: 100%;
   background-color: #000;
-  background-image: url("../../images/sothis_bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto 100%;
 }
