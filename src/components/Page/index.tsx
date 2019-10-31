@@ -17,16 +17,11 @@ export default function Page(props: Props): ReactElement {
     <div className={classnames(styles.page, className)}>
       <div className={styles.header}>
         {onBack != null ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 199.4 199.4"
-            className={styles.headerBackButton}
-            onClick={onBack}
-          >
-            <path d="M135 0L36 100l99 99 29-28-72-71 72-72z" />
-          </svg>
+          <button className={styles.headerBackButton} onClick={onBack}>
+            Back
+          </button>
         ) : null}
-        <span>{title}</span>
+        <span className={styles.headerText}>{title}</span>
       </div>
       <div className={styles.content}>{children}</div>
     </div>

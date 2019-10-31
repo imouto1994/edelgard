@@ -54,7 +54,7 @@ module.exports = {
       },
       {
         include: [path.resolve(__dirname, "../src/")],
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|webp)$/i,
         use: [
           {
             loader: "file-loader",

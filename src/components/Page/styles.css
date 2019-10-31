@@ -21,24 +21,29 @@
   min-width: 428px;
   max-width: 1440px;
   height: 36px;
-  font-size: 18px;
-  color: #e6e3d8;
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
-  letter-spacing: 1px;
   background: #5f5273;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.headerText {
+  font-size: 18px;
+  color: #e6e3d8;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+  letter-spacing: 1px;
+}
+
 .headerBackButton {
   position: absolute;
-  top: 0;
-  bottom: 0;
   left: 12px;
-  height: 24px;
-  margin: auto 0;
+  padding: 1px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5f5273;
+  text-shadow: none;
   cursor: pointer;
-  fill: rgba(237, 227, 225, 0.9);
+  background: #e6e3d8;
+  border-radius: 2px;
 
   @media all and (min-width: $tabletLandscape) {
     left: 16px;

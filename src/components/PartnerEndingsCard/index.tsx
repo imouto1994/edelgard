@@ -76,8 +76,8 @@ export default function PartnerEndingsCard(props: Props): ReactElement {
               <Image
                 contentFill="height"
                 key={route}
-                src={require(`../../images/${faction}_emblem@1x.png`)}
-                srcSet={`${require(`../../images/${faction}_emblem@1x.png`)} 1x, ${require(`../../images/${faction}_emblem@2x.png`)} 2x, ${require(`../../images/${faction}_emblem@3x.png`)} 3x`}
+                srcSetPNG={`${require(`../../images/${faction}_emblem@1x.png`)} 1x, ${require(`../../images/${faction}_emblem@2x.png`)} 2x, ${require(`../../images/${faction}_emblem@3x.png`)} 3x`}
+                srcSetWEBP={`${require(`../../images/${faction}_emblem@1x.webp`)} 1x, ${require(`../../images/${faction}_emblem@2x.webp`)} 2x, ${require(`../../images/${faction}_emblem@3x.webp`)} 3x`}
                 placeholderSrc={require(`../../images/${faction}_emblem.svg`)}
                 onClick={(): void => setSelectedRouteIndex(index)}
                 className={classnames(styles.routeIcon, {

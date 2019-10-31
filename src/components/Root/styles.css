@@ -50,3 +50,7 @@ body {
 *::after {
   box-sizing: inherit;
 }
+
+button:focus {
+  outline: 0;
+}

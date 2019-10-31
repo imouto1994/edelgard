@@ -10,8 +10,8 @@ type Props = {
   contentFill: "height" | "width";
   onClick?: () => void;
   placeholderSrc: string;
-  src: string;
-  srcSet?: string;
+  srcSetWEBP: string;
+  srcSetPNG: string;
 };
 
 export default function Image(props: Props): ReactElement {
@@ -21,8 +21,8 @@ export default function Image(props: Props): ReactElement {
     classNamePlaceholder,
     contentFill,
     placeholderSrc,
-    src,
-    srcSet,
+    srcSetWEBP,
+    srcSetPNG,
     onClick,
   } = props;
   const [isLoaded, setIsLoaded] = useState(false);
@@ -48,15 +48,18 @@ export default function Image(props: Props): ReactElement {
       className={classnames(className, styles.container)}
       onClick={onContainerClick}
     >
-      <img
-        ref={imageRef}
-        className={classnames(classNameImage, styles.image, {
-          [styles.imageShow]: isLoaded,
-        })}
-        onLoad={onImageLoad}
-        src={src}
-        srcSet={srcSet}
-      />
+      <picture>
+        <source type="image/webp" srcSet={srcSetWEBP} />
+        <source type="image/png" srcSet={srcSetPNG} />
+        <img
+          ref={imageRef}
+          className={classnames(classNameImage, styles.image, {
+            [styles.imageShow]: isLoaded,
+          })}
+          onLoad={onImageLoad}
+          srcSet={srcSetPNG}
+        />
+      </picture>
       <img
         className={classnames(classNamePlaceholder, styles.placeholder, {
           [styles.placeholderFillWidth]: contentFill === "width",
