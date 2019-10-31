@@ -55,7 +55,7 @@ module.exports = {
             loader: "file-loader",
             options: {
               outputPath: "",
-              publicPath: "/Edelgard/",
+              publicPath: "/",
             },
           },
         ],
@@ -93,7 +93,7 @@ module.exports = {
     chunkFilename: "[name]-[chunkhash].js",
     filename: "[name]-[chunkhash].js",
     path: path.resolve(__dirname, "../build/"),
-    publicPath: "/Edelgard/",
+    publicPath: "/",
   },
   plugins: [
     new CleanWebpackPlugin(),
