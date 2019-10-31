@@ -5,13 +5,26 @@ import styles from "./styles.css";
 
 type Props = {
   className?: string;
+  classNameImage?: string;
+  classNamePlaceholder?: string;
+  contentFill: "height" | "width";
+  onClick?: () => void;
   placeholderSrc: string;
   src: string;
   srcSet?: string;
 };
 
 export default function Image(props: Props): ReactElement {
-  const { className, placeholderSrc, src, srcSet } = props;
+  const {
+    className,
+    classNameImage,
+    classNamePlaceholder,
+    contentFill,
+    placeholderSrc,
+    src,
+    srcSet,
+    onClick,
+  } = props;
   const [isLoaded, setIsLoaded] = useState(false);
 
   const imageRef = useCallback((imageElement: HTMLImageElement): void => {
@@ -20,17 +33,34 @@ export default function Image(props: Props): ReactElement {
     }
   }, []);
 
+  function onImageLoad(): void {
+    setIsLoaded(true);
+  }
+
+  function onContainerClick(): void {
+    if (onClick != null) {
+      onClick();
+    }
+  }
+
   return (
-    <div className={classnames(className, styles.container)}>
+    <div
+      className={classnames(className, styles.container)}
+      onClick={onContainerClick}
+    >
       <img
         ref={imageRef}
-        className={classnames(styles.image, { [styles.imageShow]: isLoaded })}
-        onLoad={(): void => setIsLoaded(true)}
+        className={classnames(classNameImage, styles.image, {
+          [styles.imageShow]: isLoaded,
+        })}
+        onLoad={onImageLoad}
         src={src}
         srcSet={srcSet}
       />
       <img
-        className={classnames(styles.placeholder, {
+        className={classnames(classNamePlaceholder, styles.placeholder, {
+          [styles.placeholderFillWidth]: contentFill === "width",
+          [styles.placeholderFillHeight]: contentFill === "height",
           [styles.placeholderHide]: isLoaded,
         })}
         src={placeholderSrc}

@@ -1,15 +1,11 @@
 import React, { ReactElement } from "react";
 
 import Image from "../Image";
-import { characterFactions, Character } from "../../data/character/type";
+import { characterFactions } from "../../data/character";
+import { Character } from "../../data/character/type";
 import { slugify } from "../../utils/string";
 
 import styles from "./styles.css";
-
-import empireEmblemImageURL from "../../images/empire_emblem.png";
-import holyEmblemImageURL from "../../images/holy_emblem.png";
-import allianceEmblemImageURL from "../../images/alliance_emblem.png";
-import churchEmblemImageURL from "../../images/church_emblem.png";
 
 type Props = {
   characters: readonly Character[];
@@ -42,22 +38,13 @@ type CharacterItemProps = {
 };
 
 function CharacterItem(props: CharacterItemProps): ReactElement {
+  const { character } = props;
+  const characterSlug = slugify(character);
+  const faction = characterFactions[character];
+
   function onClick(): void {
     const { character, onCharacterSelect } = props;
     onCharacterSelect(character);
-  }
-
-  const { character } = props;
-  const characterSlug = slugify(character);
-  let factionImageURL;
-  if (characterFactions[character] === 0) {
-    factionImageURL = empireEmblemImageURL;
-  } else if (characterFactions[character] === 1) {
-    factionImageURL = holyEmblemImageURL;
-  } else if (characterFactions[character] === 2) {
-    factionImageURL = allianceEmblemImageURL;
-  } else if (characterFactions[character] === 3) {
-    factionImageURL = churchEmblemImageURL;
   }
 
   return (
@@ -69,9 +56,16 @@ function CharacterItem(props: CharacterItemProps): ReactElement {
             srcSet={`${require(`../../images/${characterSlug}_y_s@1x.png`)} 1x, ${require(`../../images/${characterSlug}_y_s@2x.png`)} 2x, ${require(`../../images/${characterSlug}_y_s@3x.png`)} 3x`}
             placeholderSrc={require(`../../images/${characterSlug}_y_s.svg`)}
             className={styles.portrait}
+            contentFill="height"
           />
-          {factionImageURL != null ? (
-            <img src={factionImageURL} className={styles.faction} />
+          {faction != null ? (
+            <Image
+              src={require(`../../images/${faction}_emblem@1x.png`)}
+              srcSet={`${require(`../../images/${faction}_emblem@1x.png`)} 1x, ${require(`../../images/${faction}_emblem@2x.png`)} 2x, ${require(`../../images/${faction}_emblem@3x.png`)} 3x`}
+              placeholderSrc={require(`../../images/${faction}_emblem.svg`)}
+              className={styles.faction}
+              contentFill="height"
+            />
           ) : null}
         </div>
       </div>

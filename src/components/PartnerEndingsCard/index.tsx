@@ -1,7 +1,8 @@
 import React, { ReactElement, useState } from "react";
 import classnames from "classnames";
 
-import { Character } from "../../data/character/type";
+import Image from "../Image";
+import { Character, Faction } from "../../data/character/type";
 import {
   getRoutesFromPartnerEndings,
   getEndingContentForRoute,
@@ -10,13 +11,9 @@ import { PartnerEndings, Route } from "../../data/ending/type";
 
 import styles from "./styles.css";
 
-import empireEmblemImageURL from "../../images/empire_emblem.png";
 import empireEmblemLargeImageURL from "../../images/empire_emblem_l.png";
-import holyEmblemImageURL from "../../images/holy_emblem.png";
 import holyEmblemLargeImageURL from "../../images/holy_emblem_l.png";
-import allianceEmblemImageURL from "../../images/alliance_emblem.png";
 import allianceEmblemLargeImageURL from "../../images/alliance_emblem_l.png";
-import churchEmblemImageURL from "../../images/church_emblem.png";
 import churchEmblemLargeImageURL from "../../images/church_emblem_l.png";
 
 type Props = {
@@ -73,16 +70,22 @@ export default function PartnerEndingsCard(props: Props): ReactElement {
       </div>
       <div className={styles.right}>
         <div className={styles.routes}>
-          {availableRoutes.map((route: Route, index: number) => (
-            <img
-              key={route}
-              src={getRouteImageURL(route)}
-              onClick={(): void => setSelectedRouteIndex(index)}
-              className={classnames(styles.routeIcon, {
-                [styles.routeIconSelected]: selectedRouteIndex === index,
-              })}
-            />
-          ))}
+          {availableRoutes.map((route: Route, index: number) => {
+            const faction = getRouteFaction(route);
+            return (
+              <Image
+                contentFill="height"
+                key={route}
+                src={require(`../../images/${faction}_emblem@1x.png`)}
+                srcSet={`${require(`../../images/${faction}_emblem@1x.png`)} 1x, ${require(`../../images/${faction}_emblem@2x.png`)} 2x, ${require(`../../images/${faction}_emblem@3x.png`)} 3x`}
+                placeholderSrc={require(`../../images/${faction}_emblem.svg`)}
+                onClick={(): void => setSelectedRouteIndex(index)}
+                className={classnames(styles.routeIcon, {
+                  [styles.routeIconSelected]: selectedRouteIndex === index,
+                })}
+              />
+            );
+          })}
         </div>
         <div className={styles.content}>
           {selectedEndingContent != null
@@ -141,15 +144,15 @@ function SVGBadge(): ReactElement {
   );
 }
 
-function getRouteImageURL(route: Route): string {
+function getRouteFaction(route: Route): Faction {
   if (route === "Crimson Flower") {
-    return empireEmblemImageURL;
+    return "empire";
   } else if (route === "Azure Moon") {
-    return holyEmblemImageURL;
+    return "holy";
   } else if (route === "Verdant Wind") {
-    return allianceEmblemImageURL;
+    return "alliance";
   } else {
-    return churchEmblemImageURL;
+    return "church";
   }
 }
 
