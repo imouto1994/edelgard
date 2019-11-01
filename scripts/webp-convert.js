@@ -14,7 +14,9 @@ function getFiles(pattern) {
   Promise.all(
     files.map(async file => {
       const encoder = new CWebp(path.resolve(__dirname, `../${file}`));
+      // Set encoder quality image
       encoder.quality(80);
+      // Set maximum compression level
       encoder.compression(6);
       try {
         await encoder.write(

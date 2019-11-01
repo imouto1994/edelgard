@@ -5,9 +5,10 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require("webpack");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
-  devtool: "hidden-source-map",
+  devtool: undefined,
   entry: {
     main: path.resolve(__dirname, "../src/index.tsx"),
   },
@@ -49,25 +50,13 @@ module.exports = {
       },
       {
         include: [path.resolve(__dirname, "../src/")],
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|webp|svg)$/i,
         use: [
           {
             loader: "file-loader",
             options: {
               outputPath: "",
               publicPath: "/",
-            },
-          },
-        ],
-      },
-      {
-        include: [path.resolve(__dirname, "../src/")],
-        test: /\.svg$/,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 25000,
             },
           },
         ],
@@ -83,15 +72,23 @@ module.exports = {
       }),
       new OptimizeCSSAssetsPlugin({}),
     ],
-    namedChunks: true,
-    namedModules: true,
     runtimeChunk: {
       name: "runtime",
     },
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          enforce: true,
+          reuseExistingChunk: true,
+          test: /[\\/]node_modules[\\/]/,
+        },
+      },
+      chunks: "all",
+    },
   },
   output: {
-    chunkFilename: "[name]-[chunkhash].js",
-    filename: "[name]-[chunkhash].js",
+    chunkFilename: "[name]-[contenthash].js",
+    filename: "[name]-[contenthash].js",
     path: path.resolve(__dirname, "../build/"),
     publicPath: "/",
   },
@@ -110,6 +107,7 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
     }),
+    ...(process.env.WBA ? [new BundleAnalyzerPlugin()] : []),
   ],
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
