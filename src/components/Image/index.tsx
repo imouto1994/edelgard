@@ -14,6 +14,28 @@ type Props = {
   srcSetPNG: string;
 };
 
+function isImageLoaded(imageElement: HTMLImageElement): boolean {
+  // During the onload event, IE correctly identifies any images that
+  // weren't downloaded as not complete. Others should too. Gecko-based
+  // browsers act like NS4 in that they report this incorrectly.
+  if (!imageElement.complete) {
+    return false;
+  }
+
+  // However, they do have two very useful properties: naturalWidth and
+  // naturalHeight. These give the true size of the image. If it failed
+  // to load, either of these should be zero.
+  if (
+    typeof imageElement.naturalWidth != "undefined" &&
+    imageElement.naturalWidth == 0
+  ) {
+    return false;
+  }
+
+  // No other way of checking: assume it's ok.
+  return true;
+}
+
 export default function Image(props: Props): ReactElement {
   const {
     className,
@@ -28,8 +50,8 @@ export default function Image(props: Props): ReactElement {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const imageRef = useCallback((imageElement: HTMLImageElement): void => {
-    if (imageElement !== null && imageElement.complete) {
-      setIsLoaded(imageElement.complete);
+    if (imageElement != null) {
+      setIsLoaded(isImageLoaded(imageElement));
     }
   }, []);
 

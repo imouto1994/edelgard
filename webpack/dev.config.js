@@ -54,7 +54,7 @@ module.exports = {
       },
       {
         include: [path.resolve(__dirname, "../src/")],
-        test: /\.(png|jpe?g|gif|webp)$/i,
+        test: /\.(png|jpe?g|gif|webp|svg)$/i,
         use: [
           {
             loader: "file-loader",
@@ -62,18 +62,6 @@ module.exports = {
               name: "[name].[ext]",
               outputPath: "",
               publicPath: "/",
-            },
-          },
-        ],
-      },
-      {
-        include: [path.resolve(__dirname, "../src/")],
-        test: /\.svg$/,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 25000,
             },
           },
         ],
