@@ -1,11 +1,12 @@
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const cssnano = require("cssnano");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require("webpack");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
   devtool: undefined,
@@ -38,7 +39,7 @@ module.exports = {
               importLoaders: 1,
               modules: {
                 mode: "local",
-                localIdentName: "[name]__[local]___[hash:base64:5]",
+                localIdentName: "[hash:base64]",
                 context: path.resolve(__dirname, "../src"),
               },
             },
@@ -55,6 +56,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
+              name: "[name]-[contenthash:10].[ext]",
               outputPath: "",
               publicPath: "/",
             },
@@ -68,10 +70,24 @@ module.exports = {
       new TerserPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true,
+        sourceMap: false,
       }),
-      new OptimizeCSSAssetsPlugin({}),
+      new OptimizeCSSAssetsPlugin({
+        canPrint: false,
+        cssProcessor: cssnano,
+        cssProcessorOptions: {
+          preset: [
+            "default",
+            {
+              discardComments: {
+                removeAll: true,
+              },
+            },
+          ],
+        },
+      }),
     ],
+    moduleIds: "hashed",
     runtimeChunk: {
       name: "runtime",
     },
@@ -87,9 +103,9 @@ module.exports = {
     },
   },
   output: {
-    chunkFilename: "[name]-[contenthash].js",
-    filename: "[name]-[contenthash].js",
-    path: path.resolve(__dirname, "../build/"),
+    chunkFilename: "[name]-[contenthash:10].js",
+    filename: "[name]-[contenthash:10].js",
+    path: path.resolve(__dirname, "../build"),
     publicPath: "/",
   },
   plugins: [
@@ -99,13 +115,11 @@ module.exports = {
       template: path.resolve(__dirname, "../src/index.html"),
     }),
     new MiniCssExtractPlugin({
-      chunkFilename: `${
-        process.env.CHUNK_NAME ? "[name]-" : ""
-      }[contenthash].min.css`,
-      filename: "style-[contenthash].min.css",
+      chunkFilename: "[name]-[contenthash:10].min.css",
+      filename: "[name]-[contenthash:10].min.css",
     }),
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+      "process.env.NODE_ENV": JSON.stringify("production"),
     }),
     ...(process.env.WBA ? [new BundleAnalyzerPlugin()] : []),
   ],
