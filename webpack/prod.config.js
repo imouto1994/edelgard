@@ -1,5 +1,6 @@
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const cssnano = require("cssnano");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -67,11 +68,11 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      new TerserPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: false,
-      }),
+      // new TerserPlugin({
+      //   cache: true,
+      //   parallel: true,
+      //   sourceMap: false,
+      // }),
       new OptimizeCSSAssetsPlugin({
         canPrint: false,
         cssProcessor: cssnano,
@@ -110,6 +111,12 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, "../src/images/"),
+        to: path.resolve(__dirname, "../build"),
+      },
+    ]),
     new HtmlWebpackPlugin({
       title: "Edelgard",
       template: path.resolve(__dirname, "../src/index.html"),
@@ -125,6 +132,10 @@ module.exports = {
   ],
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
+    alias: {
+      react: "preact/compat",
+      "react-dom": "preact/compat",
+    },
   },
   target: "web",
 };

@@ -1,16 +1,16 @@
-import React, { ReactElement, ReactNode } from "react";
+import { h, VNode, ComponentChildren } from "preact";
 import classnames from "classnames";
 
 import styles from "./styles.css";
 
 type Props = {
-  children: ReactNode;
+  children: ComponentChildren;
   className?: string;
   onBack?: () => void;
   title: string;
 };
 
-export default function Page(props: Props): ReactElement {
+export default function Page(props: Props): VNode<Props> {
   const { title, onBack, className, children } = props;
 
   return (

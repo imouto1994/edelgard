@@ -1,5 +1,6 @@
-import React, { ReactElement, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { h, VNode } from "preact";
+import { useEffect } from "preact/hooks";
+import { useRoute, useLocation } from "wouter-preact";
 import { useDispatch, useSelector } from "react-redux";
 
 import Page from "../Page";
@@ -14,16 +15,20 @@ import { Dispatch, State } from "../../data/type";
 import { unslugify } from "../../utils/string";
 
 type PageEndingsURLParams = {
-  characterASlug?: string;
-  characterBSlug?: string;
+  characterASlug: string;
+  characterBSlug: string;
 };
 
-export default function PageEndings(): ReactElement | null {
-  const { characterASlug, characterBSlug } = useParams<PageEndingsURLParams>();
+export default function PageEndings(): VNode | null {
+  const [, params] = useRoute<PageEndingsURLParams>(
+    "/:characterASlug/:characterBSlug",
+  );
 
-  if (characterASlug == null || characterBSlug == null) {
+  if (params == null) {
     return null;
   }
+
+  const { characterASlug, characterBSlug } = params;
 
   const characterA = unslugify(characterASlug);
   const characterB = unslugify(characterBSlug);
@@ -51,10 +56,10 @@ type PageEndingsWithCharactersProps = {
 
 function PageEndingsWithCharacters(
   props: PageEndingsWithCharactersProps,
-): ReactElement | null {
+): VNode<PageEndingsWithCharactersProps> | null {
   const { characterA, characterB, characterASlug, characterBSlug } = props;
   const dispatch = useDispatch<Dispatch>();
-  const history = useHistory();
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     dispatch(endingsPartnerGetRequest(characterA));
@@ -69,7 +74,7 @@ function PageEndingsWithCharacters(
   }
 
   function handleBackNavigate(): void {
-    history.push(`/${characterASlug}`);
+    setLocation(`/${characterASlug}`);
   }
 
   return (

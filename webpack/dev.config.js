@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -79,6 +80,12 @@ module.exports = {
       title: "Edelgard",
       template: path.resolve(__dirname, "../src/index.html"),
     }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, "../src/images/"),
+        to: path.resolve(__dirname, "../build"),
+      },
+    ]),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify("development"),
@@ -86,6 +93,10 @@ module.exports = {
   ],
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
+    alias: {
+      react: "preact/compat",
+      "react-dom": "preact/compat",
+    },
   },
   target: "web",
 };

@@ -1,4 +1,5 @@
-import React, { ReactElement, useState } from "react";
+import { h, VNode } from "preact";
+import { useState } from "preact/hooks";
 import classnames from "classnames";
 
 import Image from "../Image";
@@ -11,11 +12,6 @@ import { PartnerEndings, Route } from "../../data/ending/type";
 
 import styles from "./styles.css";
 
-import empireEmblemLargeImageURL from "../../images/empire_emblem_l.png";
-import holyEmblemLargeImageURL from "../../images/holy_emblem_l.png";
-import allianceEmblemLargeImageURL from "../../images/alliance_emblem_l.png";
-import churchEmblemLargeImageURL from "../../images/church_emblem_l.png";
-
 type Props = {
   className?: string;
   characterA: Character;
@@ -25,7 +21,7 @@ type Props = {
   partnerEndings: PartnerEndings;
 };
 
-export default function PartnerEndingsCard(props: Props): ReactElement {
+export default function PartnerEndingsCard(props: Props): VNode<Props> {
   const {
     className = "",
     characterA,
@@ -34,8 +30,8 @@ export default function PartnerEndingsCard(props: Props): ReactElement {
     characterBSlug,
     partnerEndings,
   } = props;
-  const portraitAImageURL: string = require(`../../images/${characterASlug}_l.png`); // eslint-disable-line @typescript-eslint/no-var-requires
-  const portraitBImageURL: string = require(`../../images/${characterBSlug}_l.png`); // eslint-disable-line @typescript-eslint/no-var-requires
+  const portraitAImageURL = `/${characterASlug}_l.png`;
+  const portraitBImageURL = `/${characterBSlug}_l.png`;
   const availableRoutes = getRoutesFromPartnerEndings(partnerEndings);
 
   const [selectedRouteIndex, setSelectedRouteIndex] = useState(0);
@@ -76,9 +72,9 @@ export default function PartnerEndingsCard(props: Props): ReactElement {
               <Image
                 contentFill="height"
                 key={route}
-                srcSetPNG={`${require(`../../images/${faction}_emblem@1x.png`)} 1x, ${require(`../../images/${faction}_emblem@2x.png`)} 2x, ${require(`../../images/${faction}_emblem@3x.png`)} 3x`}
-                srcSetWEBP={`${require(`../../images/${faction}_emblem@1x.webp`)} 1x, ${require(`../../images/${faction}_emblem@2x.webp`)} 2x, ${require(`../../images/${faction}_emblem@3x.webp`)} 3x`}
-                placeholderSrc={require(`../../images/${faction}_emblem.svg`)}
+                srcSetPNG={`/${faction}_emblem@1x.png 1x, /${faction}_emblem@2x.png 2x, /${faction}_emblem@3x.png 3x`}
+                srcSetWEBP={`/${faction}_emblem@1x.webp 1x, /${faction}_emblem@2x.webp 2x, /${faction}_emblem@3x.webp 3x`}
+                placeholderSrc={`/${faction}_emblem.svg`}
                 onClick={(): void => setSelectedRouteIndex(index)}
                 className={classnames(styles.routeIcon, {
                   [styles.routeIconSelected]: selectedRouteIndex === index,
@@ -107,7 +103,7 @@ type BadgeProps = {
   name: string;
 };
 
-function Badge(props: BadgeProps): ReactElement {
+function Badge(props: BadgeProps): VNode<BadgeProps> {
   const { className, name } = props;
 
   return (
@@ -118,7 +114,7 @@ function Badge(props: BadgeProps): ReactElement {
   );
 }
 
-function SVGBadge(): ReactElement {
+function SVGBadge(): VNode {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -158,12 +154,12 @@ function getRouteFaction(route: Route): Faction {
 
 function getRouteLargeImageURL(route: Route): string {
   if (route === "Crimson Flower") {
-    return empireEmblemLargeImageURL;
+    return "/empire_emblem_l.png";
   } else if (route === "Azure Moon") {
-    return holyEmblemLargeImageURL;
+    return "/holy_emblem_l.png";
   } else if (route === "Verdant Wind") {
-    return allianceEmblemLargeImageURL;
+    return "/alliance_emblem_l.png";
   } else {
-    return churchEmblemLargeImageURL;
+    return "/church_emblem_l.png";
   }
 }

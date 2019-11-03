@@ -1,5 +1,6 @@
-import React, { ReactElement, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { h, VNode } from "preact";
+import { useEffect } from "preact/hooks";
+import { useLocation, useRoute } from "wouter-preact";
 import { useSelector, useDispatch } from "react-redux";
 
 import Page from "../Page";
@@ -10,15 +11,16 @@ import { endingsPartnerGetRequest, selectPartners } from "../../data/ending";
 import { State } from "../../data/type";
 import { slugify, unslugify } from "../../utils/string";
 
-type PagePartnersURLParams = { characterSlug?: string };
+type PagePartnersURLParams = { characterSlug: string };
 
-export default function PagePartners(): ReactElement | null {
-  const { characterSlug } = useParams<PagePartnersURLParams>();
+export default function PagePartners(): VNode | null {
+  const [, params] = useRoute<PagePartnersURLParams>("/:characterSlug");
 
-  if (characterSlug == null) {
+  if (params == null) {
     return null;
   }
 
+  const { characterSlug } = params;
   const character = unslugify(characterSlug);
 
   if (!isCharacter(character)) {
@@ -40,10 +42,10 @@ type PagePartnersWithCharacterProps = {
 
 function PagePartnersWithCharacter(
   props: PagePartnersWithCharacterProps,
-): ReactElement | null {
+): VNode<PagePartnersWithCharacterProps> | null {
   const { character, characterSlug } = props;
   const dispatch = useDispatch();
-  const history = useHistory();
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     dispatch(endingsPartnerGetRequest(character));
@@ -54,11 +56,11 @@ function PagePartnersWithCharacter(
   );
 
   function handlePartnerSelect(partner: Character): void {
-    history.push(`/${characterSlug}/${slugify(partner)}`);
+    setLocation(`/${characterSlug}/${slugify(partner)}`);
   }
 
   function handleBackNavigate(): void {
-    history.push("");
+    setLocation("/");
   }
 
   return (

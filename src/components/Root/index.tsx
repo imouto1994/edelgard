@@ -1,14 +1,9 @@
-import React, { ReactElement } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { h, VNode } from "preact";
 
 import App from "../App";
 
 import "./styles.css";
 
-export default function Root(): ReactElement {
-  return (
-    <BrowserRouter basename="/">
-      <App />
-    </BrowserRouter>
-  );
+export default function Root(): VNode {
+  return <App />;
 }

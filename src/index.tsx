@@ -1,5 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { h, render } from "preact";
 import { Provider } from "react-redux";
 
 import Root from "./components/Root";
@@ -10,21 +9,9 @@ if (rootElement == null) {
   throw new Error("Root element not found");
 }
 
-ReactDOM.render(
+render(
   <Provider store={reduxStore}>
     <Root />
   </Provider>,
   rootElement,
 );
-
-// $FlowFixMe
-if (module.hot) {
-  module.hot.accept("./components/Root", () => {
-    ReactDOM.render(
-      <Provider store={reduxStore}>
-        <Root />
-      </Provider>,
-      rootElement,
-    );
-  });
-}

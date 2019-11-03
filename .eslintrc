@@ -27,6 +27,7 @@
   },
   "parserOptions": {
     "ecmaFeatures": {
+      "modules": true,
       "jsx": true
     },
     "ecmaVersion": 9,
@@ -34,6 +35,7 @@
   },
   "settings": {
     "react": {
+      "pragma": "h",
       "version": "detect"
     }
   }

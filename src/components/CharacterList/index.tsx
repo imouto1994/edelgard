@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import { h, VNode } from "preact";
 
 import Image from "../Image";
 import { characterFactions } from "../../data/character";
@@ -12,7 +12,7 @@ type Props = {
   onCharacterSelect: (character: Character) => void;
 };
 
-export default function CharacterList(props: Props): ReactElement {
+export default function CharacterList(props: Props): VNode<Props> {
   const { characters } = props;
 
   function onCharacterSelect(character: Character): void {
@@ -37,7 +37,7 @@ type CharacterItemProps = {
   onCharacterSelect: (c: Character) => void;
 };
 
-function CharacterItem(props: CharacterItemProps): ReactElement {
+function CharacterItem(props: CharacterItemProps): VNode<CharacterItemProps> {
   const { character } = props;
   const characterSlug = slugify(character);
   const faction = characterFactions[character];
@@ -52,17 +52,17 @@ function CharacterItem(props: CharacterItemProps): ReactElement {
       <div className={styles.portraitContainer}>
         <div className={styles.portraitWrapper}>
           <Image
-            srcSetPNG={`${require(`../../images/${characterSlug}_y_s@1x.png`)} 1x, ${require(`../../images/${characterSlug}_y_s@2x.png`)} 2x, ${require(`../../images/${characterSlug}_y_s@3x.png`)} 3x`}
-            srcSetWEBP={`${require(`../../images/${characterSlug}_y_s@1x.webp`)} 1x, ${require(`../../images/${characterSlug}_y_s@2x.webp`)} 2x, ${require(`../../images/${characterSlug}_y_s@3x.webp`)} 3x`}
-            placeholderSrc={require(`../../images/${characterSlug}_y_s.svg`)}
+            srcSetPNG={`/${characterSlug}_y_s@1x.png 1x, /${characterSlug}_y_s@2x.png 2x, /${characterSlug}_y_s@3x.png 3x`}
+            srcSetWEBP={`/${characterSlug}_y_s@1x.webp 1x, /${characterSlug}_y_s@2x.webp 2x, /${characterSlug}_y_s@3x.webp 3x`}
+            placeholderSrc={`/${characterSlug}_y_s.svg`}
             className={styles.portrait}
             contentFill="height"
           />
           {faction != null ? (
             <Image
-              srcSetPNG={`${require(`../../images/${faction}_emblem@1x.png`)} 1x, ${require(`../../images/${faction}_emblem@2x.png`)} 2x, ${require(`../../images/${faction}_emblem@3x.png`)} 3x`}
-              srcSetWEBP={`${require(`../../images/${faction}_emblem@1x.webp`)} 1x, ${require(`../../images/${faction}_emblem@2x.webp`)} 2x, ${require(`../../images/${faction}_emblem@3x.webp`)} 3x`}
-              placeholderSrc={require(`../../images/${faction}_emblem.svg`)}
+              srcSetPNG={`/${faction}_emblem@1x.png 1x, /${faction}_emblem@2x.png 2x, /${faction}_emblem@3x.png 3x`}
+              srcSetWEBP={`/${faction}_emblem@1x.webp 1x, /${faction}_emblem@2x.webp 2x, /${faction}_emblem@3x.webp 3x`}
+              placeholderSrc={`/${faction}_emblem.svg`}
               className={styles.faction}
               contentFill="height"
             />

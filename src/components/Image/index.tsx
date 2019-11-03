@@ -1,4 +1,5 @@
-import React, { ReactElement, useState, useCallback } from "react";
+import { h, VNode } from "preact";
+import { useState, useCallback } from "preact/hooks";
 import classnames from "classnames";
 
 import styles from "./styles.css";
@@ -36,7 +37,7 @@ function isImageLoaded(imageElement: HTMLImageElement): boolean {
   return true;
 }
 
-export default function Image(props: Props): ReactElement {
+export default function Image(props: Props): VNode<Props> {
   const {
     className,
     classNameImage,
