@@ -1,5 +1,6 @@
 import { h, render } from "preact";
-import { Provider } from "react-redux";
+
+import { StoreContext } from "./hooks/preact-redux";
 
 import Root from "./components/Root";
 import reduxStore from "./data";
@@ -10,8 +11,8 @@ if (rootElement == null) {
 }
 
 render(
-  <Provider store={reduxStore}>
+  <StoreContext.Provider value={reduxStore}>
     <Root />
-  </Provider>,
+  </StoreContext.Provider>,
   rootElement,
 );

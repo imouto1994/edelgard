@@ -26,23 +26,26 @@ const orderedRoutes: Route[] = [
 export function endingsPartnerGetRequest(
   character: Character,
 ): EndingsPartnerGetRequestAction {
-  return async (dispatch): Promise<void> => {
+  return (dispatch): Promise<void> => {
     const characterSlug = slugify(character);
     dispatch(endingsPartnerGetPending());
-    try {
-      const { default: parsedJSON } = await import(
-        /* webpackChunkName: "[request]" */ `../../../json/${characterSlug}.json`
-      );
-      if (isPartnerEndingsMap(parsedJSON)) {
-        dispatch(endingsPartnerGetSuccess(character, parsedJSON));
-      } else {
-        throw new Error(
-          "JSON response does not match with `PartnerEndingsMap` type",
-        );
-      }
-    } catch (err) {
-      dispatch(endingsPartnerGetFailure(err));
-    }
+    return import(
+      /* webpackChunkName: "[request]" */ `../../../json/${characterSlug}.json`
+    )
+      .then(({ default: parsedJSON }) => {
+        if (isPartnerEndingsMap(parsedJSON)) {
+          dispatch(endingsPartnerGetSuccess(character, parsedJSON));
+        } else {
+          return Promise.reject(
+            new Error(
+              "JSON response does not match with `PartnerEndingsMap` type",
+            ),
+          );
+        }
+      })
+      .catch((err: Error) => {
+        dispatch(endingsPartnerGetFailure(err));
+      });
   };
 }
 

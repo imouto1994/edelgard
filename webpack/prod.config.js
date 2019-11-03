@@ -68,11 +68,11 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      // new TerserPlugin({
-      //   cache: true,
-      //   parallel: true,
-      //   sourceMap: false,
-      // }),
+      new TerserPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: false,
+      }),
       new OptimizeCSSAssetsPlugin({
         canPrint: false,
         cssProcessor: cssnano,
@@ -132,10 +132,6 @@ module.exports = {
   ],
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
-    alias: {
-      react: "preact/compat",
-      "react-dom": "preact/compat",
-    },
   },
   target: "web",
 };

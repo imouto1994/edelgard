@@ -1,7 +1,6 @@
 import { h, VNode } from "preact";
-import { useEffect } from "preact/hooks";
+import { useEffect, useCallback } from "preact/hooks";
 import { useRoute, useLocation } from "wouter-preact";
-import { useDispatch, useSelector } from "react-redux";
 
 import Page from "../Page";
 import PartnerEndingsCard from "../PartnerEndingsCard";
@@ -11,7 +10,8 @@ import {
   endingsPartnerGetRequest,
   selectPartnerEndings,
 } from "../../data/ending";
-import { Dispatch, State } from "../../data/type";
+import { State } from "../../data/type";
+import { useDispatch, useMappedState } from "../../hooks/preact-redux";
 import { unslugify } from "../../utils/string";
 
 type PageEndingsURLParams = {
@@ -58,16 +58,18 @@ function PageEndingsWithCharacters(
   props: PageEndingsWithCharactersProps,
 ): VNode<PageEndingsWithCharactersProps> | null {
   const { characterA, characterB, characterASlug, characterBSlug } = props;
-  const dispatch = useDispatch<Dispatch>();
+  const dispatch = useDispatch();
   const [, setLocation] = useLocation();
 
   useEffect(() => {
     dispatch(endingsPartnerGetRequest(characterA));
   }, [characterA, dispatch]);
 
-  const partnerEndings = useSelector((state: State) =>
-    selectPartnerEndings(state, { characterA, characterB }),
+  const parnetEndingsSelector = useCallback(
+    (state: State) => selectPartnerEndings(state, { characterA, characterB }),
+    [characterA, characterB],
   );
+  const partnerEndings = useMappedState(parnetEndingsSelector);
 
   if (partnerEndings == null) {
     return null;
