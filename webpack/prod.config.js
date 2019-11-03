@@ -118,8 +118,16 @@ module.exports = {
       },
     ]),
     new HtmlWebpackPlugin({
-      title: "Edelgard",
+      title: "FE3H Endings",
       template: path.resolve(__dirname, "../src/index.html"),
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+      },
     }),
     new MiniCssExtractPlugin({
       chunkFilename: "[name]-[contenthash:10].min.css",
