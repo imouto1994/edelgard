@@ -53,20 +53,6 @@ module.exports = {
           },
         ],
       },
-      {
-        include: [path.resolve(__dirname, "../src/")],
-        test: /\.(png|jpe?g|gif|webp|svg)$/i,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "",
-              publicPath: "/",
-            },
-          },
-        ],
-      },
     ],
   },
   output: {
