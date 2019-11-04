@@ -28,6 +28,7 @@ export function endingsPartnerGetRequest(
 ): EndingsPartnerGetRequestAction {
   return (dispatch): Promise<void> => {
     const characterSlug = slugify(character);
+
     dispatch(endingsPartnerGetPending());
     return import(
       /* webpackChunkName: "[request]" */ `../../../json/${characterSlug}.json`

@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-width: 428px;
+  min-width: 320px;
   max-width: 1440px;
   height: 36px;
   background: #5f5273;
@@ -53,7 +53,7 @@
 .content {
   flex: 1;
   width: 100%;
-  min-width: 428px;
+  min-width: 320px;
   max-width: 1440px;
   padding: 16px 12px;
   margin-top: 12px;

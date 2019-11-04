@@ -57,19 +57,22 @@ function PagePartnersWithCharacter(
   );
   const partners = useMappedState(partnersSelector);
 
-  function handlePartnerSelect(partner: Character): void {
-    setLocation(`/${characterSlug}/${slugify(partner)}`);
-  }
+  const onPartnerSelect = useCallback(
+    (partner: Character): void => {
+      setLocation(`/${characterSlug}/${slugify(partner)}`);
+    },
+    [setLocation, characterSlug],
+  );
 
-  function handleBackNavigate(): void {
+  const onBack = useCallback((): void => {
     setLocation("/");
-  }
+  }, [setLocation]);
 
   return (
-    <Page title={`Select Partner for ${character}`} onBack={handleBackNavigate}>
+    <Page title={`Select Partner for ${character}`} onBack={onBack}>
       <CharacterList
         characters={partners}
-        onCharacterSelect={handlePartnerSelect}
+        onCharacterSelect={onPartnerSelect}
       />
     </Page>
   );

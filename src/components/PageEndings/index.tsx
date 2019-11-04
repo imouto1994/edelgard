@@ -65,25 +65,23 @@ function PageEndingsWithCharacters(
     dispatch(endingsPartnerGetRequest(characterA));
   }, [characterA, dispatch]);
 
-  const parnetEndingsSelector = useCallback(
+  const partnerEndingsSelector = useCallback(
     (state: State) => selectPartnerEndings(state, { characterA, characterB }),
     [characterA, characterB],
   );
-  const partnerEndings = useMappedState(parnetEndingsSelector);
+
+  const partnerEndings = useMappedState(partnerEndingsSelector);
+
+  const onBack = useCallback((): void => {
+    setLocation(`/${characterASlug}`);
+  }, [characterASlug, setLocation]);
 
   if (partnerEndings == null) {
     return null;
   }
 
-  function handleBackNavigate(): void {
-    setLocation(`/${characterASlug}`);
-  }
-
   return (
-    <Page
-      title={`Endings for ${characterA} / ${characterB}`}
-      onBack={handleBackNavigate}
-    >
+    <Page title={`Endings for ${characterA} / ${characterB}`} onBack={onBack}>
       <PartnerEndingsCard
         characterA={characterA}
         characterB={characterB}

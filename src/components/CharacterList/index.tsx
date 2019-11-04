@@ -1,4 +1,5 @@
 import { h, VNode } from "preact";
+import { useCallback } from "preact/hooks";
 
 import Image from "../Image";
 import { characterFactions } from "../../data/character";
@@ -13,11 +14,14 @@ type Props = {
 };
 
 export default function CharacterList(props: Props): VNode<Props> {
-  const { characters } = props;
+  const { characters, onCharacterSelect } = props;
 
-  function onCharacterSelect(character: Character): void {
-    props.onCharacterSelect(character);
-  }
+  const onSelect = useCallback(
+    (character: Character): void => {
+      onCharacterSelect(character);
+    },
+    [onCharacterSelect],
+  );
 
   return (
     <div className={styles.characterList}>
@@ -25,7 +29,7 @@ export default function CharacterList(props: Props): VNode<Props> {
         <CharacterItem
           key={character}
           character={character}
-          onCharacterSelect={onCharacterSelect}
+          onSelect={onSelect}
         />
       ))}
     </div>
@@ -34,18 +38,17 @@ export default function CharacterList(props: Props): VNode<Props> {
 
 type CharacterItemProps = {
   character: Character;
-  onCharacterSelect: (c: Character) => void;
+  onSelect: (c: Character) => void;
 };
 
 function CharacterItem(props: CharacterItemProps): VNode<CharacterItemProps> {
-  const { character } = props;
+  const { character, onSelect } = props;
   const characterSlug = slugify(character);
   const faction = characterFactions[character];
 
-  function onClick(): void {
-    const { character, onCharacterSelect } = props;
-    onCharacterSelect(character);
-  }
+  const onClick = useCallback(() => {
+    onSelect(character);
+  }, [character, onSelect]);
 
   return (
     <div className={styles.characterEntry} onClick={onClick}>

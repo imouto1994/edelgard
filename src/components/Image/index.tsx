@@ -56,15 +56,15 @@ export default function Image(props: Props): VNode<Props> {
     }
   }, []);
 
-  function onImageLoad(): void {
+  const onImageLoad = useCallback((): void => {
     setIsLoaded(true);
-  }
+  }, [setIsLoaded]);
 
-  function onContainerClick(): void {
+  const onContainerClick = useCallback((): void => {
     if (onClick != null) {
       onClick();
     }
-  }
+  }, [onClick]);
 
   return (
     <div

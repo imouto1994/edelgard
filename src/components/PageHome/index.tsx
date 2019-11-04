@@ -1,4 +1,5 @@
 import { h, VNode } from "preact";
+import { useCallback } from "preact/hooks";
 import { useLocation } from "wouter-preact";
 
 import Page from "../Page";
@@ -10,15 +11,18 @@ import { slugify } from "../../utils/string";
 export default function PageHome(): VNode {
   const [, setLocation] = useLocation();
 
-  function handleCharacterSelect(character: Character): void {
-    setLocation(`/${slugify(character)}`);
-  }
+  const onCharacterSelect = useCallback(
+    (character: Character): void => {
+      setLocation(`/${slugify(character)}`);
+    },
+    [setLocation],
+  );
 
   return (
     <Page title="Select Character">
       <CharacterList
         characters={orderedCharacters}
-        onCharacterSelect={handleCharacterSelect}
+        onCharacterSelect={onCharacterSelect}
       />
     </Page>
   );
