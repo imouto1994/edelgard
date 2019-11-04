@@ -19,7 +19,6 @@ module.exports = {
       "@babel/plugin-transform-react-jsx",
       { pragma: "h", pragmaFrag: "Fragment" },
     ],
-    ["@babel/plugin-proposal-class-properties", { loose: false }],
     [
       "@babel/plugin-transform-runtime",
       {
