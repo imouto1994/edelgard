@@ -46,9 +46,15 @@
   border-image: linear-gradient(to right, #9c9680, rgba(0, 0, 0, 0)) 100% 1;
 }
 
-.portraitPicture {
+.portraitPictureLazy {
   width: 100px;
   height: 100px;
+}
+
+.portraitPicture {
+  display: block;
+  width: 100%;
+  height: 100%;
   transform: translateY(-10%);
 }
 
@@ -57,9 +63,14 @@
   height: 100%;
 }
 
-.factionPicture {
+.factionPictureLazy {
   height: 32px;
   margin-left: 4px;
+}
+
+.factionPicture {
+  display: block;
+  height: 100%;
 }
 
 .factionImg {

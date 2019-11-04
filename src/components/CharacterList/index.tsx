@@ -1,6 +1,7 @@
 import { h, VNode } from "preact";
 import { useCallback } from "preact/hooks";
 
+import Lazy from "../Lazy";
 import { characterFactions } from "../../data/character";
 import { Character } from "../../data/character/type";
 import { slugify } from "../../utils/string";
@@ -58,17 +59,21 @@ function CharacterItem(props: CharacterItemProps): VNode<CharacterItemProps> {
     <div className={styles.characterEntry} onClick={onClick}>
       <div className={styles.portraitContainer}>
         <div className={styles.portraitWrapper}>
-          <picture className={styles.portraitPicture}>
-            <source type="image/webp" srcSet={portraitSrcSetWEBP} />
-            <source type="image/png" srcSet={portraitSrcSetPNG} />
-            <img className={styles.portraitImg} srcSet={portraitSrcSetPNG} />
-          </picture>
-          {faction != null ? (
-            <picture className={styles.factionPicture}>
-              <source type="image/webp" srcSet={factionSrcSetWEBP} />
-              <source type="image/png" srcSet={factionSrcSetPNG} />
-              <img className={styles.factionImg} srcSet={factionSrcSetPNG} />
+          <Lazy className={styles.portraitPictureLazy}>
+            <picture className={styles.portraitPicture}>
+              <source type="image/webp" srcSet={portraitSrcSetWEBP} />
+              <source type="image/png" srcSet={portraitSrcSetPNG} />
+              <img className={styles.portraitImg} srcSet={portraitSrcSetPNG} />
             </picture>
+          </Lazy>
+          {faction != null ? (
+            <Lazy className={styles.factionPictureLazy}>
+              <picture className={styles.factionPicture}>
+                <source type="image/webp" srcSet={factionSrcSetWEBP} />
+                <source type="image/png" srcSet={factionSrcSetPNG} />
+                <img className={styles.factionImg} srcSet={factionSrcSetPNG} />
+              </picture>
+            </Lazy>
           ) : null}
         </div>
       </div>
