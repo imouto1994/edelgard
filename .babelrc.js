@@ -11,10 +11,7 @@ module.exports = {
         modules: false,
       },
     ],
-    [
-      "@babel/preset-react",
-      { development: process.env.NODE_ENV === "development" },
-    ],
+    ["@babel/preset-react"],
     ["@babel/preset-typescript", { jsxPragma: "h" }],
   ],
   plugins: [
