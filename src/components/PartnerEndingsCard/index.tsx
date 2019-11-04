@@ -123,8 +123,8 @@ function SVGBadge(): VNode {
     >
       <defs>
         <radialGradient r="90%" id="gradient">
-          <stop offset="0%" stopColor="#3c2e4f" />
-          <stop offset="100%" stopColor="#0d0a11" />
+          <stop offset="0%" style={{ stopColor: "#3c2e4f" }} />
+          <stop offset="100%" style={{ stopColor: "#0d0a11" }} />
         </radialGradient>
       </defs>
       <g>
