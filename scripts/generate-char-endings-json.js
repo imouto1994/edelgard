@@ -56,7 +56,7 @@ const path = require("path");
     fs.writeFileSync(
       path.resolve(
         __dirname,
-        `../json/${characterA
+        `../src/json/${characterA
           .split(" ")
           .join("_")
           .toLowerCase()}.json`,

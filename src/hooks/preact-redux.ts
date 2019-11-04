@@ -1,5 +1,5 @@
 // Reference: https://github.com/facebookincubator/redux-react-hook
-// Convert this to native Preact version
+// Converted to native Preact version
 
 import { createContext } from "preact";
 import {
@@ -17,8 +17,6 @@ import {
   Dispatch as AppDispatch,
   State as AppState,
 } from "../data/type";
-
-// From https://github.com/reduxjs/preact-redux/blob/3e53ff96ed10f71c21346f08823e503df724db35/src/utils/shallowEqual.js
 
 const hasOwn = Object.prototype.hasOwnProperty;
 
@@ -55,7 +53,6 @@ export default function shallowEqual(objA: unknown, objB: unknown): boolean {
     return false;
   }
 
-  // tslint:disable-next-line:prefer-for-of
   for (let i = 0; i < keysA.length; i++) {
     if (!hasOwn.call(objB, keysA[i]) || !is(objA[keysA[i]], objB[keysA[i]])) {
       return false;

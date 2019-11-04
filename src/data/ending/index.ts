@@ -31,7 +31,7 @@ export function endingsPartnerGetRequest(
 
     dispatch(endingsPartnerGetPending());
     return import(
-      /* webpackChunkName: "[request]" */ `../../../json/${characterSlug}.json`
+      /* webpackChunkName: "[request]" */ `../../json/${characterSlug}.json`
     )
       .then(({ default: parsedJSON }) => {
         if (isPartnerEndingsMap(parsedJSON)) {
