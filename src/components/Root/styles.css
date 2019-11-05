@@ -51,6 +51,10 @@ body {
   box-sizing: inherit;
 }
 
+button {
+  border: 0;
+}
+
 button:focus {
   outline: 0;
 }

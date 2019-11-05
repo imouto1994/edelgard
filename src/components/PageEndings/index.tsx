@@ -1,17 +1,13 @@
 import { h, VNode } from "preact";
-import { useEffect, useCallback } from "preact/hooks";
+import { useEffect, useCallback, useState } from "preact/hooks";
 import { useRoute, useLocation } from "wouter-preact";
 
 import Page from "../Page";
 import PartnerEndingsCard from "../PartnerEndingsCard";
 import { isCharacter } from "../../data/character";
 import { Character } from "../../data/character/type";
-import {
-  endingsPartnerGetRequest,
-  selectPartnerEndings,
-} from "../../data/ending";
-import { State } from "../../data/type";
-import { useDispatch, useMappedState } from "../../hooks/preact-redux";
+import { isEndings } from "../../data/ending";
+import { Ending } from "../../data/ending/type";
 import { unslugify } from "../../utils/string";
 
 type PageEndingsURLParams = {
@@ -58,27 +54,35 @@ function PageEndingsWithCharacters(
   props: PageEndingsWithCharactersProps,
 ): VNode<PageEndingsWithCharactersProps> | null {
   const { characterA, characterB, characterASlug, characterBSlug } = props;
-  const dispatch = useDispatch();
   const [, setLocation] = useLocation();
+  const [endings, setEndings] = useState<Ending[]>([]);
 
   useEffect(() => {
-    dispatch(endingsPartnerGetRequest(characterA));
-  }, [characterA, dispatch]);
-
-  const partnerEndingsSelector = useCallback(
-    (state: State) => selectPartnerEndings(state, { characterA, characterB }),
-    [characterA, characterB],
-  );
-
-  const partnerEndings = useMappedState(partnerEndingsSelector);
+    const jsonFile =
+      characterASlug < characterBSlug
+        ? `/${characterASlug}_${characterBSlug}.json`
+        : `/${characterBSlug}_${characterASlug}.json`;
+    fetch(jsonFile)
+      .then((response: Response) => response.json())
+      .then((endings: unknown) => {
+        if (isEndings(endings)) {
+          setEndings(endings);
+        } else {
+          return Promise.reject(
+            new Error(
+              "JSON response does not match with `PartnerEndingsMap` type",
+            ),
+          );
+        }
+      })
+      .catch((err: Error) => {
+        console.log("Page Endings", err.message);
+      });
+  }, [characterASlug, characterBSlug]);
 
   const onBack = useCallback((): void => {
     setLocation(`/${characterASlug}`);
   }, [characterASlug, setLocation]);
-
-  if (partnerEndings == null) {
-    return null;
-  }
 
   return (
     <Page title={`Endings for ${characterA} / ${characterB}`} onBack={onBack}>
@@ -87,7 +91,7 @@ function PageEndingsWithCharacters(
         characterB={characterB}
         characterASlug={characterASlug}
         characterBSlug={characterBSlug}
-        partnerEndings={partnerEndings}
+        endings={endings}
       />
     </Page>
   );

@@ -149,6 +149,11 @@
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
+  height: 36px;
+
+  @media all and (min-width: $dekstop) {
+    height: 48px;
+  }
 }
 
 .routeIcon {

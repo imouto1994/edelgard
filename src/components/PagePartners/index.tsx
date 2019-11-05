@@ -1,14 +1,16 @@
 import { h, VNode } from "preact";
-import { useEffect, useCallback } from "preact/hooks";
+import { useCallback } from "preact/hooks";
 import { useLocation, useRoute } from "wouter-preact";
 
 import Page from "../Page";
 import CharacterList from "../CharacterList";
-import { isCharacter } from "../../data/character";
-import { Character } from "../../data/character/type";
-import { endingsPartnerGetRequest, selectPartners } from "../../data/ending";
-import { State } from "../../data/type";
-import { useDispatch, useMappedState } from "../../hooks/preact-redux";
+import {
+  isCharacter,
+  characterOrderedIndexMap,
+  orderedCharacters,
+} from "../../data/character";
+import { Character, OrderedCharacterIndex } from "../../data/character/type";
+import { orderedCharacterPartnerIndicesList } from "../../data/partners";
 import { slugify, unslugify } from "../../utils/string";
 
 type PagePartnersURLParams = { characterSlug: string };
@@ -44,18 +46,13 @@ function PagePartnersWithCharacter(
   props: PagePartnersWithCharacterProps,
 ): VNode<PagePartnersWithCharacterProps> | null {
   const { character, characterSlug } = props;
-  const dispatch = useDispatch();
   const [, setLocation] = useLocation();
 
-  useEffect(() => {
-    dispatch(endingsPartnerGetRequest(character));
-  }, [character, dispatch]);
-
-  const partnersSelector = useCallback(
-    (state: State) => selectPartners(state, { character }),
-    [character],
+  const orderedPartnerIndices =
+    orderedCharacterPartnerIndicesList[characterOrderedIndexMap[character]];
+  const orderedPartners = orderedPartnerIndices.map(
+    (index: OrderedCharacterIndex) => orderedCharacters[index],
   );
-  const partners = useMappedState(partnersSelector);
 
   const onPartnerSelect = useCallback(
     (partner: Character): void => {
@@ -71,7 +68,7 @@ function PagePartnersWithCharacter(
   return (
     <Page title={`Select Partner for ${character}`} onBack={onBack}>
       <CharacterList
-        characters={partners}
+        characters={orderedPartners}
         onCharacterSelect={onPartnerSelect}
       />
     </Page>

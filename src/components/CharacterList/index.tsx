@@ -2,7 +2,11 @@ import { h, VNode } from "preact";
 import { useCallback } from "preact/hooks";
 
 import Lazy from "../Lazy";
-import { characterFactions } from "../../data/character";
+import {
+  orderedCharacterFactionIndices,
+  orderedFactions,
+  characterOrderedIndexMap,
+} from "../../data/character";
 import { Character } from "../../data/character/type";
 import { slugify } from "../../utils/string";
 
@@ -44,7 +48,10 @@ type CharacterItemProps = {
 function CharacterItem(props: CharacterItemProps): VNode<CharacterItemProps> {
   const { character, onSelect } = props;
   const characterSlug = slugify(character);
-  const faction = characterFactions[character];
+  const faction =
+    orderedFactions[
+      orderedCharacterFactionIndices[characterOrderedIndexMap[character]]
+    ];
 
   const onClick = useCallback(() => {
     onSelect(character);

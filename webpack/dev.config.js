@@ -71,6 +71,10 @@ module.exports = {
         from: path.resolve(__dirname, "../src/images/"),
         to: path.resolve(__dirname, "../build"),
       },
+      {
+        from: path.resolve(__dirname, "../src/json/"),
+        to: path.resolve(__dirname, "../build"),
+      },
     ]),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({

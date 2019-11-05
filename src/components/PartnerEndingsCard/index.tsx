@@ -3,12 +3,12 @@ import { useState } from "preact/hooks";
 import classnames from "classnames";
 
 import Image from "../Image";
-import { Character, Faction } from "../../data/character/type";
+import { Character } from "../../data/character/type";
 import {
-  getRoutesFromPartnerEndings,
+  getAvailableRoutesFromEndings,
   getEndingContentForRoute,
 } from "../../data/ending";
-import { PartnerEndings, Route } from "../../data/ending/type";
+import { Ending, OrderedRoute } from "../../data/ending/type";
 
 import styles from "./styles.css";
 
@@ -18,7 +18,7 @@ type Props = {
   characterB: Character;
   characterASlug: string;
   characterBSlug: string;
-  partnerEndings: PartnerEndings;
+  endings: Ending[];
 };
 
 export default function PartnerEndingsCard(props: Props): VNode<Props> {
@@ -28,16 +28,16 @@ export default function PartnerEndingsCard(props: Props): VNode<Props> {
     characterB,
     characterASlug,
     characterBSlug,
-    partnerEndings,
+    endings,
   } = props;
   const portraitAImageURL = `/${characterASlug}_l.png`;
   const portraitBImageURL = `/${characterBSlug}_l.png`;
-  const availableRoutes = getRoutesFromPartnerEndings(partnerEndings);
+  const availableRoutes = getAvailableRoutesFromEndings(endings);
 
   const [selectedRouteIndex, setSelectedRouteIndex] = useState(0);
   const selectedRoute = availableRoutes[selectedRouteIndex];
   const selectedEndingContent = getEndingContentForRoute(
-    partnerEndings,
+    endings,
     selectedRoute,
   );
 
@@ -46,7 +46,10 @@ export default function PartnerEndingsCard(props: Props): VNode<Props> {
       <div
         className={styles.left}
         style={{
-          backgroundImage: `url(${getRouteLargeImageURL(selectedRoute)})`,
+          backgroundImage:
+            endings.length > 0
+              ? `url(/${getRouteFaction(selectedRoute)}_emblem_l.png)`
+              : "none",
         }}
       >
         <div className={styles.character}>
@@ -66,7 +69,7 @@ export default function PartnerEndingsCard(props: Props): VNode<Props> {
       </div>
       <div className={styles.right}>
         <div className={styles.routes}>
-          {availableRoutes.map((route: Route, index: number) => {
+          {availableRoutes.map((route: OrderedRoute, index: number) => {
             const faction = getRouteFaction(route);
             return (
               <Image
@@ -140,26 +143,14 @@ function SVGBadge(): VNode {
   );
 }
 
-function getRouteFaction(route: Route): Faction {
-  if (route === "Crimson Flower") {
+function getRouteFaction(route: OrderedRoute): string {
+  if (route === 0) {
     return "empire";
-  } else if (route === "Azure Moon") {
+  } else if (route === 1) {
     return "holy";
-  } else if (route === "Verdant Wind") {
+  } else if (route === 2) {
     return "alliance";
   } else {
     return "church";
-  }
-}
-
-function getRouteLargeImageURL(route: Route): string {
-  if (route === "Crimson Flower") {
-    return "/empire_emblem_l.png";
-  } else if (route === "Azure Moon") {
-    return "/holy_emblem_l.png";
-  } else if (route === "Verdant Wind") {
-    return "/alliance_emblem_l.png";
-  } else {
-    return "/church_emblem_l.png";
   }
 }

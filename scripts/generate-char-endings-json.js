@@ -1,6 +1,49 @@
 const fs = require("fs");
 const path = require("path");
 
+const orderedCharacters = [
+  "Byleth M",
+  "Byleth F",
+  "Edelgard",
+  "Dimitri",
+  "Claude",
+  "Hubert",
+  "Ferdinand",
+  "Linhardt",
+  "Caspar",
+  "Bernadetta",
+  "Dorothea",
+  "Petra",
+  "Dedue",
+  "Felix",
+  "Ashe",
+  "Sylvain",
+  "Mercedes",
+  "Annette",
+  "Ingrid",
+  "Lorenz",
+  "Raphael",
+  "Ignatz",
+  "Lysithea",
+  "Marianne",
+  "Hilda",
+  "Leonie",
+  "Seteth",
+  "Flayn",
+  "Hanneman",
+  "Manuela",
+  "Gilbert",
+  "Alois",
+  "Catherine",
+  "Shamir",
+  "Cyril",
+  "Rhea",
+];
+const characterIndexMap = orderedCharacters.reduce((map, character, index) => {
+  map[character] = index;
+  return map;
+}, {});
+
 (function() {
   const content = fs.readFileSync(
     path.resolve(__dirname, "../json/routeEndings.json"),
@@ -17,9 +60,14 @@ const path = require("path");
   }
 
   const charEndingsMap = {};
+  const charPartnersList = Array.from({ length: orderedCharacters.length });
   for (const characterA of Object.keys(completeRouteEndingsMap)) {
     charEndingsMap[characterA] = {};
+    charPartnersList[characterIndexMap[characterA]] = [];
     for (const characterB of Object.keys(completeRouteEndingsMap[characterA])) {
+      charPartnersList[characterIndexMap[characterA]].push(
+        characterIndexMap[characterB],
+      );
       const endings = completeRouteEndingsMap[characterA][characterB];
       const endingRoutesMap = endings.reduce((map, ending, index) => {
         if (ending != null) {
@@ -28,18 +76,7 @@ const path = require("path");
           if (map[endingStr] == null) {
             map[endingStr] = [];
           }
-          let route;
-          if (index === 0) {
-            route = "Crimson Flower";
-          } else if (index === 1) {
-            route = "Azure Moon";
-          } else if (index === 2) {
-            route = "Verdant Wind";
-          } else {
-            route = "Silver Snow";
-          }
-
-          map[endingStr].push(route);
+          map[endingStr].push(index);
         }
 
         return map;
@@ -52,20 +89,32 @@ const path = require("path");
           };
         },
       );
+      if (characterA <= characterB) {
+        fs.writeFileSync(
+          path.resolve(
+            __dirname,
+            `../src/json/${characterA
+              .split(" ")
+              .join("_")
+              .toLowerCase()}_${characterB
+              .split(" ")
+              .join("_")
+              .toLowerCase()}.json`,
+          ),
+          JSON.stringify(charEndingsMap[characterA][characterB]),
+          "utf-8",
+        );
+      }
     }
-    fs.writeFileSync(
-      path.resolve(
-        __dirname,
-        `../src/json/${characterA
-          .split(" ")
-          .join("_")
-          .toLowerCase()}.json`,
-      ),
-      JSON.stringify(charEndingsMap[characterA]),
-      "utf-8",
+    charPartnersList[characterIndexMap[characterA]].sort(
+      (a, b) => parseInt(a) - parseInt(b),
     );
   }
-
+  fs.writeFileSync(
+    path.resolve(__dirname, `../json/charPartnersList.json`),
+    JSON.stringify(charPartnersList, null, 2),
+    "utf-8",
+  );
   fs.writeFileSync(
     path.resolve(__dirname, `../json/charEndings.json`),
     JSON.stringify(charEndingsMap, null, 2),
