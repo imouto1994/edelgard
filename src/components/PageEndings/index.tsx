@@ -3,7 +3,7 @@ import { useEffect, useCallback, useState } from "preact/hooks";
 import { useRoute, useLocation } from "wouter-preact";
 
 import Page from "../Page";
-import PartnerEndingsCard from "../PartnerEndingsCard";
+import EndingsCard from "../EndingsCard";
 import { isCharacter } from "../../data/character";
 import { Character } from "../../data/character/type";
 import { isEndings } from "../../data/ending";
@@ -86,7 +86,7 @@ function PageEndingsWithCharacters(
 
   return (
     <Page title={`Endings for ${characterA} / ${characterB}`} onBack={onBack}>
-      <PartnerEndingsCard
+      <EndingsCard
         characterA={characterA}
         characterB={characterB}
         characterASlug={characterASlug}

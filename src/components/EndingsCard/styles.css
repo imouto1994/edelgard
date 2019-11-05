@@ -147,7 +147,6 @@
   flex: none;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-evenly;
   width: 100%;
   height: 36px;
 
@@ -156,17 +155,23 @@
   }
 }
 
-.routeIcon {
+.factionPicture {
+  flex: 1;
   height: 36px;
+  text-align: center;
   cursor: pointer;
-  filter: grayscale(1);
 
   @media all and (min-width: $dekstop) {
     height: 48px;
   }
 }
 
-.routeIconSelected {
+.factionImage {
+  height: 100%;
+  filter: grayscale(1);
+}
+
+.factionImageSelected {
   filter: none;
 }
 

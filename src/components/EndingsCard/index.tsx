@@ -2,7 +2,6 @@ import { h, VNode } from "preact";
 import { useState } from "preact/hooks";
 import classnames from "classnames";
 
-import Image from "../Image";
 import { Character } from "../../data/character/type";
 import {
   getAvailableRoutesFromEndings,
@@ -21,7 +20,7 @@ type Props = {
   endings: Ending[];
 };
 
-export default function PartnerEndingsCard(props: Props): VNode<Props> {
+export default function EndingsCard(props: Props): VNode<Props> {
   const {
     className = "",
     characterA,
@@ -71,18 +70,20 @@ export default function PartnerEndingsCard(props: Props): VNode<Props> {
         <div className={styles.routes}>
           {availableRoutes.map((route: OrderedRoute, index: number) => {
             const faction = getRouteFaction(route);
+            const factionSrcSetWEBP = `/${faction}_emblem@1x.webp 1x, /${faction}_emblem@2x.webp 2x, /${faction}_emblem@3x.webp 3x`;
+            const factionSrcSetPNG = `/${faction}_emblem@1x.png 1x, /${faction}_emblem@2x.png 2x, /${faction}_emblem@3x.png 3x`;
             return (
-              <Image
-                contentFill="height"
-                key={route}
-                srcSetPNG={`/${faction}_emblem@1x.png 1x, /${faction}_emblem@2x.png 2x, /${faction}_emblem@3x.png 3x`}
-                srcSetWEBP={`/${faction}_emblem@1x.webp 1x, /${faction}_emblem@2x.webp 2x, /${faction}_emblem@3x.webp 3x`}
-                placeholderSrc={`/${faction}_emblem.svg`}
-                onClick={(): void => setSelectedRouteIndex(index)}
-                className={classnames(styles.routeIcon, {
-                  [styles.routeIconSelected]: selectedRouteIndex === index,
-                })}
-              />
+              <picture className={styles.factionPicture} key={route}>
+                <source type="image/webp" srcSet={factionSrcSetWEBP} />
+                <source type="image/png" srcSet={factionSrcSetPNG} />
+                <img
+                  className={classnames(styles.factionImage, {
+                    [styles.factionImageSelected]: selectedRouteIndex === index,
+                  })}
+                  srcSet={factionSrcSetPNG}
+                  onClick={(): void => setSelectedRouteIndex(index)}
+                />
+              </picture>
             );
           })}
         </div>
