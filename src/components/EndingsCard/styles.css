@@ -51,15 +51,18 @@
   }
 }
 
-.portrait {
-  width: auto;
+.portraitPicture {
+  display: inline-flex;
+  width: 120px;
   height: 120px;
 
   @media all and (min-width: $tabletPortrait) {
+    width: 180px;
     height: 180px;
   }
 
   @media all and (min-width: $tabletLandscape) {
+    width: 240px;
     height: 240px;
   }
 
@@ -70,10 +73,15 @@
   }
 }
 
-.portraitB {
+.portraitPictureB {
   @media all and (min-width: $dekstop) {
     align-self: flex-end;
   }
+}
+
+.portraitImage {
+  width: 100%;
+  height: auto;
 }
 
 .badge {

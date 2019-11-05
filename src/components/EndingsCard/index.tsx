@@ -29,8 +29,30 @@ export default function EndingsCard(props: Props): VNode<Props> {
     characterBSlug,
     endings,
   } = props;
-  const portraitAImageURL = `/${characterASlug}_l.png`;
-  const portraitBImageURL = `/${characterBSlug}_l.png`;
+  const portraitAJPGs = [
+    `/${characterASlug}_l@1x.jpg`,
+    `/${characterASlug}_l@2x.jpg`,
+    `/${characterASlug}_l@3x.jpg`,
+    `/${characterASlug}_l@4x.jpg`,
+  ];
+  const portraitAWEBPs = [
+    `/${characterASlug}_l@1x.webp`,
+    `/${characterASlug}_l@2x.webp`,
+    `/${characterASlug}_l@3x.webp`,
+    `/${characterASlug}_l@4x.webp`,
+  ];
+  const portraitBJPGs = [
+    `/${characterBSlug}_l@1x.jpg`,
+    `/${characterBSlug}_l@2x.jpg`,
+    `/${characterBSlug}_l@3x.jpg`,
+    `/${characterBSlug}_l@4x.jpg`,
+  ];
+  const portraitBWEBPs = [
+    `/${characterBSlug}_l@1x.webp`,
+    `/${characterBSlug}_l@2x.webp`,
+    `/${characterBSlug}_l@3x.webp`,
+    `/${characterBSlug}_l@4x.webp`,
+  ];
   const availableRoutes = getAvailableRoutesFromEndings(endings);
 
   const [selectedRouteIndex, setSelectedRouteIndex] = useState(0);
@@ -42,23 +64,19 @@ export default function EndingsCard(props: Props): VNode<Props> {
 
   return (
     <div className={classnames(styles.endingsCard, className)}>
-      <div
-        className={styles.left}
-        style={{
-          backgroundImage:
-            endings.length > 0
-              ? `url(/${getRouteFaction(selectedRoute)}_emblem_l.png)`
-              : "none",
-        }}
-      >
+      <div className={styles.left}>
         <div className={styles.character}>
-          <img src={portraitAImageURL} className={styles.portrait} />
+          <PortraitPic
+            portraitJPGs={portraitAJPGs}
+            portraitWEBPs={portraitAWEBPs}
+          />
           <Badge name={characterA} className={styles.badge} />
         </div>
         <div className={classnames(styles.character, styles.characterB)}>
-          <img
-            src={portraitBImageURL}
-            className={classnames(styles.portrait, styles.portraitB)}
+          <PortraitPic
+            className={styles.portraitPictureB}
+            portraitJPGs={portraitBJPGs}
+            portraitWEBPs={portraitBWEBPs}
           />
           <Badge
             name={characterB}
@@ -99,6 +117,60 @@ export default function EndingsCard(props: Props): VNode<Props> {
         </div>
       </div>
     </div>
+  );
+}
+
+type PortraitPicProps = {
+  className?: string;
+  portraitJPGs: string[];
+  portraitWEBPs: string[];
+};
+
+function PortraitPic(props: PortraitPicProps): VNode<PortraitPicProps> {
+  const { className, portraitJPGs, portraitWEBPs } = props;
+
+  return (
+    <picture className={classnames(styles.portraitPicture, className)}>
+      <source
+        type="image/webp"
+        media="(min-width: 1200px)"
+        srcSet={portraitWEBPs[3]}
+      />
+      <source
+        type="image/jpeg"
+        media="(min-width: 1200px)"
+        srcSet={portraitJPGs[3]}
+      />
+      <source
+        type="image/webp"
+        media="(min-width: 992px)"
+        srcSet={`${portraitWEBPs[1]} 1x, ${portraitWEBPs[3]} 2x`}
+      />
+      <source
+        type="image/jpeg"
+        media="(min-width: 992px)"
+        srcSet={`${portraitJPGs[1]} 1x, ${portraitJPGs[3]} 2x`}
+      />
+      <source
+        type="image/webp"
+        media="(min-width: 768px)"
+        srcSet={`${portraitWEBPs[1]} 1x, ${portraitWEBPs[2]} 2x, ${portraitWEBPs[3]} 3x`}
+      />
+      <source
+        type="image/jpeg"
+        media="(min-width: 768px)"
+        srcSet={`${portraitJPGs[1]} 1x, ${portraitJPGs[2]} 2x, ${portraitJPGs[3]} 3x`}
+      />
+      <source
+        type="image/webp"
+        srcSet={`${portraitWEBPs[0]} 1x, ${portraitWEBPs[1]} 2x, ${portraitWEBPs[2]} 3x`}
+      />
+      <source
+        type="image/jpeg"
+        srcSet={`${portraitJPGs[0]} 1x, ${portraitJPGs[1]} 2x, ${portraitJPGs[2]} 3x`}
+      />
+      <img className={styles.portraitImage} src={portraitJPGs[3]} />
+    </picture>
   );
 }
 
