@@ -3,11 +3,10 @@
   flex-flow: column nowrap;
   align-items: center;
   height: 100%;
-  padding: 24px 36px;
+  padding: 0;
 
   @media all and (min-width: $tabletLandscape) {
-    padding-right: 48px;
-    padding-left: 48px;
+    padding: 24px 48px;
   }
 }
 
@@ -57,7 +56,6 @@
   min-width: 320px;
   max-width: 1440px;
   padding: 16px 12px;
-  margin-top: 12px;
   overflow: auto;
   background: #e6e3d8;
   border-radius: 1px;
@@ -65,6 +63,7 @@
 
   @media all and (min-width: $tabletLandscape) {
     padding: 16px 24px;
+    margin-top: 12px;
   }
 }
 
