@@ -1,3 +1,5 @@
+import styles from "./styles.css";
+
 import { h, VNode } from "preact";
 import { useCallback } from "preact/hooks";
 
@@ -9,8 +11,6 @@ import {
 } from "../../data/character";
 import { Character } from "../../data/character/type";
 import { slugify } from "../../utils/string";
-
-import styles from "./styles.css";
 
 type Props = {
   characters: readonly Character[];

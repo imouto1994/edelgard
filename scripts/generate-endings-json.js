@@ -156,11 +156,15 @@ function cleanUpMainCharEnding(ending, isMale) {
     // Filter out all empty strings
     .filter(line => line.length > 0);
 
+  const charactersMap = {};
   const endingsMap = {};
   let characterA;
   let characterB;
 
   for (const line of lines) {
+    line.split("").forEach(char => {
+      charactersMap[char] = 1;
+    });
     if (line.length < ENDING_HEADER_MAX_LENGTH) {
       const characters = line.split(" x ");
       characterA = characters[0].trim();
@@ -228,5 +232,11 @@ function cleanUpMainCharEnding(ending, isMale) {
     path.resolve(__dirname, "../json/endings.json"),
     JSON.stringify(endingsMap, null, 2),
     "utf-8",
+  );
+
+  console.log(
+    Object.keys(charactersMap)
+      .sort()
+      .join(""),
   );
 })();

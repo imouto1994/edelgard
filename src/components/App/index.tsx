@@ -1,11 +1,11 @@
+import styles from "./styles.css";
+
 import { h, VNode } from "preact";
 import { Switch, Route } from "wouter-preact";
 
 import PageHome from "../PageHome";
 import PagePartners from "../PagePartners";
 import PageEndings from "../PageEndings";
-
-import styles from "./styles.css";
 
 export default function App(): VNode {
   return (

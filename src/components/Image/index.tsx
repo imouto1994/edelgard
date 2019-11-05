@@ -1,8 +1,8 @@
+import styles from "./styles.css";
+
 import { h, VNode } from "preact";
 import { useState, useCallback } from "preact/hooks";
 import classnames from "classnames";
-
-import styles from "./styles.css";
 
 type Props = {
   className?: string;

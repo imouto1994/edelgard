@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const cssnano = require("cssnano");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const InlineManifestWebpackPlugin = require("inline-manifest-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const path = require("path");
@@ -106,6 +107,10 @@ module.exports = {
         from: path.resolve(__dirname, "../src/json/"),
         to: path.resolve(__dirname, "../build"),
       },
+      {
+        from: path.resolve(__dirname, "../src/fonts/"),
+        to: path.resolve(__dirname, "../build"),
+      },
     ]),
     new HtmlWebpackPlugin({
       title: "FE3H Endings",
@@ -119,6 +124,7 @@ module.exports = {
         useShortDoctype: true,
       },
     }),
+    new InlineManifestWebpackPlugin("runtime"),
     new MiniCssExtractPlugin({
       chunkFilename: "[name]-[contenthash:10].min.css",
       filename: "[name]-[contenthash:10].min.css",

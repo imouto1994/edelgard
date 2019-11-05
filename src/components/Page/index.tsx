@@ -1,7 +1,7 @@
+import styles from "./styles.css";
+
 import { h, VNode, ComponentChildren } from "preact";
 import classnames from "classnames";
-
-import styles from "./styles.css";
 
 type Props = {
   children: ComponentChildren;

@@ -1,3 +1,5 @@
+import styles from "./styles.css";
+
 import { h, VNode } from "preact";
 import { useState } from "preact/hooks";
 import classnames from "classnames";
@@ -8,8 +10,6 @@ import {
   getEndingContentForRoute,
 } from "../../data/ending";
 import { Ending, OrderedRoute } from "../../data/ending/type";
-
-import styles from "./styles.css";
 
 type Props = {
   className?: string;
