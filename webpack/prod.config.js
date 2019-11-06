@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const cssnano = require("cssnano");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const InlineManifestWebpackPlugin = require("inline-manifest-webpack-plugin");
+const ManifestPlugin = require("webpack-manifest-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const path = require("path");
@@ -76,6 +76,7 @@ module.exports = {
       }),
     ],
     moduleIds: "hashed",
+    chunkIds: "named",
     runtimeChunk: {
       name: "runtime",
     },
@@ -112,19 +113,6 @@ module.exports = {
         to: path.resolve(__dirname, "../build"),
       },
     ]),
-    new HtmlWebpackPlugin({
-      title: "FE3H Endings",
-      template: path.resolve(__dirname, "../src/index.html"),
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true,
-      },
-    }),
-    new InlineManifestWebpackPlugin("runtime"),
     new MiniCssExtractPlugin({
       chunkFilename: "[name]-[contenthash:10].min.css",
       filename: "[name]-[contenthash:10].min.css",
@@ -133,6 +121,7 @@ module.exports = {
       "process.env.NODE_ENV": JSON.stringify("production"),
     }),
     ...(process.env.WBA ? [new BundleAnalyzerPlugin()] : []),
+    new ManifestPlugin(),
   ],
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],

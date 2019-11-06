@@ -44,6 +44,13 @@ const characterIndexMap = orderedCharacters.reduce((map, character, index) => {
   return map;
 }, {});
 
+function slugify(str) {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .join("_");
+}
+
 (function() {
   const content = fs.readFileSync(
     path.resolve(__dirname, "../json/routeEndings.json"),
@@ -61,10 +68,13 @@ const characterIndexMap = orderedCharacters.reduce((map, character, index) => {
 
   const charEndingsMap = {};
   const charPartnersList = Array.from({ length: orderedCharacters.length });
+  const availableURLs = ["/"];
   for (const characterA of Object.keys(completeRouteEndingsMap)) {
+    availableURLs.push(`/${slugify(characterA)}`);
     charEndingsMap[characterA] = {};
     charPartnersList[characterIndexMap[characterA]] = [];
     for (const characterB of Object.keys(completeRouteEndingsMap[characterA])) {
+      availableURLs.push(`/${slugify(characterA)}/${slugify(characterB)}`);
       charPartnersList[characterIndexMap[characterA]].push(
         characterIndexMap[characterB],
       );
@@ -110,6 +120,11 @@ const characterIndexMap = orderedCharacters.reduce((map, character, index) => {
       (a, b) => parseInt(a) - parseInt(b),
     );
   }
+  fs.writeFileSync(
+    path.resolve(__dirname, `../json/availableURLs.json`),
+    JSON.stringify(availableURLs, null, 2),
+    "utf-8",
+  );
   fs.writeFileSync(
     path.resolve(__dirname, `../json/charPartnersList.json`),
     JSON.stringify(charPartnersList, null, 2),
