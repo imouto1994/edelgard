@@ -2,6 +2,7 @@ import { h } from "preact";
 import { Router } from "wouter-preact";
 import path from "path";
 import fs from "fs";
+import pathToRegexp from "path-to-regexp";
 import pug from "pug";
 import render from "preact-render-to-string";
 import staticLocationHook from "wouter-preact/static-location";
@@ -40,6 +41,7 @@ function ensureDirSync(dirPath) {
 }
 
 (function() {
+  const endingPathRegex = pathToRegexp("/:characterA/:characterB");
   // Generate all static pages
   for (const url of availableURLs) {
     const appContent = render(
@@ -47,12 +49,25 @@ function ensureDirSync(dirPath) {
         <Root />
       </Router>,
     );
+
     const locals = {
       appContent,
       cssInline: { content: mainCSSContent, url: mainCSSURL },
+      jsonURLs: [],
       jsRuntimeContent: runtimeJSContent,
       jsBundleURLs: [vendorJSURL, mainJSURL],
     };
+    const endingPathMatch = endingPathRegex.exec(url);
+    if (endingPathMatch != null) {
+      const characterASlug = endingPathMatch[1];
+      const characterBSlug = endingPathMatch[2];
+      locals.jsonURLs = [
+        characterASlug <= characterBSlug
+          ? `/${characterASlug}_${characterBSlug}.json`
+          : `/${characterBSlug}_${characterASlug}.json`,
+      ];
+    }
+
     const html = pug.renderFile(
       path.resolve(__dirname, "../../src/templates/index.pug"),
       locals,
@@ -72,6 +87,7 @@ function ensureDirSync(dirPath) {
   const locals = {
     appContent: "",
     cssInline: { content: mainCSSContent, url: mainCSSURL },
+    jsonURLs: [],
     jsRuntimeContent: runtimeJSContent,
     jsBundleURLs: [vendorJSURL, mainJSURL],
   };

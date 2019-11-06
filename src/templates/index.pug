@@ -7,6 +7,10 @@ html(lang="en")
     title FE3H Endings
     link(rel="preload" crossorigin="" href="/eb-garamond-regular.woff2" as="font")/
     link(rel="preload" crossorigin="" href="/eb-garamond-semibold.woff2" as="font")/
+    each jsonURL in jsonURLs
+      link(rel="preload" crossorigin="" href=jsonURL as="fetch")/
+    each jsBundleURL in jsBundleURLs
+      link(rel="preload" href=jsBundleURL as="script")/
     style(data-href=cssInline.url) !{cssInline.content}
   body
     div(id="root") !{appContent}
