@@ -1,10 +1,26 @@
+- var title = "Fire Emblem Three Houses Endings"
+- var description = "Complete collection of all available endings for every character in Fire Emblem Three Houses"
+
 doctype html
 html(lang="en")
   head
     meta(charset="utf-8")/
     meta(http-equiv="X-UA-Compatible" content="IE=edge")/
     meta(name="viewport" content="width=device-width, initial-scale=1.0")/
-    title FE3H Endings
+    title= title
+    meta(name="description" content=description)/
+    meta(property="og:title" content=title)/
+    meta(property="og:type" content="website")/
+    meta(property="og:description" content=description)/
+    meta(property="og:image" content="/og-image.jpg")/
+    meta(property="og:url" content=url)/
+    meta(property="og:site_name" content="Three Houses Endings")/
+    meta(name="twitter:card" content="summary_large_image")/
+    link(rel="canonical" href=url)/
+    link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png")/
+    link(rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png")/
+    link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png")/
+    link(rel="manifest" href="/app-manifest.json")/
     link(rel="preload" crossorigin="" href="/eb-garamond-regular.woff2" as="font")/
     link(rel="preload" crossorigin="" href="/eb-garamond-semibold.woff2" as="font")/
     each jsonURL in jsonURLs

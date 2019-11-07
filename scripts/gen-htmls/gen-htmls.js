@@ -55,6 +55,7 @@ function ensureDirSync(dirPath) {
       cssInline: { content: mainCSSContent, url: mainCSSURL },
       jsBundleURLs: [vendorJSURL, mainJSURL],
       jsonURLs: [],
+      url: `https://fe3h.noobsaigon.com${url === "/" ? "" : url}`,
       jsRuntimeContent: runtimeJSContent,
       requiredChunks: JSON.stringify(["vendors~main", "main"]),
     };
@@ -91,6 +92,7 @@ function ensureDirSync(dirPath) {
     cssInline: { content: mainCSSContent, url: mainCSSURL },
     jsBundleURLs: [vendorJSURL, mainJSURL],
     jsonURLs: [],
+    url: `https://fe3h.noobsaigon.com`,
     jsRuntimeContent: runtimeJSContent,
     requiredChunks: JSON.stringify(["vendors~main", "main"]),
   };

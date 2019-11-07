@@ -1,0 +1,21 @@
+{
+  "background_color": "#000",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/android-chrome-icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/android-chrome-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "name": "Fire Emblem Three Houses Endings",
+  "orientation": "portrait",
+  "short_name": "3Houses Endings",
+  "start_url": "/",
+  "theme_color": "#5f5273"
+}

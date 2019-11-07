@@ -103,15 +103,23 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, "../src/images/"),
-        to: path.resolve(__dirname, "../build"),
+        to: path.resolve(__dirname, "../build/"),
       },
       {
         from: path.resolve(__dirname, "../src/json/"),
-        to: path.resolve(__dirname, "../build"),
+        to: path.resolve(__dirname, "../build/"),
       },
       {
         from: path.resolve(__dirname, "../src/fonts/"),
-        to: path.resolve(__dirname, "../build"),
+        to: path.resolve(__dirname, "../build/"),
+      },
+      {
+        from: path.resolve(__dirname, "../src/app-manifest.json"),
+        to: path.resolve(__dirname, "../build/"),
+      },
+      {
+        from: path.resolve(__dirname, "../src/robots.txt"),
+        to: path.resolve(__dirname, "../build/"),
       },
     ]),
     new MiniCssExtractPlugin({
