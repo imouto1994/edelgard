@@ -113,7 +113,9 @@ export default function EndingsCard(props: Props): VNode<Props> {
             ? selectedEndingContent
                 .split("\n")
                 .map((ending: string, index: number) => (
-                  <div key={index}>{ending}</div>
+                  <div className={styles.ending} key={index}>
+                    {ending}
+                  </div>
                 ))
             : null}
           <div className={styles.contentBackground} />

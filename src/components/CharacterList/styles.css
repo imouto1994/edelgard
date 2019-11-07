@@ -24,9 +24,7 @@
   width: 144px;
   padding: 2px 0;
   border-style: solid;
-  border-width: 2px;
-  border-right: 0;
-  border-left: 0;
+  border-width: 2px 0;
   border-image: linear-gradient(to right, #9c9680, rgba(0, 0, 0, 0)) 100% 1;
 }
 
@@ -39,9 +37,7 @@
   overflow: hidden;
   background-image: linear-gradient(to right, #a99e8a, rgba(0, 0, 0, 0));
   border-style: solid;
-  border-width: 1px;
-  border-right: 0;
-  border-left: 0;
+  border-width: 1px 0;
   border-image: linear-gradient(to right, #9c9680, rgba(0, 0, 0, 0)) 100% 1;
 }
 

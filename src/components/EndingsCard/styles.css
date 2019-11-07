@@ -55,22 +55,27 @@
 .portraitPicture {
   display: inline-flex;
   width: 120px;
-  height: 120px;
+  height: auto;
 
   @media all and (min-width: $tabletPortrait) {
     width: 180px;
-    height: 180px;
   }
 
   @media all and (min-width: $tabletLandscape) {
     width: 240px;
-    height: 240px;
   }
 
   @media all and (min-width: $dekstop) {
     align-self: flex-start;
     width: 50%;
-    height: auto;
+  }
+}
+
+.portraitPicture::after {
+  @media all and (min-width: $dekstop) {
+    display: block;
+    padding-bottom: 100%;
+    content: "";
   }
 }
 
@@ -82,7 +87,7 @@
 
 .portraitImage {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .badge {
@@ -194,6 +199,10 @@
   font-weight: 600;
   line-height: 44px;
   color: #4e4936;
+}
+
+.ending {
+  line-break: normal;
 }
 
 .contentBackground {
