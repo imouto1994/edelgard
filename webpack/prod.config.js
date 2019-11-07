@@ -94,6 +94,7 @@ module.exports = {
   output: {
     chunkFilename: "[name]-[contenthash:10].js",
     filename: "[name]-[contenthash:10].js",
+    jsonpFunction: "loadedChunks",
     path: path.resolve(__dirname, "../build"),
     publicPath: "/",
   },

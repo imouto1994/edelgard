@@ -14,6 +14,7 @@ html(lang="en")
     style(data-href=cssInline.url) !{cssInline.content}
   body
     div(id="root") !{appContent}
+    script(id="requiredChunks" type="application/json") !{requiredChunks}
     script !{jsRuntimeContent}
     each jsBundleURL in jsBundleURLs
-      script(src=jsBundleURL)
+      script(src=jsBundleURL async="")

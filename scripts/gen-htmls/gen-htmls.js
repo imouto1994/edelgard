@@ -53,10 +53,12 @@ function ensureDirSync(dirPath) {
     const locals = {
       appContent,
       cssInline: { content: mainCSSContent, url: mainCSSURL },
+      jsBundleURLs: [vendorJSURL, mainJSURL],
       jsonURLs: [],
       jsRuntimeContent: runtimeJSContent,
-      jsBundleURLs: [vendorJSURL, mainJSURL],
+      requiredChunks: JSON.stringify(["vendors~main", "main"]),
     };
+
     const endingPathMatch = endingPathRegex.exec(url);
     if (endingPathMatch != null) {
       const characterASlug = endingPathMatch[1];
@@ -87,9 +89,10 @@ function ensureDirSync(dirPath) {
   const locals = {
     appContent: "",
     cssInline: { content: mainCSSContent, url: mainCSSURL },
+    jsBundleURLs: [vendorJSURL, mainJSURL],
     jsonURLs: [],
     jsRuntimeContent: runtimeJSContent,
-    jsBundleURLs: [vendorJSURL, mainJSURL],
+    requiredChunks: JSON.stringify(["vendors~main", "main"]),
   };
   const html = pug.renderFile(
     path.resolve(__dirname, "../../src/templates/index.pug"),
