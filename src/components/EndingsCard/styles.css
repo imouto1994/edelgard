@@ -72,11 +72,9 @@
 }
 
 .portraitPicture::after {
-  @media all and (min-width: $dekstop) {
-    display: block;
-    padding-bottom: 100%;
-    content: "";
-  }
+  display: block;
+  padding-bottom: 100%;
+  content: "";
 }
 
 .portraitPictureB {

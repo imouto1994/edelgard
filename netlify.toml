@@ -2,3 +2,8 @@
   from = "/*"
   to = "/layout.html"
   status = 200
+
+[[headers]]
+  for = "*.woff2" # Cache font files for long period
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
