@@ -67,6 +67,7 @@ export default function EndingsCard(props: Props): VNode<Props> {
       <div className={styles.left}>
         <div className={styles.character}>
           <PortraitPic
+            character={characterA}
             portraitJPGs={portraitAJPGs}
             portraitWEBPs={portraitAWEBPs}
           />
@@ -74,6 +75,7 @@ export default function EndingsCard(props: Props): VNode<Props> {
         </div>
         <div className={classnames(styles.character, styles.characterB)}>
           <PortraitPic
+            character={characterB}
             className={styles.portraitPictureB}
             portraitJPGs={portraitBJPGs}
             portraitWEBPs={portraitBWEBPs}
@@ -95,6 +97,7 @@ export default function EndingsCard(props: Props): VNode<Props> {
                 <source type="image/webp" srcSet={factionSrcSetWEBP} />
                 <source type="image/png" srcSet={factionSrcSetPNG} />
                 <img
+                  alt={`${faction}`}
                   className={classnames(styles.factionImage, {
                     [styles.factionImageSelected]: selectedRouteIndex === index,
                   })}
@@ -121,13 +124,14 @@ export default function EndingsCard(props: Props): VNode<Props> {
 }
 
 type PortraitPicProps = {
+  character: Character;
   className?: string;
   portraitJPGs: string[];
   portraitWEBPs: string[];
 };
 
 function PortraitPic(props: PortraitPicProps): VNode<PortraitPicProps> {
-  const { className, portraitJPGs, portraitWEBPs } = props;
+  const { className, character, portraitJPGs, portraitWEBPs } = props;
 
   return (
     <picture className={classnames(styles.portraitPicture, className)}>
@@ -169,7 +173,11 @@ function PortraitPic(props: PortraitPicProps): VNode<PortraitPicProps> {
         type="image/jpeg"
         srcSet={`${portraitJPGs[0]} 1x, ${portraitJPGs[1]} 2x, ${portraitJPGs[2]} 3x`}
       />
-      <img className={styles.portraitImage} src={portraitJPGs[3]} />
+      <img
+        alt={`${character} Portrait`}
+        className={styles.portraitImage}
+        src={portraitJPGs[3]}
+      />
     </picture>
   );
 }

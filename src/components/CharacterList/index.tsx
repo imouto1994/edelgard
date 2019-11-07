@@ -70,7 +70,11 @@ function CharacterItem(props: CharacterItemProps): VNode<CharacterItemProps> {
             <picture className={styles.portraitPicture}>
               <source type="image/webp" srcSet={portraitSrcSetWEBP} />
               <source type="image/png" srcSet={portraitSrcSetPNG} />
-              <img className={styles.portraitImg} srcSet={portraitSrcSetPNG} />
+              <img
+                alt={`${character} Portrait`}
+                className={styles.portraitImg}
+                srcSet={portraitSrcSetPNG}
+              />
             </picture>
           </Lazy>
           {faction != null ? (
@@ -78,7 +82,11 @@ function CharacterItem(props: CharacterItemProps): VNode<CharacterItemProps> {
               <picture className={styles.factionPicture}>
                 <source type="image/webp" srcSet={factionSrcSetWEBP} />
                 <source type="image/png" srcSet={factionSrcSetPNG} />
-                <img className={styles.factionImg} srcSet={factionSrcSetPNG} />
+                <img
+                  alt={`${character} Faction`}
+                  className={styles.factionImg}
+                  srcSet={factionSrcSetPNG}
+                />
               </picture>
             </Lazy>
           ) : null}
