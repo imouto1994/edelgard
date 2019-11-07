@@ -1,3 +1,5 @@
+import styles from "./styles.css";
+
 import { h, VNode } from "preact";
 import { useEffect, useCallback, useState } from "preact/hooks";
 import { useRoute, useLocation } from "wouter-preact";
@@ -85,7 +87,11 @@ function PageEndingsWithCharacters(
   }, [characterASlug, setLocation]);
 
   return (
-    <Page title={`Endings for ${characterA} / ${characterB}`} onBack={onBack}>
+    <Page
+      title={`Endings for ${characterA} / ${characterB}`}
+      onBack={onBack}
+      classNameContent={styles.pageContent}
+    >
       <EndingsCard
         characterA={characterA}
         characterB={characterB}
