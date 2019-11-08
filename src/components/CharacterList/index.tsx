@@ -1,7 +1,7 @@
 import styles from "./styles.css";
 
 import { h, VNode } from "preact";
-import { useCallback } from "preact/hooks";
+import { useLocation, Link } from "wouter-preact";
 
 import Lazy from "../Lazy";
 import {
@@ -14,27 +14,15 @@ import { slugify } from "../../utils/string";
 
 type Props = {
   characters: readonly Character[];
-  onCharacterSelect: (character: Character) => void;
 };
 
 export default function CharacterList(props: Props): VNode<Props> {
-  const { characters, onCharacterSelect } = props;
-
-  const onSelect = useCallback(
-    (character: Character): void => {
-      onCharacterSelect(character);
-    },
-    [onCharacterSelect],
-  );
+  const { characters } = props;
 
   return (
     <div className={styles.characterList}>
       {characters.map((character: Character) => (
-        <CharacterItem
-          key={character}
-          character={character}
-          onSelect={onSelect}
-        />
+        <CharacterItem key={character} character={character} />
       ))}
     </div>
   );
@@ -42,20 +30,16 @@ export default function CharacterList(props: Props): VNode<Props> {
 
 type CharacterItemProps = {
   character: Character;
-  onSelect: (c: Character) => void;
 };
 
 function CharacterItem(props: CharacterItemProps): VNode<CharacterItemProps> {
-  const { character, onSelect } = props;
+  const { character } = props;
   const characterSlug = slugify(character);
   const faction =
     orderedFactions[
       orderedCharacterFactionIndices[characterOrderedIndexMap[character]]
     ];
-
-  const onClick = useCallback(() => {
-    onSelect(character);
-  }, [character, onSelect]);
+  const [location] = useLocation();
 
   const portraitSrcSetPNG = `/${characterSlug}_y_s@1x.png 1x, /${characterSlug}_y_s@2x.png 2x, /${characterSlug}_y_s@3x.png 3x`;
   const portraitSrcSetWEBP = `/${characterSlug}_y_s@1x.webp 1x, /${characterSlug}_y_s@2x.webp 2x, /${characterSlug}_y_s@3x.webp 3x`;
@@ -63,7 +47,10 @@ function CharacterItem(props: CharacterItemProps): VNode<CharacterItemProps> {
   const factionSrcSetWEBP = `/${faction}_emblem@1x.webp 1x, /${faction}_emblem@2x.webp 2x, /${faction}_emblem@3x.webp 3x`;
 
   return (
-    <div className={styles.characterEntry} onClick={onClick}>
+    <Link
+      className={styles.characterEntry}
+      href={`${location === "/" ? "" : location}/${slugify(character)}`}
+    >
       <div className={styles.portraitContainer}>
         <div className={styles.portraitWrapper}>
           <Lazy className={styles.portraitPictureLazy}>
@@ -95,6 +82,6 @@ function CharacterItem(props: CharacterItemProps): VNode<CharacterItemProps> {
       <div className={styles.contentContainer}>
         <span>{character}</span>
       </div>
-    </div>
+    </Link>
   );
 }

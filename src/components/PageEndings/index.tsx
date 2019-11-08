@@ -1,8 +1,8 @@
 import styles from "./styles.css";
 
 import { h, VNode } from "preact";
-import { useEffect, useCallback, useState } from "preact/hooks";
-import { useRoute, useLocation } from "wouter-preact";
+import { useEffect, useState } from "preact/hooks";
+import { useRoute } from "wouter-preact";
 
 import Page from "../Page";
 import EndingsCard from "../EndingsCard";
@@ -56,7 +56,6 @@ function PageEndingsWithCharacters(
   props: PageEndingsWithCharactersProps,
 ): VNode<PageEndingsWithCharactersProps> | null {
   const { characterA, characterB, characterASlug, characterBSlug } = props;
-  const [, setLocation] = useLocation();
   const [endings, setEndings] = useState<Ending[]>([]);
 
   useEffect(() => {
@@ -82,14 +81,10 @@ function PageEndingsWithCharacters(
       });
   }, [characterASlug, characterBSlug]);
 
-  const onBack = useCallback((): void => {
-    setLocation(`/${characterASlug}`);
-  }, [characterASlug, setLocation]);
-
   return (
     <Page
       title={`Endings for ${characterA} / ${characterB}`}
-      onBack={onBack}
+      backHref={`/${characterASlug}`}
       classNameContent={styles.pageContent}
     >
       <EndingsCard

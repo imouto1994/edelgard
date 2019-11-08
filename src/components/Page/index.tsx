@@ -2,17 +2,18 @@ import styles from "./styles.css";
 
 import { h, VNode, ComponentChildren } from "preact";
 import { useRef, useState, useEffect } from "preact/hooks";
+import { Link } from "wouter-preact";
 import classnames from "classnames";
 
 type Props = {
+  backHref?: string;
   children: ComponentChildren;
   classNameContent?: string;
-  onBack?: () => void;
   title: string;
 };
 
 export default function Page(props: Props): VNode<Props> {
-  const { title, onBack, classNameContent, children } = props;
+  const { title, backHref, classNameContent, children } = props;
   const [contentMarginRight, setContentMarginRight] = useState(0);
   const contentWrapperOuterRef = useRef<HTMLDivElement | null>(null);
   const contentWrapperInnerRef = useRef<HTMLDivElement | null>(null);
@@ -31,10 +32,10 @@ export default function Page(props: Props): VNode<Props> {
   return (
     <div className={styles.page}>
       <div className={styles.header}>
-        {onBack != null ? (
-          <button className={styles.headerBackButton} onClick={onBack}>
+        {backHref != null ? (
+          <Link className={styles.headerBackButton} href={backHref}>
             Back
-          </button>
+          </Link>
         ) : null}
         <span className={styles.headerText}>{title}</span>
       </div>

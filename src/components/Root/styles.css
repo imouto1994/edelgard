@@ -54,3 +54,7 @@ button:focus {
 img:-moz-loading {
   visibility: hidden;
 }
+
+a {
+  text-decoration: none;
+}
