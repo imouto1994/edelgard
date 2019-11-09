@@ -4,11 +4,6 @@
   status = 200
 
 [[headers]]
-  for = "/sw.js" # Cache font files for long period
-  [headers.values]
-    Cache-Control = "public, max-age=0"
-
-[[headers]]
   for = "/*.woff2" # Cache font files for long period
   [headers.values]
     Cache-Control = "public, max-age=31536000"
@@ -42,3 +37,8 @@
   for = "/*.webp" # Cache WEBP files for long period
   [headers.values]
     Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/sw.js" # Cache Service Worker file
+  [headers.values]
+    Cache-Control = "public, max-age=0"
