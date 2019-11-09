@@ -34,6 +34,7 @@ type CharacterItemProps = {
 
 function CharacterItem(props: CharacterItemProps): VNode<CharacterItemProps> {
   const { character } = props;
+  const { ASSETS_VERSION } = process.env;
   const characterSlug = slugify(character);
   const faction =
     orderedFactions[
@@ -41,10 +42,10 @@ function CharacterItem(props: CharacterItemProps): VNode<CharacterItemProps> {
     ];
   const [location] = useLocation();
 
-  const portraitSrcSetPNG = `/${characterSlug}_y_s@1x.png 1x, /${characterSlug}_y_s@2x.png 2x, /${characterSlug}_y_s@3x.png 3x`;
-  const portraitSrcSetWEBP = `/${characterSlug}_y_s@1x.webp 1x, /${characterSlug}_y_s@2x.webp 2x, /${characterSlug}_y_s@3x.webp 3x`;
-  const factionSrcSetPNG = `/${faction}_emblem@1x.png 1x, /${faction}_emblem@2x.png 2x, /${faction}_emblem@3x.png 3x`;
-  const factionSrcSetWEBP = `/${faction}_emblem@1x.webp 1x, /${faction}_emblem@2x.webp 2x, /${faction}_emblem@3x.webp 3x`;
+  const portraitSrcSetPNG = `/${characterSlug}_y_s@1x-${ASSETS_VERSION}.png 1x, /${characterSlug}_y_s@2x-${ASSETS_VERSION}.png 2x, /${characterSlug}_y_s@3x-${ASSETS_VERSION}.png 3x`;
+  const portraitSrcSetWEBP = `/${characterSlug}_y_s@1x-${ASSETS_VERSION}.webp 1x, /${characterSlug}_y_s@2x-${ASSETS_VERSION}.webp 2x, /${characterSlug}_y_s@3x-${ASSETS_VERSION}.webp 3x`;
+  const factionSrcSetPNG = `/${faction}_emblem@1x-${ASSETS_VERSION}.png 1x, /${faction}_emblem@2x-${ASSETS_VERSION}.png 2x, /${faction}_emblem@3x-${ASSETS_VERSION}.png 3x`;
+  const factionSrcSetWEBP = `/${faction}_emblem@1x-${ASSETS_VERSION}.webp 1x, /${faction}_emblem@2x-${ASSETS_VERSION}.webp 2x, /${faction}_emblem@3x-${ASSETS_VERSION}.webp 3x`;
 
   return (
     <Link

@@ -29,12 +29,14 @@ export type Character =
   | "Flayn"
   | "Hanneman"
   | "Manuela"
+  | "Jeritza"
   | "Gilbert"
   | "Alois"
   | "Catherine"
   | "Shamir"
   | "Cyril"
-  | "Rhea";
+  | "Rhea"
+  | "Sothis";
 
 export enum OrderedCharacterIndex {
   "Byleth M" = 0,
@@ -67,12 +69,14 @@ export enum OrderedCharacterIndex {
   "Flayn",
   "Hanneman",
   "Manuela",
+  "Jeritza",
   "Gilbert",
   "Alois",
   "Catherine",
   "Shamir",
   "Cyril",
   "Rhea",
+  "Sothis",
 }
 
 export type Faction = "empire" | "holy" | "alliance" | "church" | null;

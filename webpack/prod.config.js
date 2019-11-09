@@ -10,6 +10,8 @@ const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require("webpack");
 
+const ASSETS_VERSION = 1;
+
 module.exports = {
   devtool: undefined,
   entry: {
@@ -104,10 +106,22 @@ module.exports = {
       {
         from: path.resolve(__dirname, "../src/images/"),
         to: path.resolve(__dirname, "../build/"),
+        transformPath(targetPath, absolutePath) {
+          const [fileName, fileExtension] = targetPath.split(".");
+          return `${fileName}-${ASSETS_VERSION}.${fileExtension}`;
+        },
+      },
+      {
+        from: path.resolve(__dirname, "../src/icons/"),
+        to: path.resolve(__dirname, "../build/"),
       },
       {
         from: path.resolve(__dirname, "../src/json/"),
         to: path.resolve(__dirname, "../build/"),
+        transformPath(targetPath, absolutePath) {
+          const [fileName, fileExtension] = targetPath.split(".");
+          return `${fileName}-${ASSETS_VERSION}.${fileExtension}`;
+        },
       },
       {
         from: path.resolve(__dirname, "../src/fonts/"),
@@ -128,6 +142,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify("production"),
+      "process.env.ASSETS_VERSION": `${ASSETS_VERSION}`,
     }),
     ...(process.env.WBA ? [new BundleAnalyzerPlugin()] : []),
     new ManifestPlugin(),

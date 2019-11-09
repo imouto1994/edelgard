@@ -29,38 +29,64 @@ export default function EndingsCard(props: Props): VNode<Props> {
     characterBSlug,
     endings,
   } = props;
-  const portraitAJPGs = [
-    `/${characterASlug}_l@1x.jpg`,
-    `/${characterASlug}_l@2x.jpg`,
-    `/${characterASlug}_l@3x.jpg`,
-    `/${characterASlug}_l@4x.jpg`,
-  ];
-  const portraitAWEBPs = [
-    `/${characterASlug}_l@1x.webp`,
-    `/${characterASlug}_l@2x.webp`,
-    `/${characterASlug}_l@3x.webp`,
-    `/${characterASlug}_l@4x.webp`,
-  ];
-  const portraitBJPGs = [
-    `/${characterBSlug}_l@1x.jpg`,
-    `/${characterBSlug}_l@2x.jpg`,
-    `/${characterBSlug}_l@3x.jpg`,
-    `/${characterBSlug}_l@4x.jpg`,
-  ];
-  const portraitBWEBPs = [
-    `/${characterBSlug}_l@1x.webp`,
-    `/${characterBSlug}_l@2x.webp`,
-    `/${characterBSlug}_l@3x.webp`,
-    `/${characterBSlug}_l@4x.webp`,
-  ];
+  const [selectedRouteIndex, setSelectedRouteIndex] = useState(0);
+  const { ASSETS_VERSION } = process.env;
   const availableRoutes = getAvailableRoutesFromEndings(endings);
 
-  const [selectedRouteIndex, setSelectedRouteIndex] = useState(0);
   const selectedRoute = availableRoutes[selectedRouteIndex];
   const selectedEndingContent = getEndingContentForRoute(
     endings,
     selectedRoute,
   );
+
+  let suffixA = "";
+  if (
+    selectedRoute === 0 &&
+    (characterA === "Byleth M" || characterA === "Byleth F")
+  ) {
+    suffixA = "_n";
+  }
+
+  let suffixB = "";
+  if (
+    selectedRoute === 0 &&
+    (characterB === "Byleth M" || characterB === "Byleth F")
+  ) {
+    suffixB = "_n";
+  }
+
+  const portraitAJPGs = availableRoutes.length
+    ? [
+        `/${characterASlug}${suffixA}_l@1x-${ASSETS_VERSION}.jpg`,
+        `/${characterASlug}${suffixA}_l@2x-${ASSETS_VERSION}.jpg`,
+        `/${characterASlug}${suffixA}_l@3x-${ASSETS_VERSION}.jpg`,
+        `/${characterASlug}${suffixA}_l@4x-${ASSETS_VERSION}.jpg`,
+      ]
+    : [];
+  const portraitAWEBPs = availableRoutes.length
+    ? [
+        `/${characterASlug}${suffixA}_l@1x-${ASSETS_VERSION}.webp`,
+        `/${characterASlug}${suffixA}_l@2x-${ASSETS_VERSION}.webp`,
+        `/${characterASlug}${suffixA}_l@3x-${ASSETS_VERSION}.webp`,
+        `/${characterASlug}${suffixA}_l@4x-${ASSETS_VERSION}.webp`,
+      ]
+    : [];
+  const portraitBJPGs = availableRoutes.length
+    ? [
+        `/${characterBSlug}${suffixB}_l@1x-${ASSETS_VERSION}.jpg`,
+        `/${characterBSlug}${suffixB}_l@2x-${ASSETS_VERSION}.jpg`,
+        `/${characterBSlug}${suffixB}_l@3x-${ASSETS_VERSION}.jpg`,
+        `/${characterBSlug}${suffixB}_l@4x-${ASSETS_VERSION}.jpg`,
+      ]
+    : [];
+  const portraitBWEBPs = availableRoutes.length
+    ? [
+        `/${characterBSlug}${suffixB}_l@1x-${ASSETS_VERSION}.webp`,
+        `/${characterBSlug}${suffixB}_l@2x-${ASSETS_VERSION}.webp`,
+        `/${characterBSlug}${suffixB}_l@3x-${ASSETS_VERSION}.webp`,
+        `/${characterBSlug}${suffixB}_l@4x-${ASSETS_VERSION}.webp`,
+      ]
+    : [];
 
   return (
     <div className={classnames(styles.endingsCard, className)}>
@@ -90,8 +116,9 @@ export default function EndingsCard(props: Props): VNode<Props> {
         <div className={styles.routes}>
           {availableRoutes.map((route: OrderedRoute, index: number) => {
             const faction = getRouteFaction(route);
-            const factionSrcSetWEBP = `/${faction}_emblem@1x.webp 1x, /${faction}_emblem@2x.webp 2x, /${faction}_emblem@3x.webp 3x`;
-            const factionSrcSetPNG = `/${faction}_emblem@1x.png 1x, /${faction}_emblem@2x.png 2x, /${faction}_emblem@3x.png 3x`;
+            const factionSrcSetWEBP = `/${faction}_emblem@1x-${ASSETS_VERSION}.webp 1x, /${faction}_emblem@2x-${ASSETS_VERSION}.webp 2x, /${faction}_emblem@3x-${ASSETS_VERSION}.webp 3x`;
+            const factionSrcSetPNG = `/${faction}_emblem@1x-${ASSETS_VERSION}.png 1x, /${faction}_emblem@2x-${ASSETS_VERSION}.png 2x, /${faction}_emblem@3x-${ASSETS_VERSION}.png 3x`;
+
             return (
               <picture className={styles.factionPicture} key={route}>
                 <source type="image/webp" srcSet={factionSrcSetWEBP} />
@@ -134,6 +161,12 @@ type PortraitPicProps = {
 
 function PortraitPic(props: PortraitPicProps): VNode<PortraitPicProps> {
   const { className, character, portraitJPGs, portraitWEBPs } = props;
+
+  if (portraitJPGs.length === 0 || portraitWEBPs.length === 0) {
+    return (
+      <div className={classnames(styles.portraitPicture, className)}></div>
+    );
+  }
 
   return (
     <picture className={classnames(styles.portraitPicture, className)}>

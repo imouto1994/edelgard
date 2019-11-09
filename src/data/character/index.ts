@@ -38,12 +38,14 @@ export const orderedCharacters: Character[] = [
   "Flayn",
   "Hanneman",
   "Manuela",
+  "Jeritza",
   "Gilbert",
   "Alois",
   "Catherine",
   "Shamir",
   "Cyril",
   "Rhea",
+  "Sothis",
 ];
 
 export const characterOrderedIndexMap: {
@@ -90,6 +92,8 @@ export const orderedCharacterFactionIndices: OrderedFactionIndex[] = [
   4,
   4,
   4,
+  4,
+  0,
 ];
 
 export const orderedFactions: Faction[] = [

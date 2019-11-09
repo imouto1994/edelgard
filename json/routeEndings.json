@@ -1,10 +1,19 @@
 {
   "Byleth M": {
+    "Sothis": [
+      "Byleth fought alongside Edelgard to bring an end to the tyranny of a godlike being. Though he was wounded in the battle and lost the power of the progenitor god, he remained determined to walk his destined path. With his legendary blade in hand, he will never stop standing against those who slither in the dark until Fódlan at last knows everlasting peace.",
+      "Byleth helped Dimitri to finally crush the ambitions of the Empire. After the war, Rhea stepped down from her role as archbishop, and Byleth swore to lead the Church of Seiros in her stead. He helped to guide the Holy Kingdom of Faerghus as it brought leadership to the newly unified Fódlan and worked tirelessly to create a peaceful world free from the shackles of oppression.",
+      "Together, Byleth and Claude sent the Fell King Nemesis, a foe from a bygone age, back to the flames of eternity from whence he came. Afterward, Claude left Fódlan, leaving Byleth to ascend the throne as the first leader of the United Kingdom of Fódlan. As he took his schemes and dreams and efforts to a far-off land, he hoped dearly that their joint efforts would one day allow for a world where all of humanity can coexist in peace and harmony, regardless of borders or bloodlines.",
+      "Byleth defeated those who slither in the dark and put down the crazed Immaculate One. In the aftermath of the loss of Fódlan's great leading figures, he ascended the throne as the first leader of the United Kingdom of Fódlan. In his heart lived the indelible hope that their efforts would one day yield an era in which the people knew true peace and the horrors of war were a hazy memory of the past."
+    ],
+    "Jeritza": [
+      "After the war for Fodlan, Byleth and Jeritza threw themselves fully into Emperor Edelgard's struggle against those who slither in the dark. Though the battle proved vicious, none could stand against the combined might of shining sword and reaper's scythe, and the pair became venerated by history as heroes of Adrestia. Once those who slither in the dark were forever vanquished, the two heroes stole away in secret and vanished without a trace. Their whereabouts thereafter have been the subject of much conjecture among historians.",
+      null,
+      null,
+      null
+    ],
     "Edelgard": [
-      [
-        "Byleth fought alongside Edelgard to bring an end to the tyranny of a godlike being. Though he was wounded in the battle and lost the power of the progenitor god, he remained determined to walk his destined path. With his legendary blade in hand, he will never stop standing against those who slither in the dark until Fódlan at last knows everlasting peace.",
-        "Byleth and Edelgard ended the tyranny of a godlike being. Byleth was wounded and lost the power of the progenitor god, but it mattered not, as he and Edelgard had each other. To ensure lasting peace, the two fought against those who slither in the dark, and to ensure a society where people can rise and fall by their own merits, they spent their lives reforming the antiquated class system. They achieved much in their time together, and it is said that they were sometimes spotted leaving the palace to privately enjoy the world they had created. How they spent those precious moments, none but the two of them will ever know."
-      ],
+      "Byleth and Edelgard ended the tyranny of a godlike being. Byleth was wounded and lost the power of the progenitor god, but it mattered not, as he and Edelgard had each other. To ensure lasting peace, the two fought against those who slither in the dark, and to ensure a society where people can rise and fall by their own merits, they spent their lives reforming the antiquated class system. They achieved much in their time together, and it is said that they were sometimes spotted leaving the palace to privately enjoy the world they had created. How they spent those precious moments, none but the two of them will ever know.",
       null,
       null,
       null
@@ -13,10 +22,7 @@
       null,
       null,
       null,
-      [
-        "Byleth defeated those who slither in the dark and put down the crazed Immaculate One. In the aftermath of the loss of Fódlan's great leading figures, he ascended the throne as the first leader of the United Kingdom of Fódlan. In his heart lived the indelible hope that their efforts would one day yield an era in which the people knew true peace and the horrors of war were a hazy memory of the past.",
-        "After finally saving both Fódlan and Rhea from crisis, Byleth ascended the throne as the first leader of the United Kingdom of Fódlan. From his temporary residence at Garreg Mach Monastery, he endeavored to restore and develop Fódlan. Having narrowly escaped death, Rhea took time to recover her strength before returning to her role as archbishop. Upon her return, she applied herself to rehabilitating the church and helping those who had suffered because of the war. Thereafter, the two worked closely to forge new policies and achieve progress for Fódlan. The pair's collective work came to be thought of as nothing short of miraculous."
-      ]
+      "After finally saving both Fódlan and Rhea from crisis, Byleth ascended the throne as the first leader of the United Kingdom of Fódlan. From his temporary residence at Garreg Mach Monastery, he endeavored to restore and develop Fódlan. Having narrowly escaped death, Rhea took time to recover her strength before returning to her role as archbishop. Upon her return, she applied herself to rehabilitating the church and helping those who had suffered because of the war. Thereafter, the two worked closely to forge new policies and achieve progress for Fódlan. The pair's collective work came to be thought of as nothing short of miraculous."
     ],
     "Dimitri": [
       null,
@@ -196,11 +202,20 @@
     ]
   },
   "Byleth F": {
+    "Jeritza": [
+      "After the war for Fodlan, Byleth and Jeritza threw themselves fully into Emperor Edelgard's struggle against those who slither in the dark. Though the battle proved vicious, none could stand against the combined might of shining sword and reaper's scythe, and the pair became venerated by history as heroes of Adrestia. Once those who slither in the dark were forever vanquished, the two heroes stole away in secret and vanished without a trace. Their whereabouts thereafter have been the subject of much conjecture among historians.",
+      null,
+      null,
+      null
+    ],
+    "Sothis": [
+      "Byleth fought alongside Edelgard to bring an end to the tyranny of a godlike being. Though she was wounded in the battle and lost the power of the progenitor god, she remained determined to walk his destined path. With her legendary blade in hand, she will never stop standing against those who slither in the dark until Fódlan at last knows everlasting peace.",
+      "Byleth helped Dimitri to finally crush the ambitions of the Empire. After the war, Rhea stepped down from her role as archbishop, and Byleth swore to lead the Church of Seiros in her stead. She helped to guide the Holy Kingdom of Faerghus as it brought leadership to the newly unified Fódlan and worked tirelessly to create a peaceful world free from the shackles of oppression.",
+      "Together, Byleth and Claude sent the Fell King Nemesis, a foe from a bygone age, back to the flames of eternity from whence he came. Afterward, Claude left Fódlan, leaving Byleth to ascend the throne as the first leader of the United Kingdom of Fódlan. As he took his schemes and dreams and efforts to a far-off land, he hoped dearly that their joint efforts would one day allow for a world where all of humanity can coexist in peace and harmony, regardless of borders or bloodlines.",
+      "Byleth defeated those who slither in the dark and put down the crazed Immaculate One. In the aftermath of the loss of Fódlan's great leading figures, she ascended the throne as the first leader of the United Kingdom of Fódlan. In his heart lived the indelible hope that their efforts would one day yield an era in which the people knew true peace and the horrors of war were a hazy memory of the past."
+    ],
     "Edelgard": [
-      [
-        "Byleth fought alongside Edelgard to bring an end to the tyranny of a godlike being. Though she was wounded in the battle and lost the power of the progenitor god, she remained determined to walk her destined path. With her legendary blade in hand, she will never stop standing against those who slither in the dark until Fódlan at last knows everlasting peace.",
-        "Byleth and Edelgard ended the tyranny of a godlike being. Byleth was wounded and lost the power of the progenitor god, but it mattered not, as she and Edelgard had each other. To ensure lasting peace, the two fought against those who slither in the dark, and to ensure a society where people can rise and fall by their own merits, they spent their lives reforming the antiquated class system. They achieved much in their time together, and it is said that they were sometimes spotted leaving the palace to privately enjoy the world they had created. How they spent those precious moments, none but the two of them will ever know."
-      ],
+      "Byleth and Edelgard ended the tyranny of a godlike being. Byleth was wounded and lost the power of the progenitor god, but it mattered not, as she and Edelgard had each other. To ensure lasting peace, the two fought against those who slither in the dark, and to ensure a society where people can rise and fall by their own merits, they spent their lives reforming the antiquated class system. They achieved much in their time together, and it is said that they were sometimes spotted leaving the palace to privately enjoy the world they had created. How they spent those precious moments, none but the two of them will ever know.",
       null,
       null,
       null
@@ -209,27 +224,18 @@
       null,
       null,
       null,
-      [
-        "Byleth defeated those who slither in the dark and put down the crazed Immaculate One. In the aftermath of the loss of Fódlan's great leading figures, she ascended the throne as the first leader of the United Kingdom of Fódlan. In her heart lived the indelible hope that their efforts would one day yield an era in which the people knew true peace and the horrors of war were a hazy memory of the past.",
-        "After finally saving both Fódlan and Rhea from crisis, Byleth ascended the throne as the first leader of the United Kingdom of Fódlan. From her temporary residence at Garreg Mach Monastery, she endeavored to restore and develop Fódlan. Having narrowly escaped death, Rhea took time to recover her strength before returning to her role as archbishop. Upon her return, she applied herself to rehabilitating the church and helping those who had suffered because of the war. Thereafter, the two worked closely to forge new policies and achieve progress for Fódlan. The pair's collective work came to be thought of as nothing short of miraculous."
-      ]
+      "After finally saving both Fódlan and Rhea from crisis, Byleth ascended the throne as the first leader of the United Kingdom of Fódlan. From her temporary residence at Garreg Mach Monastery, she endeavored to restore and develop Fódlan. Having narrowly escaped death, Rhea took time to recover her strength before returning to her role as archbishop. Upon her return, she applied herself to rehabilitating the church and helping those who had suffered because of the war. Thereafter, the two worked closely to forge new policies and achieve progress for Fódlan. The pair's collective work came to be thought of as nothing short of miraculous."
     ],
     "Dimitri": [
       null,
-      [
-        "Byleth helped Dimitri to finally crush the ambitions of the Empire. After the war, Rhea stepped down from her role as archbishop, and Byleth swore to lead the Church of Seiros in her stead. She helped to guide the Holy Kingdom of Faerghus as it brought leadership to the newly unified Fódlan and worked tirelessly to create a peaceful world free from the shackles of oppression.",
-        "Paired with the end of the war, the joyous marriage of Byleth, the newly-appointed archbishop, and Dimitri, the newly-crowned king of Faerghus, gave the people of Fódlan much to celebrate. The two were devoted to improving life for the people and to seeking greater wisdom in order to reform the government and the church from the inside out. As leaders of church and state respectively, at times they engaged in heated debate. Even still, when enjoying a long horse ride or a quiet evening, they were not as the world saw them, but rather two adoring spouses, desperately in love. They remained as such for the rest of their days."
-      ],
+      "Paired with the end of the war, the joyous marriage of Byleth, the newly-appointed archbishop, and Dimitri, the newly-crowned king of Faerghus, gave the people of Fódlan much to celebrate. The two were devoted to improving life for the people and to seeking greater wisdom in order to reform the government and the church from the inside out. As leaders of church and state respectively, at times they engaged in heated debate. Even still, when enjoying a long horse ride or a quiet evening, they were not as the world saw them, but rather two adoring spouses, desperately in love. They remained as such for the rest of their days.",
       null,
       null
     ],
     "Claude": [
       null,
       null,
-      [
-        "Together, Byleth and Claude sent the Fell King Nemesis, a foe from a bygone age, back to the flames of eternity from whence he came. Afterward, Claude left Fódlan, leaving Byleth to ascend the throne as the first leader of the United Kingdom of Fódlan. As he took his schemes and dreams and efforts to a far-off land, he hoped dearly that their joint efforts would one day allow for a world where all of humanity can coexist in peace and harmony, regardless of borders or bloodlines.",
-        "After ascending the throne as the first leader of the United Kingdom of Fódlan, Byleth sought to rebuild the war-torn towns and villages and to help guide the reformation of the Church of Seiros. After a few months of peace, remnants of the Imperial army joined with those who slither in the dark and marched upon the capital city of Derdriu. The new kingdom lacked the power to repel the invaders, but when defeat seemed imminent, a battle cry rang out from the east. Claude, the newly-crowned King of Almyra, led a mighty army that broke through the rebel forces with ease. This show of solidarity forever altered the course of history, heralding a new age of unity."
-      ],
+      "After ascending the throne as the first leader of the United Kingdom of Fódlan, Byleth sought to rebuild the war-torn towns and villages and to help guide the reformation of the Church of Seiros. After a few months of peace, remnants of the Imperial army joined with those who slither in the dark and marched upon the capital city of Derdriu. The new kingdom lacked the power to repel the invaders, but when defeat seemed imminent, a battle cry rang out from the east. Claude, the newly-crowned King of Almyra, led a mighty army that broke through the rebel forces with ease. This show of solidarity forever altered the course of history, heralding a new age of unity.",
       null
     ],
     "Hubert": [
@@ -342,6 +348,8 @@
     ]
   },
   "Rhea": {},
+  "Jeritza": {},
+  "Sothis": {},
   "Dimitri": {
     "Dimitri": [
       null,
@@ -939,6 +947,12 @@
     ]
   },
   "Mercedes": {
+    "Jeritza": [
+      "Once those who slither in the dark were finally defeated, Mercedes left home and opened a small orphanage in the Faerghus region with her mother. After many years of kind service raising children who had lost their families, she received a letter bearing familiar handwriting. Its author, a prisoner in Enbarr, expressed his sincerest well-wishes to Mercedes and her family. Still more time passed until, one day, the man who wrote the letter paid her a visit. With joyful tears in her eyes, Mercedes smiled, took Emile by the hand, and at last welcomed him home.",
+      null,
+      null,
+      null
+    ],
     "Mercedes": [
       "Mercedes left home and opened a small orphanage in the Faerghus region with her mother. There, she took in and raised children who had lost their families in the war, regardless of their blood or circumstances of birth. It is said that, in the town which grew around this orphanage, the children never failed to smile.",
       "Mercedes left home and went to Garreg Mach, where she became a model cleric. She devoted the whole of her life to the service of the goddess and became well-loved by the people, who revered her for her piety and her boundless generosity toward those in need.",

@@ -56,13 +56,14 @@ function PageEndingsWithCharacters(
   props: PageEndingsWithCharactersProps,
 ): VNode<PageEndingsWithCharactersProps> | null {
   const { characterA, characterB, characterASlug, characterBSlug } = props;
+  const { ASSETS_VERSION } = process.env;
   const [endings, setEndings] = useState<Ending[]>([]);
 
   useEffect(() => {
     const jsonFile =
       characterASlug < characterBSlug
-        ? `/${characterASlug}_${characterBSlug}.json`
-        : `/${characterBSlug}_${characterASlug}.json`;
+        ? `/${characterASlug}_${characterBSlug}-${ASSETS_VERSION}.json`
+        : `/${characterBSlug}_${characterASlug}-${ASSETS_VERSION}.json`;
     fetch(jsonFile)
       .then((response: Response) => response.json())
       .then((endings: unknown) => {

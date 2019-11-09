@@ -70,10 +70,22 @@ module.exports = {
       {
         from: path.resolve(__dirname, "../src/images/"),
         to: path.resolve(__dirname, "../build"),
+        transformPath(targetPath, absolutePath) {
+          const [fileName, fileExtension] = targetPath.split(".");
+          return `${fileName}-${ASSETS_VERSION}.${fileExtension}`;
+        },
       },
       {
         from: path.resolve(__dirname, "../src/json/"),
         to: path.resolve(__dirname, "../build"),
+        transformPath(targetPath, absolutePath) {
+          const [fileName, fileExtension] = targetPath.split(".");
+          return `${fileName}-${ASSETS_VERSION}.${fileExtension}`;
+        },
+      },
+      {
+        from: path.resolve(__dirname, "../src/icons/"),
+        to: path.resolve(__dirname, "../build/"),
       },
       {
         from: path.resolve(__dirname, "../src/fonts/"),
