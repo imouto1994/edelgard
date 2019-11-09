@@ -46,6 +46,3 @@ workbox.routing.registerRoute(
       caches.match(workbox.precaching.getCacheKeyForURL("/layout.html")),
     ),
 );
-
-//Single line to make GA work offline.
-workbox.googleAnalytics.initialize();
