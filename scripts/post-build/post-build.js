@@ -34,6 +34,9 @@ const mainJSURL = manifestJSON["main.js"];
 const swContent = terser.minify(
   fs.readFileSync(path.resolve(__dirname, "./sw.js"), "utf-8"),
 ).code;
+const gaContent = terser.minify(
+  fs.readFileSync(path.resolve(__dirname, "./ga.js"), "utf-8"),
+).code;
 
 function ensureDirSync(dirPath) {
   try {
@@ -62,6 +65,7 @@ function ensureDirSync(dirPath) {
       jsonURLs: [],
       jsRuntimeContent: runtimeJSContent,
       requiredChunks: JSON.stringify(["vendors~main", "main"]),
+      gaContent,
       swContent,
       url: `https://fe3h.noobsaigon.com${url === "/" ? "" : url}`,
     };
@@ -108,6 +112,7 @@ function ensureDirSync(dirPath) {
     jsonURLs: [],
     jsRuntimeContent: runtimeJSContent,
     requiredChunks: JSON.stringify(["vendors~main", "main"]),
+    gaContent,
     swContent,
     url: `https://fe3h.noobsaigon.com`,
   };

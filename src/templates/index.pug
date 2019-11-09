@@ -22,10 +22,11 @@ html(lang="en")
     link(rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png")/
     link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png")/
     link(rel="manifest" href="/app-manifest.json")/
-    link(rel="preload" crossorigin="" href="/eb-garamond-regular.woff2" as="font")/
-    link(rel="preload" crossorigin="" href="/eb-garamond-semibold.woff2" as="font")/
+    link(rel="dns-prefetch preconnect" href="https://www.google-analytics.com" crossorigin)/
+    link(rel="preload" crossorigin href="/eb-garamond-regular.woff2" as="font")/
+    link(rel="preload" crossorigin href="/eb-garamond-semibold.woff2" as="font")/
     each jsonURL in jsonURLs
-      link(rel="preload" crossorigin="" href=jsonURL as="fetch")/
+      link(rel="preload" crossorigin href=jsonURL as="fetch")/
     each jsBundleURL in jsBundleURLs
       link(rel="preload" href=jsBundleURL as="script")/
     style(data-href=cssInline.url) !{cssInline.content}
@@ -33,6 +34,8 @@ html(lang="en")
     div(id="root") !{appContent}
     script(id="requiredChunks" type="application/json") !{requiredChunks}
     script !{jsRuntimeContent}
+    script !{gaContent}
     each jsBundleURL in jsBundleURLs
       script(src=jsBundleURL async="")
     script !{swContent}
+    script(src="https://www.google-analytics.com/analytics.js" async="")
