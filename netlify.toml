@@ -7,3 +7,33 @@
   for = "*.woff2" # Cache font files for long period
   [headers.values]
     Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.js" # Cache JS files for long period
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.css" # Cache CSS files for long period
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.json" # Cache JSON files for long period
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.jpg" # Cache JPEG files for long period
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.png" # Cache PNG files for long period
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.webp" # Cache WEBP files for long period
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"

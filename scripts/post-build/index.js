@@ -9,4 +9,4 @@ require("css-modules-require-hook")({
   rootDir: path.resolve(__dirname, "../../src"),
 });
 
-require("./gen-htmls");
+require("./post-build");

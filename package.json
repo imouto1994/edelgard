@@ -6,10 +6,10 @@
   "author": "Nhan Bui <imouto1994@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "PLATFORM=browser NODE_ENV=production webpack --config ./webpack/prod.config.js && yarn gen-htmls",
+    "build": "PLATFORM=browser NODE_ENV=production webpack --config ./webpack/prod.config.js && yarn post-build",
     "dev": "PLATFORM=browser NODE_ENV=development webpack-dev-server --config ./webpack/dev.config.js --progress --color --open",
     "eslint": "eslint ./src --max-warnings 0 --cache --ext .js,.tsx,.ts",
-    "gen-htmls": "PLATFORM=node node scripts/gen-htmls",
+    "post-build": "PLATFORM=node node scripts/post-build",
     "lint": "yarn eslint && yarn stylelint",
     "serve": "serve build/ -l 9000",
     "stylelint": "stylelint 'src/**/*.css' --cache",
@@ -81,6 +81,6 @@
     "webpack-cli": "3.3.9",
     "webpack-dev-server": "3.8.2",
     "webpack-manifest-plugin": "2.2.0",
-    "workbox-webpack-plugin": "4.3.1"
+    "workbox-build": "4.3.1"
   }
 }

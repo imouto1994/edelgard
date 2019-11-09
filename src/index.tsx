@@ -53,11 +53,20 @@ if (process.env.NODE_ENV === "development") {
 
     checkReadyState();
   }).then(() => {
-    hydrate(
-      <Router hook={useLocation}>
-        <Root />
-      </Router>,
-      rootElement,
-    );
+    if (rootElement.innerHTML.length > 0) {
+      hydrate(
+        <Router hook={useLocation}>
+          <Root />
+        </Router>,
+        rootElement,
+      );
+    } else {
+      render(
+        <Router hook={useLocation}>
+          <Root />
+        </Router>,
+        rootElement,
+      );
+    }
   });
 }
