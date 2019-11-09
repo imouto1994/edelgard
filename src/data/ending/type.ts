@@ -7,7 +7,9 @@ export enum OrderedRoute {
   "Silver Snow",
 }
 
+export type EndingRoute = [OrderedRoute, number, number];
+
 export type Ending = {
   content: string;
-  routes: OrderedRoute[];
+  routes: EndingRoute[];
 };

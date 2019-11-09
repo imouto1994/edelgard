@@ -3,6 +3,8 @@ const webpack = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const ASSETS_VERSION = 2;
+
 module.exports = {
   devtool: "cheap-module-eval-source-map",
   devServer: {
@@ -95,6 +97,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify("development"),
+      "process.env.ASSETS_VERSION": `${ASSETS_VERSION}`,
     }),
   ],
   resolve: {

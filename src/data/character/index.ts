@@ -96,6 +96,57 @@ export const orderedCharacterFactionIndices: OrderedFactionIndex[] = [
   0,
 ];
 
+export const orderedCharacterTitles: (string[])[] = [
+  [
+    "Wings of the Hegemon",
+    "Guardian of Order",
+    "Ruler of Dawn",
+    "Wandering Flame",
+  ],
+  [
+    "Wings of the Hegemon",
+    "Guardian of Order",
+    "Ruler of Dawn",
+    "Wandering Flame",
+  ],
+  ["Flame Emperor"], // Edelgard
+  ["Savior King"], // Dimitri
+  ["King of Unification"], // Claude
+  ["Emperor's Confidant"], // Hubert
+  ["Noblest of Nobles"], // Ferdinand
+  ["Ragamuffin Sage", "Sleepy Crest Scholar"], // Linhardt
+  ["Roaming Instigator", "Hotheaded General"], // Caspar
+  ["Eternal Loner"], // Bernadetta
+  ["Devoted Heart", "Mystical Songstress"], // Dorothea
+  ["Seafaring Princess", "Queen of Brigid"], // Petra
+  ["Taciturn Devotee"], // Dedue
+  ["The Shield's Successor", "Meandering Sword"], // Felix
+  ["Arrow of Justice"], // Ashe
+  ["Sincerest of Knights"], // Sylvain
+  ["Benevolent Soul"], // Mercedes
+  ["Bloomed Overachiever"], // Annette
+  ["Stalwart Knight"], // Ingrid
+  ["Noble of the Red Rose"], // Lorenz
+  ["Beast of Leicester"], // Raphael
+  ["Worldly Artist"], // Ignatz
+  ["Scholar of Misfortune"], // Lysithea
+  ["Survivor of the Curse"], // Marianne
+  ["Free Spirit"], // Hilda
+  ["The Blade Breaker II"], // Leonie
+  ["Ally of the Archbishop", "Heir of Purpose"], // Seteth
+  ["Slumbering Princess"], // Flayn
+  ["Father of Crestology"], // Hanneman
+  ["Divine Songstress"], // Manuela
+  ["Bloodstained Demon"], // Jeritza
+  ["Veteran Patriot"], // Gilbert
+  ["Family Man", "Sun of the Knights"], // Alois
+  ["Guardian of Zanado", "Free Knight"], // Catherine
+  ["Distant Archer"], // Shamir
+  ["Limitless Potential"], // Cyril
+  [""],
+  [""],
+];
+
 export const orderedFactions: Faction[] = [
   null,
   "empire",

@@ -88,6 +88,42 @@
   height: 100%;
 }
 
+.badgeContainer {
+  position: relative;
+  text-align: center;
+
+  @media all and (min-width: $dekstop) {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.badgeContainerB {
+  @media all and (min-width: $dekstop) {
+    right: initial;
+    left: 0;
+  }
+}
+
+.badgeCaption {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4e4936;
+
+  @media all and (min-width: $tabletPortrait) {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  @media all and (min-width: $dekstop) {
+    font-size: 18px;
+  }
+}
+
+.badgeCaption::after {
+  content: "\200b";
+}
+
 .badge {
   position: relative;
   width: 182px;
@@ -99,16 +135,9 @@
   }
 
   @media all and (min-width: $dekstop) {
-    position: absolute;
-    right: 0;
     width: 363px;
     height: 48px;
-  }
-}
-
-.badgeB {
-  @media all and (min-width: $dekstop) {
-    left: 0;
+    margin-top: 4px;
   }
 }
 

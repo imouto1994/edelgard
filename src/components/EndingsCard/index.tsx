@@ -4,12 +4,16 @@ import { h, VNode } from "preact";
 import { useState } from "preact/hooks";
 import classnames from "classnames";
 
+import {
+  orderedCharacterTitles,
+  characterOrderedIndexMap,
+} from "../../data/character";
 import { Character } from "../../data/character/type";
 import {
   getAvailableRoutesFromEndings,
   getEndingContentForRoute,
 } from "../../data/ending";
-import { Ending, OrderedRoute } from "../../data/ending/type";
+import { Ending, OrderedRoute, EndingRoute } from "../../data/ending/type";
 
 type Props = {
   className?: string;
@@ -39,9 +43,23 @@ export default function EndingsCard(props: Props): VNode<Props> {
     selectedRoute,
   );
 
+  const titleA =
+    selectedRoute != null
+      ? orderedCharacterTitles[characterOrderedIndexMap[characterA]][
+          characterA < characterB ? selectedRoute[1] : selectedRoute[2]
+        ]
+      : "";
+  const titleB =
+    selectedRoute != null
+      ? orderedCharacterTitles[characterOrderedIndexMap[characterB]][
+          characterB < characterA ? selectedRoute[1] : selectedRoute[2]
+        ]
+      : "";
+
   let suffixA = "";
   if (
-    selectedRoute === 0 &&
+    selectedRoute != null &&
+    selectedRoute[0] === 0 &&
     (characterA === "Byleth M" || characterA === "Byleth F")
   ) {
     suffixA = "_n";
@@ -49,7 +67,8 @@ export default function EndingsCard(props: Props): VNode<Props> {
 
   let suffixB = "";
   if (
-    selectedRoute === 0 &&
+    selectedRoute != null &&
+    selectedRoute[0] === 0 &&
     (characterB === "Byleth M" || characterB === "Byleth F")
   ) {
     suffixB = "_n";
@@ -97,7 +116,10 @@ export default function EndingsCard(props: Props): VNode<Props> {
             portraitJPGs={portraitAJPGs}
             portraitWEBPs={portraitAWEBPs}
           />
-          <Badge name={characterA} className={styles.badge} />
+          <div className={styles.badgeContainer}>
+            <span className={styles.badgeCaption}>{titleA}</span>
+            <Badge name={characterA} className={styles.badge} />
+          </div>
         </div>
         <div className={classnames(styles.character, styles.characterB)}>
           <PortraitPic
@@ -106,16 +128,21 @@ export default function EndingsCard(props: Props): VNode<Props> {
             portraitJPGs={portraitBJPGs}
             portraitWEBPs={portraitBWEBPs}
           />
-          <Badge
-            name={characterB}
-            className={classnames(styles.badge, styles.badgeB)}
-          />
+          <div
+            className={classnames(
+              styles.badgeContainer,
+              styles.badgeContainerB,
+            )}
+          >
+            <span className={styles.badgeCaption}>{titleB}</span>
+            <Badge name={characterB} className={styles.badge} />
+          </div>
         </div>
       </div>
       <div className={styles.right}>
         <div className={styles.routes}>
-          {availableRoutes.map((route: OrderedRoute, index: number) => {
-            const faction = getRouteFaction(route);
+          {availableRoutes.map((route: EndingRoute, index: number) => {
+            const faction = getRouteFaction(route[0]);
             const factionSrcSetWEBP = `/${faction}_emblem@1x-${ASSETS_VERSION}.webp 1x, /${faction}_emblem@2x-${ASSETS_VERSION}.webp 2x, /${faction}_emblem@3x-${ASSETS_VERSION}.webp 3x`;
             const factionSrcSetPNG = `/${faction}_emblem@1x-${ASSETS_VERSION}.png 1x, /${faction}_emblem@2x-${ASSETS_VERSION}.png 2x, /${faction}_emblem@3x-${ASSETS_VERSION}.png 3x`;
 

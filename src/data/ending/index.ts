@@ -1,4 +1,4 @@
-import { Ending, OrderedRoute } from "./type";
+import { Ending, OrderedRoute, EndingRoute } from "./type";
 
 /* Utils */
 export function isRoute(o: unknown): o is OrderedRoute {
@@ -20,7 +20,11 @@ export function isEnding(o: unknown): o is Ending {
     return false;
   }
   for (const route of o["routes"]) {
-    if (!isRoute(route)) {
+    if (!(route instanceof Array)) {
+      return false;
+    }
+
+    if (!isRoute(route[0])) {
       return false;
     }
   }
@@ -51,9 +55,9 @@ export function isEndings(o: unknown): o is Ending[] {
 
 export function getAvailableRoutesFromEndings(
   endings: Ending[],
-): OrderedRoute[] {
-  const availableRoutes: OrderedRoute[] = endings.reduce(
-    (arr: OrderedRoute[], ending: Ending) => {
+): EndingRoute[] {
+  const availableRoutes: EndingRoute[] = endings.reduce(
+    (arr: EndingRoute[], ending: Ending) => {
       for (const route of ending.routes) {
         arr.push(route);
       }
@@ -63,7 +67,7 @@ export function getAvailableRoutesFromEndings(
     [],
   );
   availableRoutes.sort(
-    (routeA: OrderedRoute, routeB: OrderedRoute) => routeA - routeB,
+    (routeA: EndingRoute, routeB: EndingRoute) => routeA[0] - routeB[0],
   );
 
   return availableRoutes;
@@ -71,11 +75,13 @@ export function getAvailableRoutesFromEndings(
 
 export function getEndingContentForRoute(
   endings: Ending[],
-  route: OrderedRoute,
+  route: EndingRoute,
 ): string | null {
   for (const ending of endings) {
-    if (ending.routes.includes(route)) {
-      return ending.content;
+    for (const endingRoute of ending.routes) {
+      if (endingRoute[0] === route[0]) {
+        return ending.content;
+      }
     }
   }
 

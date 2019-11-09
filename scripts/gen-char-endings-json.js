@@ -63,8 +63,20 @@ function slugify(str) {
 
   for (const characterA of Object.keys(routeEndingsMap)) {
     for (const characterB of Object.keys(routeEndingsMap[characterA])) {
-      completeRouteEndingsMap[characterB][characterA] =
-        routeEndingsMap[characterA][characterB];
+      completeRouteEndingsMap[characterB][characterA] = Array.from({
+        length: 4,
+      }).map(() => null);
+      for (const endingIndex in routeEndingsMap[characterA][characterB]) {
+        const ending = routeEndingsMap[characterA][characterB][endingIndex];
+        if (ending != null) {
+          const [endingText, roleA, roleB] = ending;
+          completeRouteEndingsMap[characterB][characterA][endingIndex] = [
+            endingText,
+            roleB,
+            roleA,
+          ];
+        }
+      }
     }
   }
 
@@ -83,21 +95,20 @@ function slugify(str) {
       const endings = completeRouteEndingsMap[characterA][characterB];
       const endingRoutesMap = endings.reduce((map, ending, index) => {
         if (ending != null) {
-          const endingStr =
-            ending instanceof Array ? ending.join("\n") : ending;
+          const [endingStr, roleA, roleB] = ending;
           if (map[endingStr] == null) {
             map[endingStr] = [];
           }
-          map[endingStr].push(index);
+          map[endingStr].push([index, roleA, roleB]);
         }
 
         return map;
       }, {});
       charEndingsMap[characterA][characterB] = Object.keys(endingRoutesMap).map(
-        ending => {
+        endingStr => {
           return {
-            content: ending,
-            routes: endingRoutesMap[ending],
+            content: endingStr,
+            routes: endingRoutesMap[endingStr],
           };
         },
       );

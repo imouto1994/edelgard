@@ -80,7 +80,7 @@ function PageEndingsWithCharacters(
       .catch((err: Error) => {
         console.log("Page Endings", err.message);
       });
-  }, [characterASlug, characterBSlug]);
+  }, [characterASlug, characterBSlug, ASSETS_VERSION]);
 
   return (
     <Page
