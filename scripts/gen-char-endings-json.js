@@ -32,7 +32,6 @@ const orderedCharacters = [
   "Flayn",
   "Hanneman",
   "Manuela",
-  "Jeritza",
   "Gilbert",
   "Alois",
   "Catherine",
@@ -40,6 +39,12 @@ const orderedCharacters = [
   "Cyril",
   "Rhea",
   "Sothis",
+  "Anna",
+  "Jeritza",
+  "Yuri",
+  "Balthus",
+  "Constance",
+  "Hapi",
 ];
 const characterIndexMap = orderedCharacters.reduce((map, character, index) => {
   map[character] = index;

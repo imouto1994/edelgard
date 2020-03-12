@@ -1,10 +1,1 @@
-[
-  {
-    "content": "Once the long war against those who slither in the dark came to an end, Alois and his family moved to Remire Village and lived happily as farmers. It is said that from the moment he put down his sword and picked up a hoe, he never so much as thought about turning back.",
-    "routes": [[0, 0, 0]]
-  },
-  {
-    "content": "Once all the fighting had come to an end, Alois officially took up the position of captain of the Knights of Seiros. In this capacity, he was much beloved, and the Knights became more unified than ever under his command. It is said that their accomplishments during his tenure were beyond even what Jeralt's troop had achieved.",
-    "routes": [[1, 1, 1], [2, 1, 1], [3, 1, 1]]
-  }
-]
+[{"content":"Once the long war against those who slither in the dark came to an end, Alois and his family moved to Remire Village and lived happily as farmers. It is said that from the moment he put down his sword and picked up a hoe, he never so much as thought about turning back.","routes":[[0,0,0]]},{"content":"Once all the fighting had come to an end, Alois officially took up the position of captain of the Knights of Seiros. In this capacity, he was much beloved, and the Knights became more unified than ever under his command. It is said that their accomplishments during his tenure were beyond even what Jeralt's troop had achieved.","routes":[[1,1,1],[2,1,1],[3,1,1]]}]

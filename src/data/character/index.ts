@@ -38,7 +38,6 @@ export const orderedCharacters: Character[] = [
   "Flayn",
   "Hanneman",
   "Manuela",
-  "Jeritza",
   "Gilbert",
   "Alois",
   "Catherine",
@@ -46,6 +45,12 @@ export const orderedCharacters: Character[] = [
   "Cyril",
   "Rhea",
   "Sothis",
+  "Anna",
+  "Jeritza",
+  "Yuri",
+  "Balthus",
+  "Constance",
+  "Hapi",
 ];
 
 export const characterOrderedIndexMap: {
@@ -92,8 +97,13 @@ export const orderedCharacterFactionIndices: OrderedFactionIndex[] = [
   4,
   4,
   4,
-  4,
   0,
+  0,
+  1,
+  5,
+  5,
+  5,
+  5,
 ];
 
 export const orderedCharacterTitles: (string[])[] = [
@@ -137,14 +147,19 @@ export const orderedCharacterTitles: (string[])[] = [
   ["Slumbering Princess"], // Flayn
   ["Father of Crestology"], // Hanneman
   ["Divine Songstress"], // Manuela
-  ["Bloodstained Demon"], // Jeritza
   ["Veteran Patriot"], // Gilbert
   ["Family Man", "Sun of the Knights"], // Alois
   ["Guardian of Zanado", "Free Knight"], // Catherine
   ["Distant Archer"], // Shamir
   ["Limitless Potential"], // Cyril
-  [""],
-  [""],
+  [""], // Rhea
+  [""], // Sothis
+  ["Traveling Merchant"], // Anna
+  ["Bloodstained Demon"], // Jeritza
+  ["Underground Lord"], // Yuri
+  ["King of Grappling"], // Balthus
+  ["Sorcery Incarnate", "Scion of Nuvelle"], // Constance
+  ["Freed Spirit", "Beast Master"], // Hapi
 ];
 
 export const orderedFactions: Faction[] = [
@@ -153,6 +168,7 @@ export const orderedFactions: Faction[] = [
   "holy",
   "alliance",
   "church",
+  "abyss",
 ];
 
 /* Utility */

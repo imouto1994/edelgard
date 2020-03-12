@@ -3,7 +3,7 @@ const webpack = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const ASSETS_VERSION = 2;
+const ASSETS_VERSION = 3;
 
 module.exports = {
   devtool: "cheap-module-eval-source-map",

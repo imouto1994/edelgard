@@ -10,7 +10,7 @@ const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require("webpack");
 
-const ASSETS_VERSION = 2;
+const ASSETS_VERSION = 3;
 
 module.exports = {
   devtool: undefined,

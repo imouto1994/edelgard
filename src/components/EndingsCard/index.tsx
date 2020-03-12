@@ -76,10 +76,10 @@ export default function EndingsCard(props: Props): VNode<Props> {
 
   const portraitAJPGs = availableRoutes.length
     ? [
-        `/${characterASlug}${suffixA}_l@1x-${ASSETS_VERSION}.jpg`,
-        `/${characterASlug}${suffixA}_l@2x-${ASSETS_VERSION}.jpg`,
-        `/${characterASlug}${suffixA}_l@3x-${ASSETS_VERSION}.jpg`,
-        `/${characterASlug}${suffixA}_l@4x-${ASSETS_VERSION}.jpg`,
+        `/${characterASlug}${suffixA}_l@1x-${ASSETS_VERSION}.png`,
+        `/${characterASlug}${suffixA}_l@2x-${ASSETS_VERSION}.png`,
+        `/${characterASlug}${suffixA}_l@3x-${ASSETS_VERSION}.png`,
+        `/${characterASlug}${suffixA}_l@4x-${ASSETS_VERSION}.png`,
       ]
     : [];
   const portraitAWEBPs = availableRoutes.length
@@ -92,10 +92,10 @@ export default function EndingsCard(props: Props): VNode<Props> {
     : [];
   const portraitBJPGs = availableRoutes.length
     ? [
-        `/${characterBSlug}${suffixB}_l@1x-${ASSETS_VERSION}.jpg`,
-        `/${characterBSlug}${suffixB}_l@2x-${ASSETS_VERSION}.jpg`,
-        `/${characterBSlug}${suffixB}_l@3x-${ASSETS_VERSION}.jpg`,
-        `/${characterBSlug}${suffixB}_l@4x-${ASSETS_VERSION}.jpg`,
+        `/${characterBSlug}${suffixB}_l@1x-${ASSETS_VERSION}.png`,
+        `/${characterBSlug}${suffixB}_l@2x-${ASSETS_VERSION}.png`,
+        `/${characterBSlug}${suffixB}_l@3x-${ASSETS_VERSION}.png`,
+        `/${characterBSlug}${suffixB}_l@4x-${ASSETS_VERSION}.png`,
       ]
     : [];
   const portraitBWEBPs = availableRoutes.length

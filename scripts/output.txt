@@ -1,0 +1,348 @@
+Byleth M x Rhea
+PREV:
+[
+  "After finally saving both Fodlan and Rhea from crisis, Byleth ascended the throne as the first leader of the United Kingdom of Fodlan. From his temporary residence at Garreg Mach Monastery, he endeavored to restore and develop Fodlan. Having narrowly escaped death, Rhea took time to recover her strength before returning to her role as archbishop. Upon her return, she applied herself to rehabilitating the church and helping those who had suffered because of the war. Thereafter, the two worked closely to forge new policies and achieve progress for Fodlan. The pair's collective work came to be thought of as nothing short of miraculous.",
+  "Byleth defeated those who slither in the dark and put down the crazed Immaculate One. In the aftermath of the loss of Fodlan's great leading figures, he ascended the throne as the first leader of the United Kingdom of Fodlan. In his heart lived the indelible hope that their efforts would one day yield an era in which the people knew true peace and the horrors of war were a hazy memory of the past."
+]
+CURR:
+[
+  "After finally saving both Fodlan and Rhea from crisis, Byleth ascended the throne as the first leader of the United Kingdom of Fodlan. From his temporary residence at Garreg Mach Monastery, he endeavored to restore and develop Fodlan. Having narrowly escaped death, Rhea took time to recover her strength before returning to her role as archbishop. Upon her return, she applied herself to rehabilitating the church and helping those who had suffered because of the war. Thereafter, the two worked closely to forge new policies and achieve progress for Fodlan. The pair's collective work came to be thought of as nothing short of miraculous."
+]
+
+Byleth M x Jeritza
+PREV:
+[]
+CURR:
+[
+  "After the war for Fodlan, Byleth and Jeritza threw themselves fully into Emperor Edelgard's struggle against those who slither in the dark. Though the battle proved vicious, none could stand against the combined might of shining sword and reaper's scythe, and the pair become venerated by history as heroes of Adrestia. Once those who slither in the dark were forever vanquished, the two heroes stole away in secret and vanished without a trace. Their whereabouts thereafter have been the subject of much conjecture among historians."
+]
+
+Byleth M x Yuri
+PREV:
+[]
+CURR:
+[
+  "As the new Archbishop of the Church of Seiros, Byleth worked tirelessly with the Kingdom to reform and rebuild in the aftermath of a devastating war. Constantly at his side during that time was his husband, Yuri, whose policy proposals led, time and again, to better education and opportunities for the less fortunate. After working to ensure a bright and prosperous future for Fodlan, the couple stepped back from the public eye and vanished from official record. Curiously, informal notes and letters from friends suggest that the pair was extraordinarily long-lived and that their youth was untouched by the passage of time.",
+  "As the new leader of the United Kingdom of Fodlan, Byleth worked tirelessly to reform and rebuild in the aftermath of a devastating war. Constantly at his side during that time was his husband, Yuri, whose policy proposals led, time and again, to better education and opportunities for the less fortunate. After working to ensure a bright and prosperous future for Fodlan, the couple stepped back from the public eye and vanished from official record. Curiously, informal notes and letters from friends suggest that the pair was extraordinarily long-lived and that their youth was untouched by the passage of time.",
+  "No sooner was the modest wedding ceremony between Byleth and Yuri over than the battle with those who slither in the dark began in earnest. Through the bloody and brutal fight, the couple became known for their constant determination to save every possible life, leaving none behind. The battle marks the last mention of them in official sources, but stories abound of the order they brought to the underworld upon their triumphant return."
+]
+
+Byleth M x Constance
+PREV:
+[]
+CURR:
+[
+  "After ascending to the throne as the first leader of the United Kingdom of Fodlan, Byleth announced his marriage to Constance, who was given peerage for her service in war and permitted to revive House Nuvelle. Praised for her innovative talent, she rapidly rose to prominence in the new era, and her house came to be relied upon as a valued leader in magical research and development for generations. She was not without her detractors, however. Jealous rumors persisted throughout her life that the rays of the sun compelled her to retreat into hiding, threatening to reveal her monstrous true form.",
+  "After taking his place as the new archbishop of the Church of Seiros, Byleth announced his marriage to Constance, who was given peerage for her service in war and permitted to revive House Nuvelle. Praised for her innovative talent, she rapidly rose to prominence in the new era, and her house came to be relied upon as a valued leader in magical research and development for generations. Though the couple was known during their time as pioneer reformers for the church, they were remembered best for their charming, if unnerving, anecdotes of a wife's relentless insistence on using her husband as a test subject for experiments.",
+  "Almost as soon as Byleth and Constance were wed in a spectacular ceremony, the battle with those who slither in the dark began in earnest. Constance's efforts to understand and implement the magical techniques of the enemy quickly became instrumental, both to the fight and to the era of peaceful Imperial rule that followed. Though the couple was known during their time for their countless contributions to the Empire, they were remembered best for their charming, if unnerving, anecdotes of a wife's relentless insistence on using her husband as a test subject for experiments."
+]
+
+Byleth M x Hapi
+PREV:
+[]
+CURR:
+[
+  "After ascending to the throne as the first leader of the United Kingdom of Fodlan, Byleth announced his marriage to Hapi. Her disquieting lineage earned her more than her fair share of detractors, but over time, as the royal couple restored Fodlan together, the people came to appreciate her competence and taciturn wit. Some years later, when those who slither in the dark emerged to threaten Fodlan once again, it is said that Hapi's strength was instrumental in dealing with them.",
+  "After becoming the new Archbishop of the Church of Seiros, Byleth announced his marriage to Hapi. Her disquieting lineage earned her more than her fair share of detractors, but over time, as the royal couple restored Fodlan together, the people came to appreciate her competence and taciturn wit. Some years later, when those who slither in the dark emerged to threaten Fodlan once again, it is said that Hapi's strength was instrumental in dealing with them.",
+  "Almost immediately after Byleth and Hapi had celebrated their marriage in a lively ceremony, the battle against those who slither in the dark began in earnest. Contrary to expectations, Hapi wholeheartedly charged to the front lines and fought alongside her husband until true peace came to Fodlan. Afterward, the couple vanished without a trace-at least until someone claiming to be a descendant produced a chronicle of their lives. According to that account, the pair had retired to a secluded village at the foot of the Oghma Mountains. There, the author writes, they pledged their undying love for each other underneath a starry sky."
+]
+
+Edelgard x Constance
+PREV:
+[]
+CURR:
+[
+  "For her service in war and her innovations in magic, Constance von Nuvelle was among the first to receive peerage from Emperor Edelgard. Though her noble house was given no guarantee of power on a hereditary basis, Constance made certain that House Nuvelle would be relied upon in helping to achieve Edelgard's vision of a new social order. The emperor kept Constance close at hand and routinely recognized her counsel as valuable, which helped to bolster Constance's own sense of worth. It is rumored that the two were also dear personal friends and that they would frequently slip away from duties of governance to traipse through the capital together."
+]
+
+Byleth F x Rhea
+PREV:
+[
+  "After finally saving both Fodlan and Rhea from crisis, Byleth ascended the throne as the first leader of the United Kingdom of Fodlan. From her temporary residence at Garreg Mach Monastery, she endeavored to restore and develop Fodlan. Having narrowly escaped death, Rhea took time to recover her strength before returning to her role as archbishop. Upon her return, she applied herself to rehabilitating the church and helping those who had suffered because of the war. Thereafter, the two worked closely to forge new policies and achieve progress for Fodlan. The pair's collective work came to be thought of as nothing short of miraculous.",
+  "Byleth defeated those who slither in the dark and put down the crazed Immaculate One. In the aftermath of the loss of Fodlan's great leading figures, she ascended the throne as the first leader of the United Kingdom of Fodlan. In her heart lived the indelible hope that their efforts would one day yield an era in which the people knew true peace and the horrors of war were a hazy memory of the past."
+]
+CURR:
+[
+  "After finally saving both Fodlan and Rhea from crisis, Byleth ascended the throne as the first leader of the United Kingdom of Fodlan. From her temporary residence at Garreg Mach Monastery, she endeavored to restore and develop Fodlan. Having narrowly escaped death, Rhea took time to recover her strength before returning to her role as archbishop. Upon her return, she applied herself to rehabilitating the church and helping those who had suffered because of the war. Thereafter, the two worked closely to forge new policies and achieve progress for Fodlan. The pair's collective work came to be thought of as nothing short of miraculous."
+]
+
+Byleth F x Jeritza
+PREV:
+[]
+CURR:
+[
+  "After the war for Fodlan, Byleth and Jeritza threw themselves fully into Emperor Edelgard's struggle against those who slither in the dark. Though the battle proved vicious, none could stand against the combined might of shining sword and reaper's scythe, and the pair become venerated by history as heroes of Adrestia. Once those who slither in the dark were forever vanquished, the two heroes stole away in secret and vanished without a trace. Their whereabouts thereafter have been the subject of much conjecture among historians."
+]
+
+Byleth F x Yuri
+PREV:
+[]
+CURR:
+[
+  "As the new Archbishop of the Church of Seiros, Byleth worked tirelessly to reform and rebuild in the aftermath of a devastating war. Constantly at her side during that time was her husband, Yuri, whose policy proposals led, time and again, to better education and opportunities for the less fortunate-a legacy that was later taken up by the couple's children. A trove of their love letters, uncovered many years later, revealed that she called him by an entirely different name in private. Scholars have never learned why.",
+  "As the new leader of the United Kingdom of Fodlan, Byleth worked tirelessly to reform and rebuild in the aftermath of a devastating war. Constantly at her side during that time was her husband, Yuri, whose policy proposals led, time and again, to better education and opportunities for the less fortunate-a legacy that was later taken up by the couple's children. A trove of their love letters, uncovered many years later, revealed that she called him by an entirely different name in private. Scholars have never learned why.",
+  "No sooner was the modest wedding ceremony between Byleth and Yuri over than the battle with those who slither in the dark began in earnest. Through the bloody and brutal fight, the couple became known for their constant determination to save every possible life, leaving none behind. The battle marks the last mention of them in official sources, but stories abound of the order they brought to the underworld upon their triumphant return."
+]
+
+Byleth F x Balthus
+PREV:
+[]
+CURR:
+[
+  "After ascending to the throne as the first leader of the United Kingdom of Fodlan, Byleth announced her marriage to Balthus. The people were reluctant to accept this union at first, considering his reputation, but his natural charisma in speeches and his ability to exceed expectations eventually won their blessing. Though mostly noted for his strength and dedication as a bodyguard, Balthus also provided counsel. It is said that many civil and diplomatic reforms owe their origins to his advice.",
+  "After taking her place as the new archbishop of the Church of Seiros, Byleth announced her marriage to Balthus. The people were reluctant to accept this union at first, considering his reputation, but his natural charisma in speeches and his ability to exceed expectations eventually won their blessing. Though mostly noted for his strength and dedication as a bodyguard, Balthus also provided counsel. It is said that many civil and diplomatic reforms owe their origins to his advice.",
+  "Almost as soon as Byleth and Balthus finished their lively wedding celebration, the battle with those who slither in the dark began in earnest. Leading from the front lines, the couple drove the enemy back again and again, causing such carnage on the battlefield that even their Imperial allies and subordinates were intimidated. After hostilities came to an end, their names faded from official historical records but persisted in folk tales. Of the stories that spread to every corner of Fodlan and survive to this day, the most prominent one features criminals who threaten to abduct a traveler's wife. The traveler laughs and wishes them the best of luck."
+]
+
+Byleth x Byleth
+PREV:
+[]
+CURR:
+[
+  "S0 defeated those who slither in the dark and put down the crazed Immaculate One. In the aftermath of the loss of Fodlan's great leading figures, EK00heEL00sheEM00 ascended the throne as the first leader of the United Kingdom of Fodlan. In EK00hisEL00herEM00 heart lived the indelible hope that their efforts would one day yield an era in which the people knew true peace and the horrors of war were a hazy memory of the past."
+]
+
+Dimitri x Hapi
+PREV:
+[]
+CURR:
+[
+  "After his coronation, Dimitri assumed the throne of the Holy Kingdom of Faerghus. He focused first and foremost on the restoration of the Kingdom but at the same time worked to expose the schemes of Cornelia and of those who conspired to bring about the Tragedy of Duscur. Always by his side was Hapi, who relentlessly pursued those who slither in the dark and, with Dimitri's help, discovered a magic spell to rid herself of her condition. Once all had settled down, the pair was known to have tea together often in the capital. It is said that Dimitri's tendency to discuss politics during tea time frequently moved Hapi to smirk, shake her head, and sigh."
+]
+
+Claude x Flayn
+PREV:
+[
+  "Entrusting the future of Fodlan to his friends, Claude left for Almyra to reclaim his place as heir to the throne. Several years later, when he became king, he took initial steps to open diplomatic relations with Fodlan, and asked Garreg Mach for aid. During this time, he was reunited with Flayn, who had been helping Seteth run the church. She agreed to help, and as they worked together to secure friendly relations between their respective regions, they fell deeply in love. It is said that Seteth never learned of their relationship."
+]
+CURR:
+[
+  "Entrusting the future of Fodlan to his friends, Claude left for Almyra to reclaim his place as heir to the throne. Several years later, when he became king, he took initial steps to open diplomatic relations with Fodlan, and asked Garreg Mach for aid. Alongside him was his wife, Flayn, who had gone missing during the war, but who now worked tirelessly to bridge the gap between their two lands for the sake of the late Seteth. It is said that some churchgoers disapproved of this new stance toward Almyra at first, but that Flayn's love for Claude proved to be a key inspiration in shifting the perspectives of the populace.",
+  "Entrusting the future of Fodlan to his friends, Claude left for Almyra to reclaim his place as heir to the throne. Several years later, when he became king, he took initial steps to open diplomatic relations with Fodlan, and asked Garreg Mach for aid. During this time, he was reunited with Flayn, who had been helping Seteth run the church. She agreed to help, and as they worked together to secure friendly relations between their respective regions, they fell deeply in love. It is said that Seteth never learned of their relationship."
+]
+
+Claude x Balthus
+PREV:
+[]
+CURR:
+[
+  "Perhaps unexpectedly, Balthus accompanied Claude upon his return to his homeland of Almyra. While Claude assumed the role of a politically active prince, Balthus spent his days drinking, flirting, and brawling. As soon as Claude inherited the throne, however, all that changed. In the blink of an eye, Balthus became son-in-law to the great commander, Nader, and took up a position of military command in service to Claude's stated goal to improve relations with Fodlan. To foster trust, Claude frequently sent Balthus into Fodlan on missions to help quell revolts begun by Imperial loyalists."
+]
+
+Ferdinand x Constance
+PREV:
+[]
+CURR:
+[
+  "After officially becoming the new Duke Aegir, Ferdinand found that he had a new neighbor in Constance, whose revived noble house was granted the old Hrym territory for its domain. It was a prescient move by Emperor Edelgard, as Ferdinand and Constance were quick to marry and merge their adjoining territories. The couple's diverse talents helped them overcome countless obstacles together, in pursuit of a restored land and a new social order for the Empire.",
+  "After officially becoming the new Duke Aegir, Ferdinand found that he had a new neighbor in Constance, whose revived noble house was granted the old Hrym territory for its domain. They were married in short order, and their adjoining territories were merged. The couple's diverse talents helped them overcome countless obstacles together, in pursuit of a restored land. They had many children, including one who became well-known in her own right for the advancements she brought to her mother's research. For generations thereafter, House Nuvelle stood at the forefront of magical progress."
+]
+
+Linhardt x Hapi
+PREV:
+[]
+CURR:
+[
+  "After the war, Linhardt abandoned his inherited position and instead journeyed with Hapi to the village both she and Saint Timotheos were from. The villagers initially bristled at the arrival but welcomed the two once they recognized Hapi. Combining what he had uncovered beneath Garreg Mach with notes found in the village said to have been left by Timotheos himself, Linhardt swiftly unraveled the mystery of Hapi's unique power. With little to do once the research was completed, the pair embarked upon a life of leisure together."
+]
+
+Bernadetta x Jeritza
+PREV:
+[]
+CURR:
+[
+  "After the war for Fodlan, Jeritza threw himself fully into the struggle against those who slither in the dark. Visage masked by the likeness of death itself, he laid waste to his enemies with a scythe that terrified friend and foe alike. When it was all over, he stole away in secret and vanished. At the same time, a mysterious guest arrived in Varley territory, which Bernadetta had inherited from her father. On that day, the reclusive noble and her guest were seen walking the grounds pleasantly together. A rendition of that scene, said to be painted by Bernadetta herself, remains at the estate to this day."
+]
+
+Bernadetta x Yuri
+PREV:
+[]
+CURR:
+[
+  "Bernadetta's struggle with anxiety made it difficult for her to take over as the head of House Varley. She became so overwhelmed that when Yuri chanced to visit her domain, she literally grabbed hold of him and refused to let go. Baffling as it was for Yuri at the time, this peculiar state of affairs eventually led to marriage. The commonfolk were initially perplexed, but over the years they became grateful for Count Varley's surprising husband. His presence kept her calm and allowed her to deal with her people more frequently and easily. As a result, her talent for governance blossomed and her rule was widely celebrated."
+]
+
+Dorothea x Yuri
+PREV:
+[]
+CURR:
+[
+  "A new opera company was born of the postwar rebuilding period. This troupe, headed up by a former songstress, was comprised of hand-picked talent from all walks of life. Though it began humbly, over the years it grew to rival even the Mittelfrank Opera Company in its greatness. The most popular production in its repertoire was a tale of a disillusioned songstress making a comeback with the help of her ambitious lover. Through that story, the names of Yuri and Dorothea live on to this very day."
+]
+
+Ashe x Hapi
+PREV:
+[]
+CURR:
+[
+  "After the war, Ashe was formally knighted and appointed the new head of House Gaspard, which had no successors. He soon married Hapi, whose competence lent much reliability to the governance of their territory. The ruling couple developed a frank and earnest relationship with their people, and the territory prospered. They were also blessed with many children, and their home was always so busy and full of merriment that there was never an occasion to sigh. It is said that Hapi took such delight in recounting Ashe's stories to their children that it became hard to believe she had ever despised knights."
+]
+
+Mercedes x Mercedes
+PREV:
+[
+  "Mercedes left home and opened a small orphanage in the Faerghus region with her mother. There, she took in and raised children who had lost their families in the war, regardless of their blood or circumstances of birth. It is said that, in the town which grew around this orphanage, the children never failed to smile.",
+  "Mercedes left home and went to Garreg Mach, where she became a model cleric. She devoted the whole of her life to the service of the goddess and became well-loved by the people, who revered her for her piety and her boundless generosity toward those in need."
+]
+CURR:
+[
+  "Mercedes left home and opened a small orphanage in the Faerghus region with her mother. There, she took in and raised children who had lost their families in the war, regardless of their blood or circumstances of birth. It is said that, in the town which grew around this orphanage, the children never failed to smile.",
+  "Mercedes left home and went to Garreg Mach, where she became a model cleric. She devoted the whole of her life to the service of the goddess and became well-loved by the people, who revered her for her piety and her boundless generosity toward those in need.",
+  "Once those who slither in the dark were finally defeated, Mercedes left home and opened a small orphanage in the Faerghus region with her mother. After many years of kind service raising children who had lost their families, she received a letter bearing familiar handwriting. Its author, a prisoner in Enbarr, expressed his sincerest well-wishes to Mercedes and her family. Still more time passed until, one day, the man who wrote the letter paid her a visit. With joyful tears in her eyes, Mercedes smiled, took Emile by the hand, and at last welcomed him home."
+]
+
+Mercedes x Constance
+PREV:
+[]
+CURR:
+[
+  "After the war, Constance and Mercedes traveled together to the school of sorcery in Fhirdiad. There, they immersed themselves in magical research and, with the help of their friends and all the school's resources, made one astounding discovery after another. Their considerable achievements led to the revitalization of both House Nuvelle and House Martritz. The pair grew increasingly close over the years so that, as time wore on, they became less like friends and more like family. It is said that, years later, each began to speak of the other as if she were a dear sister."
+]
+
+Ingrid x Yuri
+PREV:
+[]
+CURR:
+[
+  "When Galatea territory was seized, Ingrid argued strongly for the preservation of its borders. Her request was granted, and she was appointed to rule. Though, since she had previously abandoned her noble house, she was not well accepted by the people. Despite this, she found that the commonfolk carried out her policies with unexpected enthusiasm and efficiency. She soon discovered that it was Yuri who had convinced them of her wisdom. The two were reunited and eventually married, and under their stewardship, Galatea territory flourished. It is said that, after a busy day of governance, Ingrid yearned for nothing more than a home-cooked meal prepared by her husband.",
+  "Yuri disappeared into the underworld of the western Kingdom and faded away into obscurity. The only account of him after that comes from a Kingdom knight's journal, uncovered many decades later, which tells of Yuri's efforts to win the king's support for an orphanage and medical clinic to be built in the slums of the castle town. It is believed that the journal belonged to Ingrid, who had declined to rule House Galatea in order to serve House Blaiddyd as a knight. According to local rumor, Ingrid eventually retired from knighthood to become the owner of an inn. There, it is said that she and the man she wrote about cooked dishes loved by rich and poor alike."
+]
+
+Lysithea x Balthus
+PREV:
+[]
+CURR:
+[
+  "Balthus accompanied Lysithea home to help her parents restore their family land, securing the aid of his younger brother, who happened to be lord of a nearby domain. Years later, when the end to their hard work was finally in sight, Lysithea relinquished House Ordelia's claim to nobility, ceding the territory to a nearby lord. Shortly thereafter, Balthus brought her and her family to Kupala, in Fodlan's Throat. There, they fell in love and lived peaceful, happy lives blending in with the mountain folk."
+]
+
+Hilda x Balthus
+PREV:
+[]
+CURR:
+[
+  "Most of Balthus's debts vanished in the chaos after the war, and those few that remained were paid off with what he had earned in the fighting. Free to do as he pleased, he sought out Hilda, and the two of them went on an adventure around the world. Crossing Fodlan's Throat, they journeyed through and beyond Almyra, where they are said to have found a kingdom of gold in the far east. Though the details of their adventure are largely lost, one anecdote firmly remains. To win Holst's blessing to take his sister out of Fodlan, Balthus had to beat him in a duel."
+]
+
+Seteth x Catherine
+PREV:
+[
+  "After the war, Seteth fully confessed his love to Catherine and asked her to marry him. Intending to accompany Rhea to a life of seclusion, however, Catherine declined. Over the years, as Seteth worked to rebuild the church from the monastery, he continued to write love letters to Catherine. When the rebuilding effort was complete, he journeyed to the Red Canyon, where she and Rhea had been living, and delivered all of his letters by hand. Catherine was deeply moved, and with Rhea's blessing and no more reason to refuse him, she accepted his proposal. The two were wed and lived out their lives happily alongside Rhea.",
+  "After the war, Seteth fully confessed his love to Catherine and asked her to marry him. Refusing to remain at the monastery, however, Catherine declined. Over the years, as Seteth worked to rebuild the church, he continued to write love letters to Catherine. Her answer was always the same. Finally, when the rebuilding effort was complete, Seteth left the church and went to see her, declaring his love anew. With no more reason to refuse him, she at last accepted his proposal. The two were wed, and swore to walk side by side together through the new age."
+]
+CURR:
+[
+  "After the war, Rhea resumed her duties as the archbishop, and Seteth and Catherine joined her in rebuilding the Knights of Seiros. As ever, Seteth served as her second in command and Catherine remained one of her most trusted protectors. When the hard work was over and all had been restored, Seteth confessed his love to Catherine and asked her to marry him. Though initially reluctant, Catherine is said to have been persuaded to accept by a nudge from Rhea herself. The two were wed in a packed and lively ceremony, and afterward they lived out their lives happily as husband and wife.",
+  "After the war, Seteth fully confessed his love to Catherine and asked her to marry him. Intending to accompany Rhea to a life of seclusion, however, Catherine declined. Over the years, as Seteth worked to rebuild the church from the monastery, he continued to write love letters to Catherine. When the rebuilding effort was complete, he journeyed to the Red Canyon, where she and Rhea had been living, and delivered all of his letters by hand. Catherine was deeply moved, and with Rhea's blessing and no more reason to refuse him, she accepted his proposal. The two were wed and lived out their lives happily alongside Rhea.",
+  "After the war, Seteth fully confessed his love to Catherine and asked her to marry him. Refusing to remain at the monastery, however, Catherine declined. Over the years, as Seteth worked to rebuild the church, he continued to write love letters to Catherine. Her answer was always the same. Finally, when the rebuilding effort was complete, Seteth left the church and went to see her, declaring his love anew. With no more reason to refuse him, she at last accepted his proposal. The two were wed, and swore to walk side by side together through the new age."
+]
+
+Jeritza x Jeritza
+PREV:
+[]
+CURR:
+[
+  "After the war for Fodlan, Jeritza threw himself fully into the struggle against those who slither in the dark. Visage masked by the likeness of death itself, he laid waste to his enemies with a scythe that terrified friend and foe alike. When it was all over, he stole away in secret and vanished without a trace. His whereabouts thereafter have been the subject of much conjecture."
+]
+
+Jeritza x Constance
+PREV:
+[]
+CURR:
+[
+  "After the war, Jeritza and Constance joined the battle against those who slither in the dark. In that dire struggle, which raged across the continent, Constance earned her noble title with powerful magic that proved essential to victory. Her rise in status ruffled more than a few feathers, but Jeritza kept the Imperial nobility in line. It is said, in the ballads composed about the couple, that they swore their wedding vows in the beautiful rose garden they had planted together on the Nuvelle estate."
+]
+
+Anna x Anna
+PREV:
+[]
+CURR:
+[
+  "Anna's business savvy proved to be a great asset in the post-war reconstruction of Garreg Mach. Once the restoration was complete, she disappeared from the area entirely, though tales of a mysterious merchant were passed down in every corner of the world for centuries to come. Some say she continues her travels even to this day, eternally peddling her wares, and ever in search of the next lucrative opportunity."
+]
+
+Yuri x Yuri
+PREV:
+[]
+CURR:
+[
+  "After Fodlan had healed from the war, Yuri's organization spent the next few decades cultivating and controlling illicit markets. Not coincidentally, wherever Yuri's underground businesses thrived, so too did orphanages and almshouses. For the awe and respect his generosity earned him among the downtrodden, Yuri came to be known as the \"Underground Lord.\""
+]
+
+Yuri x Balthus
+PREV:
+[]
+CURR:
+[
+  "After the war, Yuri returned to the underworld. Some time after assuming control of the illicit markets, he happened upon Balthus, who had become so down on his luck that he had collapsed in an alley. Yuri helped Balthus back to his feet and offered him work as a bodyguard. While Balthus first accepted just to get by, he came to enjoy the lifestyle so much that he remained at Yuri's side for the rest of his days. The underworld kingpin and the Indomitable King of Grappling made such an impression on the world that their names were feared for centuries."
+]
+
+Yuri x Constance
+PREV:
+[]
+CURR:
+[
+  "After the war, Constance devoted herself to her magical research. Her unorthodox methods allowed her to make great strides, which earned her acclaim and eventually enabled her to restore her noble house. Afterward, almost as if to spite her detractors, she married Yuri. The pair made a happy, if unconventional, couple, as the husband frequently ventured away for months on end. In the long years of their marriage, however, Constance laughed off any concerns-she was known to say that Yuri always knew how to find his way home. Many decades later, he passed away in bed alongside his beloved wife."
+]
+
+Yuri x Hapi
+PREV:
+[]
+CURR:
+[
+  "After the war, Yuri accompanied Hapi to the village where she was born. The surprise nature of the visit, combined with a local custom of massive celebrations for family reunions, made things awkward at first. The party did not get started until nightfall, but Hapi was able to reunite with her parents, and under that starry sky, lasting bonds were forged. In fact, it is said that Yuri, a complete stranger, made such an impression that the welcome party lasted for seven days and nights before he was finally permitted to leave. Years later, they returned for another visit-this time as a couple. The village turned out en masse for the wedding, held under those same stars."
+]
+
+Balthus x Balthus
+PREV:
+[]
+CURR:
+[
+  "After the war for Fodlan, Balthus whole-heartedly joined the battle against those who slither in the dark. The devastation he wrought in the Battle of Shambhala was immortalized in a tapestry, entitled \"Avatar of War,\" and passed down through the generations. Afterward, it is said he returned to Kupala and became a protector of the mountain folk.",
+  "Balthus disappeared shortly after the war, but rumors of his exploits swirled for a long time thereafter. Some say he returned to Kupala, where he became a protector of the mountain folk. Others say he remained right under Garreg Mach's nose as a prominent underworld figure. Whatever the truth, the tale of his domination in the first- ever All-Fodlan Tournament Brawl is likely too persistent to be a fabrication."
+]
+
+Balthus x Constance
+PREV:
+[]
+CURR:
+[
+  "After the war, Balthus and Constance joined the battle against those who slither in the dark. The devastation they wrought in Shambhala was immortalized in a tapestry, entitled \"Avatars of War,\" which preserved their legacy for generations. Afterward, the two were married. Constance was among the first to receive peerage from Emperor Edelgard, and though Balthus sometimes chafed from being at the mercy of his wife's whims, the couple worked diligently to solidify the new social order under Imperial rule. House Nuvelle was given no guarantee of continued power on a hereditary basis but nevertheless achieved lasting status as a leader in the magical arts.",
+  "For her service in war, and her innovations in magic, Constance von Nuvelle was among the first to receive peerage in the new Fodlan. The very next day, she and Balthus were wed, and the couple set about the restoration of House Nuvelle. For their domain, they claimed not the land once ruled by that house, but rather an area in the east of Leicester that encompassed Kupala. There, they became known as advocates for the mountain folk, and as nobles who lived moment to moment as outlandishly as they pleased."
+]
+
+Balthus x Hapi
+PREV:
+[]
+CURR:
+[
+  "Shortly after the war, Hapi and Balthus disappeared. Their absence from the world stage was not lasting, however, as before long they emerged as the leaders of an elite band of mercenaries. The group traveled all over Fodlan helping those in need, with a noted specialty in handling monsters. It is said that these mercenaries lived raucously, laughing often, and that not a single sigh of discontent was ever heard. Some time later, when those who slither in the dark threatened Fodlan, it is rumored that these mercenaries were instrumental in dealing with them.",
+  "Shortly after the war, Hapi and Balthus disappeared. Their absence from the world stage was not lasting, however, as before long they emerged as the leaders of an elite band of mercenaries. The group traveled all over Fodlan helping those in need, with a noted specialty in handling monsters. It is said that these mercenaries lived raucously, laughing often, and that not a single sigh of discontent was ever heard. Some years later, when those who slither in the dark returned to threaten Fodlan once again, these mercenaries were instrumental in dealing with them."
+]
+
+Constance x Constance
+PREV:
+[]
+CURR:
+[
+  "For her service in war, and her innovations in magic, Constance von Nuvelle was among the first to receive peerage from Emperor Edelgard. Though her noble house was given no guarantee of power on a hereditary basis, Constance made certain that House Nuvelle would be valued as a leader in magical research and development for generations to come.",
+  "For her service in war, and her innovations in magic, Constance von Nuvelle was among the first to receive peerage in the new Fodlan. For generations thereafter, her noble house was valued as a leader in magical research and development."
+]
+
+Constance x Hapi
+PREV:
+[]
+CURR:
+[
+  "Once all the fighting was over, Hapi and Constance set out together on a journey across Fodlan. They toured the land as they liked, watching it come together in the aftermath of war. They helped in the rebuilding effort here and there with magic and even the occasional sigh. When their wanderings were done, they returned to Garreg Mach, to which they also lent their restorative talents, both above and below the ground. It is said that they remained lifelong friends, steadfast through thick and thin forever after."
+]
+
+Hapi x Hapi
+PREV:
+[]
+CURR:
+[
+  "Though Hapi's exact whereabouts after the war for Fodlan are not known, it is widely speculated that she returned to her hometown to live a quiet life. One strange occurrence is a matter of historical record, however. When the Empire began its struggle against those who slither in the dark in earnest, Imperial forces were sometimes aided by a mysterious woman leading a horde of beasts.",
+  "Where exactly Hapi went after the war is unknown. Some say she returned to her hometown to live a quiet life, while others speculate she assumed a new identity in the underworld beneath Garreg Mach. There is one incident that is a matter of historical record, however. Some years later, remnants of those who slither in the dark emerged to threaten Fodlan once again. They were defeated by a mysterious woman leading a horde of beasts.",
+  "Where exactly Hapi went after the war is unknown. Some say she returned to her hometown to live a quiet life, while others speculate she assumed a new identity in the underworld beneath Garreg Mach. There is one incident that is a matter of historical record, however. Some years later, when those who slither in the dark emerged to threaten Fodlan once again, they were defeated by a mysterious woman leading a horde of beasts."
+]
